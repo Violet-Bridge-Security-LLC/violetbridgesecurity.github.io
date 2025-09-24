@@ -1,0 +1,223 @@
+/* ====== Violet Bridge Security LLC – Base Styles ======
+   (keeps original variables & tone, extends for new layout) */
+
+:root{
+  --bg: #0e0f13;
+  --bg-elev: #14161d;
+  --text: #e6e8ee;
+  --muted: #b2b7c2;
+  --accent: #7c4dff;       /* Violet */
+  --accent-2: #5a35d6;
+  --card: #171923;
+  --border: #24283b;
+  --maxw: 1120px;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#ffffff; --bg-elev:#fafafa; --text:#0e0f13; --muted:#4a4f5a;
+    --card:#ffffff; --border:#e8eaf1; --shadow:0 10px 24px rgba(12,8,32,.06);
+  }
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif;
+}
+
+/* ====== Layout ====== */
+.container{
+  width:100%;
+  max-width:var(--maxw);
+  margin-inline:auto;
+  padding: clamp(16px, 3vw, 28px);
+}
+
+.lead{ color:var(--muted); margin: 6px 0 16px; }
+.center{ text-align:center; }
+.muted{ color:var(--muted); }
+
+/* ====== Header / Brand / Nav ====== */
+.site-header{
+  background:
+    radial-gradient(1200px 600px at 30% -10%, rgba(124,77,255,.25), transparent 60%),
+    linear-gradient(180deg, var(--bg-elev), var(--bg));
+  border-bottom:1px solid var(--border);
+  position:sticky; top:0; z-index:100;
+}
+.header-inner{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
+.brand{ display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
+.brand-mark{ width:40px; height:40px; border-radius:12px; overflow:hidden; }
+.brand-mark rect{ fill: linear-gradient(135deg, var(--accent), var(--accent-2)); fill: var(--accent); }
+.brand-mark .bridge{ stroke:#fff; stroke-width:4; fill:none; stroke-linecap:round; }
+.brand-mark .node{ fill:#fff; }
+.brand-text{ font-weight:800; letter-spacing:.2px; }
+.brand-primary{ color:var(--accent); }
+
+/* Primary nav */
+.site-nav ul{ list-style:none; padding:0; margin:0; display:flex; gap:18px; align-items:center; }
+.site-nav a{
+  color:var(--muted); text-decoration:none; font-weight:600; padding:8px 2px; border-radius:8px;
+}
+.site-nav a:hover,
+.site-nav a.is-active{ color:var(--text); }
+.site-nav a.is-active{ text-decoration:underline; text-decoration-color:var(--accent); text-underline-offset:4px; }
+
+.nav-toggle{
+  display:none;
+  background:transparent; color:var(--text);
+  border:1px solid var(--border); border-radius:10px;
+  padding:8px 10px; font-size:18px; line-height:1;
+}
+
+/* Mobile nav */
+@media (max-width: 840px){
+  .nav-toggle{ display:inline-block; }
+  .site-nav{ position:absolute; left:0; right:0; top:64px; padding:12px 16px;
+    background:var(--bg-elev); border-bottom:1px solid var(--border);
+    transform:translateY(-8px); opacity:0; pointer-events:none; transition:.18s ease;
+  }
+  .site-nav ul{ flex-direction:column; align-items:flex-start; gap:10px; }
+  .site-nav.open{ transform:translateY(0); opacity:1; pointer-events:auto; }
+}
+
+/* ====== Hero ====== */
+.hero{ padding: 56px 0 24px; border-top:1px solid var(--border); }
+.hero-inner h1{
+  margin:10px 0 10px;
+  font-size: clamp(28px, 4.8vw, 44px);
+  letter-spacing:.2px;
+}
+.hero-inner .accent{ color:var(--accent); }
+.hero-ctas{ display:flex; gap:12px; flex-wrap:wrap; }
+
+/* Trust badges (inline list) */
+.trust-badges{
+  display:flex; flex-wrap:wrap; gap:8px; padding:0; margin: 16px 0 0; list-style:none;
+}
+.trust-badges li{
+  padding:6px 10px; border-radius:999px; font-size:.85rem;
+  background: rgba(124,77,255,.12); color: var(--accent);
+  border:1px solid rgba(124,77,255,.25);
+}
+
+/* ====== Buttons ====== */
+.btn{
+  display:inline-block; padding:12px 16px; border-radius:12px; font-weight:700;
+  background:var(--accent); color:#fff; text-decoration:none; border:1px solid transparent;
+  box-shadow: var(--shadow);
+}
+.btn:hover{ filter:brightness(1.05); }
+.btn-outline{
+  background:transparent; color:var(--accent); border-color:var(--accent); box-shadow:none;
+}
+.btn-outline:hover{ background:rgba(124,77,255,.10); }
+
+/* Small button variant (e.g., in nav) */
+.btn.btn-small{ padding:8px 12px; border-radius:10px; font-weight:700; }
+
+/* ====== Sections ====== */
+.section{ padding:42px 0; border-top:1px solid var(--border); }
+.section h2{ margin:0 0 8px; font-size: clamp(22px, 3.2vw, 28px); }
+.section.alt{ background: var(--bg-elev); }
+
+/* ====== Grids & Cards ====== */
+.grid-3{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:18px; }
+.grid-2{ display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:18px; }
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  padding:18px;
+  box-shadow: var(--shadow);
+}
+.card h3{ margin:0 0 6px; font-size:1.06rem; }
+.card p{ margin:6px 0 12px; color:var(--muted); }
+.card .btn{ margin-top:8px; }
+
+/* Steps (Approach) */
+.steps{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:18px; }
+.step{ background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); }
+.step h3{ margin:0 0 6px; }
+
+/* Training */
+.training-grid .training-block{ background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); }
+
+/* ====== Tools / Reports Lists (optional) ====== */
+ul.clean{ list-style:none; padding-left:0; margin:0; }
+ul.clean li{ padding:8px 0; border-bottom:1px dashed var(--border); }
+ul.clean li:last-child{ border-bottom:none; }
+
+/* ====== Contact ====== */
+.contact .contact-form{
+  display:grid; gap:12px; max-width:640px;
+}
+.contact .contact-form label{ display:grid; gap:6px; font-weight:600; }
+.contact .contact-form input,
+.contact .contact-form textarea{
+  background:var(--bg-elev);
+  color:var(--text);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:10px 12px;
+}
+.contact .contact-form input:focus,
+.contact .contact-form textarea:focus{
+  outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(124,77,255,.18);
+}
+
+/* ====== Footer ====== */
+.site-footer{ border-top:1px solid var(--border); padding:22px 0 40px; color:var(--muted); }
+.footer-inner{ display:flex; align-items:center; justify-content:center; }
+
+/* ====== Reveal on scroll ====== */
+.reveal{ opacity:0; transform: translateY(12px); transition: opacity .25s ease, transform .25s ease; }
+.reveal.in{ opacity:1; transform:none; }
+
+/* ====== Back to top ====== */
+.back-to-top{
+  position:fixed; right:18px; bottom:18px; z-index:50;
+  opacity:0; pointer-events:none; transition:opacity .2s ease;
+  background:var(--bg-elev); border:1px solid var(--border); color:var(--text);
+  padding:10px 12px; border-radius:12px; box-shadow: var(--shadow);
+}
+.back-to-top.show{ opacity:1; pointer-events:auto; }
+.back-to-top:hover{ border-color:var(--accent); color:var(--accent); }
+
+/* ====== Compatibility with earlier CSS (kept for safety) ======
+   These keep older class names working if they appear elsewhere.
+   Derived from your previous stylesheet.  */
+/* Header/Hero legacy */
+header{ border-bottom:1px solid var(--border); }
+.brand .logo{ width:44px; height:44px; border-radius:12px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: var(--shadow); }
+.top{ display:flex; justify-content:space-between; align-items:center; }
+nav a{ color:var(--muted); text-decoration:none; margin-left:18px; font-weight:600; }
+nav a:hover, nav a.is-active{ color:var(--text); }
+.hero p{ color:var(--muted); margin:0 0 18px; }
+.cta{ display:inline-block; padding:12px 18px; border-radius:12px; font-weight:700; background:var(--accent); color:white; text-decoration:none; box-shadow:var(--shadow); }
+.cta:hover{ filter:brightness(1.05); }
+
+/* Generic section & grids legacy */
+section{ padding:42px 0; border-top:1px solid var(--border); }
+section h2{ margin:0 0 10px; font-size: clamp(22px, 3.2vw, 28px); }
+.grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:18px; }
+
+/* Legacy back-to-top support (#toTop) */
+#toTop{ position:fixed; right:18px; bottom:18px; z-index:50; opacity:0; pointer-events:none; transition:opacity .2s ease; }
+#toTop.visible{ opacity:1; pointer-events:auto; }
+#toTop .btn{ display:inline-block; padding:10px 12px; border-radius:12px; font-weight:700; background:var(--bg-elev); border:1px solid var(--border); color:var(--text); text-decoration:none; box-shadow: var(--shadow); }
+#toTop .btn:hover{ border-color:var(--accent); color:var(--accent); }
+
+/* ====== Responsive tweaks ====== */
+@media (max-width:720px){
+  .hero{ padding: 44px 0 16px; }
+}
