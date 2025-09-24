@@ -1,0 +1,147 @@
+/* ====== Violet Bridge Security LLC – Base Styles ====== */
+:root{
+  --bg: #0e0f13;
+  --bg-elev: #14161d;
+  --text: #e6e8ee;
+  --muted: #b2b7c2;
+  --accent: #7c4dff;        /* Violet */
+  --accent-2: #5a35d6;
+  --card: #171923;
+  --border: #24283b;
+  --maxw: 1120px;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+/* Light mode support (auto if user prefers) */
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#ffffff; --bg-elev:#fafafa; --text:#0e0f13; --muted:#4a4f5a;
+    --card:#ffffff; --border:#e8eaf1; --shadow:0 10px 24px rgba(12,8,32,.06);
+  }
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+/* Layout */
+.container{
+  width:100%;
+  max-width:var(--maxw);
+  margin-inline:auto;
+  padding: clamp(16px, 3vw, 28px);
+}
+
+/* Header/Hero */
+header{
+  background: radial-gradient(1200px 600px at 30% -10%, rgba(124,77,255,.25), transparent 60%),
+              linear-gradient(180deg, var(--bg-elev), var(--bg));
+  border-bottom:1px solid var(--border);
+}
+.brand{
+  display:flex; align-items:center; gap:12px;
+}
+.logo{
+  width:44px; height:44px; border-radius:12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: var(--shadow);
+}
+.top{
+  display:flex; justify-content:space-between; align-items:center;
+}
+nav a{
+  color:var(--muted); text-decoration:none; margin-left:18px; font-weight:600;
+}
+nav a:hover, nav a.is-active{ color:var(--text); }
+.hero{
+  padding: 56px 0 28px;
+}
+.hero h1{
+  margin:10px 0 6px;
+  font-size: clamp(28px, 5vw, 44px);
+  letter-spacing:.2px;
+}
+.hero p{ color:var(--muted); margin: 0 0 18px; }
+.cta{
+  display:inline-block; padding:12px 18px; border-radius:12px; font-weight:700;
+  background:var(--accent); color:white; text-decoration:none;
+  box-shadow: var(--shadow);
+}
+.cta:hover{ filter:brightness(1.05); }
+
+/* Sections */
+section{
+  padding: 42px 0;
+  border-top:1px solid var(--border);
+}
+section h2{
+  margin:0 0 10px; font-size: clamp(22px, 3.2vw, 28px);
+}
+section p.lead{ color:var(--muted); margin-top:0; }
+
+/* Cards & grids */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:18px;
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  padding:18px;
+  box-shadow: var(--shadow);
+}
+.card h3{ margin:0 0 6px; font-size:1.05rem; }
+.card p{ margin:6px 0 12px; color:var(--muted); }
+.card a.btn{
+  display:inline-block; padding:8px 12px; border-radius:10px; text-decoration:none;
+  background: transparent; color: var(--accent); border:1px solid var(--accent);
+}
+.card a.btn:hover{ background: rgba(124,77,255,.1); }
+
+/* Lists */
+ul.clean{ list-style:none; padding-left:0; margin:0; }
+ul.clean li{ padding:8px 0; border-bottom:1px dashed var(--border); }
+ul.clean li:last-child{ border-bottom:none; }
+
+/* Footer */
+footer{
+  border-top:1px solid var(--border);
+  padding:22px 0 40px; color:var(--muted);
+}
+
+/* Utilities */
+.badge{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:4px 10px; border-radius:999px; font-size:.85rem;
+  background: rgba(124,77,255,.12); color: var(--accent);
+  border:1px solid rgba(124,77,255,.25);
+}
+.muted{ color:var(--muted); }
+.center{ text-align:center; }
+
+/* Back-to-top */
+#toTop{
+  position:fixed; right:18px; bottom:18px; z-index:50;
+  opacity:0; pointer-events:none; transition:opacity .2s ease;
+}
+#toTop.visible{ opacity:1; pointer-events:auto; }
+#toTop .btn{
+  display:inline-block; padding:10px 12px; border-radius:12px; font-weight:700;
+  background:var(--bg-elev); border:1px solid var(--border); color:var(--text);
+  text-decoration:none; box-shadow: var(--shadow);
+}
+#toTop .btn:hover{ border-color:var(--accent); color:var(--accent); }
+
+/* Small screens */
+@media (max-width:720px){
+  .top{ flex-direction:column; align-items:flex-start; gap:10px; }
+  nav{ display:flex; flex-wrap:wrap; gap:10px; }
+}
