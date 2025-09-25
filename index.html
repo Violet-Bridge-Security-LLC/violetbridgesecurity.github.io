@@ -508,6 +508,11 @@ ul.clean li:last-child{
   white-space: nowrap !important;
   border: 0 !important;
 }
+
+/* Hidden spam protection field */
+.hidden {
+  display: none;
+}
   </style>
 </head>
 <body>
@@ -783,7 +788,10 @@ ul.clean li:last-child{
     <section id="contact" class="section contact">
       <div class="container">
         <h2>Let's Talk</h2>
-        <form class="contact-form" method="POST" data-netlify="true" name="contact" action="mailto:info@violetbridgesecurity.com">
+        <form class="contact-form" method="POST" action="https://formspree.io/f/xyznznrd">
+          <input type="hidden" name="_replyto" value="info@violetbridgesecurity.com">
+          <input type="hidden" name="_subject" value="New Contact Form Submission - Violet Bridge Security">
+          <input type="hidden" name="_next" value="https://violetbridgesecurity.com/#contact">
           <label>Name <input type="text" name="name" required /></label>
           <label>Email <input type="email" name="email" required /></label>
           <label>Message <textarea name="message" rows="5" required></textarea></label>
