@@ -258,13 +258,3 @@ border:2px solid var(--accent);
 @media (max-width:720px){
 .hero{ padding: 44px 0 16px; }
 }
-
-/* Keep each nav label on one line (fixes "Awareness & Training" wrapping) */
-.site-nav a { 
-  white-space: nowrap;
-}
-
-/* Slightly tighten spacing to make extra room */
-.site-nav ul { 
-  gap: 14px;   /* was 18px */
-}
