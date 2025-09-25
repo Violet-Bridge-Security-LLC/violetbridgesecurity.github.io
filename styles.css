@@ -55,7 +55,7 @@ body{
   display:flex; align-items:center; justify-content:space-between; gap:16px;
 }
 .brand{ display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
-.brand-mark{ width:40px; height:40px; border-radius:12px; overflow:hidden; }
+.brand-mark{ width:120px; max-width: none; height:auto; border-radius:12px; overflow:hidden; }
 .brand-mark rect{ fill: linear-gradient(135deg, var(--accent), var(--accent-2)); fill: var(--accent); }
 .brand-mark .bridge{ stroke:#fff; stroke-width:4; fill:none; stroke-linecap:round; }
 .brand-mark .node{ fill:#fff; }
@@ -231,4 +231,5 @@ section h2{ margin:0 0 10px; font-size: clamp(22px, 3.2vw, 28px); }
 @media (max-width:720px){
   .hero{ padding: 44px 0 16px; }
 }
+
 
