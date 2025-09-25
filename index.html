@@ -304,6 +304,10 @@ body{
   gap:18px; 
 }
 
+.cards {
+  margin-top: 24px;
+}
+
 .card{
   background:var(--card);
   border:1px solid var(--border);
@@ -321,6 +325,7 @@ body{
   display:grid; 
   grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); 
   gap:18px; 
+  margin-top: 24px;
 }
 
 .step{ 
@@ -334,6 +339,10 @@ body{
 .step h3{ margin:0 0 6px; }
 
 /* Training */
+.training-grid { 
+  margin-top: 24px; 
+}
+
 .training-grid .training-block{ 
   background:var(--card); 
   border:1px solid var(--border); 
@@ -727,7 +736,7 @@ ul.clean li:last-child{
           <article class="card reveal">
             <h3>Zero-Trust 90-Day Plan</h3>
             <p>Quick-wins, OKRs, and measurable stakeholder outcomes.</p>
-            <p><a class="btn btn-outline" href="reports/zero-trust-90d-sample.pdf" target="_blank" rel="noopener">View on GitHub</a></p>
+            <p><a class="btn btn-outline" href="reports/zero-trust-90d-sample.pdf" target="_blank" rel="noopener">Open PDF</a></p>
           </article>
         </div>
       </div>
@@ -774,4 +783,3 @@ ul.clean li:last-child{
     <section id="contact" class="section contact">
       <div class="container">
         <h2>Let's Talk</h2>
-        <form class="contact-form" method="POST" data-netlify="true" name="contact" action="mailto:info@violetbridgesecurity.com">
