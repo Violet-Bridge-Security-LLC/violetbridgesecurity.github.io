@@ -18,35 +18,35 @@
 /* ====== Enhanced Violet Bridge Security LLC ====== */
 
 :root{
-  --bg: #0a0b0f;
-  --bg-elev: #13151c;
-  --bg-card: #1a1d28;
-  --text: #e8eaf0;
-  --text-secondary: #a8adb8;
-  --accent: #8b5cf6;
-  --accent-bright: #a78bfa;
-  --accent-dark: #6d28d9;
-  --card: #1a1d28;
-  --border: #2a2f3f;
+  --bg: #1a1a1a;
+  --bg-elev: #2a2a2a;
+  --bg-card: #2D2D2D;
+  --text: ##FFFFFFFFF;
+  --text-secondary: #D2C9E5;
+  --accent: #7056A0;
+  --accent-bright: #D2C9E5;
+  --accent-dark: #7056A0;
+  --card: #2D2D2D;
+  --border: #3D3D3D;
   --maxw: 1140px;
   --radius: 20px;
   --shadow: 0 20px 60px -10px rgba(0,0,0,.5);
   --shadow-sm: 0 4px 12px rgba(0,0,0,.3);
-  --glow: 0 0 40px rgba(139,92,246,.15);
+  --glow: 0 0 40px rgba(112,86,160,.15);
 }
 
 @media (prefers-color-scheme: light){
   :root{
-    --bg:#ffffff; 
-    --bg-elev:#f8f9fb; 
-    --bg-card:#ffffff;
-    --text:#0f172a; 
-    --text-secondary:#475569;
-    --card:#ffffff; 
-    --border:#e2e8f0; 
+    --bg:#FFFFFFfff; 
+    --bg-elev:#f5f5f5; 
+    --bg-card:#FFFFFFfff;
+    --text:#3D3D3D; 
+    --text-secondary:#7056A0;
+    --card:#FFFFFFfff; 
+    --border:#D2C9E5; 
     --shadow:0 20px 40px -10px rgba(15,23,42,.08);
     --shadow-sm:0 4px 12px rgba(15,23,42,.04);
-    --glow: 0 0 40px rgba(139,92,246,.08);
+    --glow: 0 0 40px rgba(112,86,160,.08);
   }
 }
 
@@ -81,7 +81,7 @@ h1, h2, h3, h4 {
 
 h1 {
   font-size: clamp(36px, 5.5vw, 56px);
-  background: linear-gradient(135deg, var(--text) 0%, var(--accent-bright) 100%);
+  background: linear-gradient(135deg, #FFFFFFFFF 0%, #D2C9E5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -114,7 +114,7 @@ h3 {
 
 /* Header with glass morphism */
 .site-header{
-  background: rgba(10, 11, 15, 0.8);
+  background: rgba(26, 26, 26, 0.8);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom:1px solid var(--border);
@@ -131,7 +131,7 @@ h3 {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  background: linear-gradient(90deg, transparent, #7056A0, transparent);
   opacity: 0.3;
 }
 
@@ -171,7 +171,7 @@ h3 {
   object-fit: contain;
   border-radius:14px; 
   flex-shrink: 0;
-  filter: drop-shadow(0 4px 12px rgba(139,92,246,.3));
+  filter: drop-shadow(0 4px 12px rgba(112,86,160,.3));
 }
 
 .brand-text{ 
@@ -218,12 +218,12 @@ h3 {
 
 .site-nav a:hover{ 
   color:var(--text); 
-  background: rgba(139,92,246,.1);
+  background: rgba(112,86,160,.1);
 }
 
 .site-nav a.is-active{ 
-  color:var(--accent-bright);
-  background: rgba(139,92,246,.12);
+  color:#D2C9E5;
+  background: rgba(112,86,160,.12);
 }
 
 .nav-toggle{
@@ -239,8 +239,8 @@ h3 {
 }
 
 .nav-toggle:hover {
-  background: rgba(139,92,246,.1);
-  border-color: var(--accent);
+  background: rgba(112,86,160,.1);
+  border-color: #7056A0;
 }
 
 @media (max-width: 940px){
@@ -252,7 +252,7 @@ h3 {
     right:0; 
     top:100%; 
     padding:20px 24px;
-    background: rgba(26, 29, 40, 0.98);
+    background: rgba(45, 45, 45, 0.98);
     backdrop-filter: blur(20px);
     border-bottom:1px solid var(--border);
     transform:translateY(-12px); 
@@ -294,8 +294,8 @@ h3 {
   left: -25%;
   width: 150%;
   height: 200%;
-  background: radial-gradient(circle at 30% 20%, rgba(139,92,246,.15) 0%, transparent 50%),
-              radial-gradient(circle at 70% 60%, rgba(109,40,217,.1) 0%, transparent 50%);
+  background: radial-gradient(circle at 30% 20%, rgba(112,86,160,.15) 0%, transparent 50%),
+              radial-gradient(circle at 70% 60%, rgba(90,69,128,.1) 0%, transparent 50%);
   animation: gradient-shift 15s ease infinite;
   pointer-events: none;
 }
@@ -338,14 +338,14 @@ h3 {
   border-radius:12px; 
   font-size:13px;
   font-weight: 600;
-  background: rgba(139,92,246,.12); 
-  color: var(--accent-bright);
-  border:1px solid rgba(139,92,246,.25);
+  background: rgba(112,86,160,.12); 
+  color: #D2C9E5;
+  border:1px solid rgba(112,86,160,.25);
   transition: all 0.3s ease;
 }
 
 .trust-badges li:hover {
-  background: rgba(139,92,246,.18);
+  background: rgba(112,86,160,.18);
   transform: translateY(-2px);
 }
 
@@ -356,8 +356,8 @@ h3 {
   border-radius:14px; 
   font-weight:700;
   font-size: 15px;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-  color:#fff; 
+  background: linear-gradient(135deg, #7056A0 0%, #5a4580 100%);
+  color:#FFFFFFFFF; 
   text-decoration:none; 
   border:none;
   box-shadow: var(--shadow-sm), var(--glow);
@@ -383,19 +383,19 @@ h3 {
 
 .btn:hover{ 
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(139,92,246,.4);
+  box-shadow: 0 12px 30px rgba(112,86,160,.4);
 }
 
 .btn-outline{
   background: transparent; 
-  color:var(--accent-bright); 
-  border: 2px solid var(--accent);
+  color:#D2C9E5; 
+  border: 2px solid #7056A0;
   box-shadow: none;
 }
 
 .btn-outline:hover{ 
-  background:rgba(139,92,246,.15); 
-  border-color: var(--accent-bright);
+  background:rgba(112,86,160,.15); 
+  border-color: #D2C9E5;
 }
 
 .btn.btn-small{ 
@@ -453,7 +453,7 @@ h3 {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-bright));
+  background: linear-gradient(90deg, #7056A0, #D2C9E5);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
@@ -466,7 +466,7 @@ h3 {
 .card:hover{
   transform: translateY(-8px);
   box-shadow: var(--shadow), var(--glow);
-  border-color: rgba(139,92,246,.3);
+  border-color: rgba(112,86,160,.3);
 }
 
 .card h3{ 
@@ -507,7 +507,7 @@ h3 {
 
 .step h3{ 
   margin:0 0 16px;
-  color: var(--accent-bright);
+  color: #D2C9E5;
   font-size: 1.3rem;
 }
 
@@ -588,8 +588,8 @@ ul.clean li:last-child{
 .contact .contact-form input:focus,
 .contact .contact-form textarea:focus{
   outline:none; 
-  border-color:var(--accent); 
-  box-shadow:0 0 0 4px rgba(139,92,246,.12);
+  border-color:#7056A0; 
+  box-shadow:0 0 0 4px rgba(112,86,160,.12);
   background: var(--bg);
 }
 
@@ -610,15 +610,15 @@ ul.clean li:last-child{
 }
 
 .form-status.success {
-  background: rgba(34, 197, 94, 0.1);
-  border: 1px solid rgba(34, 197, 94, 0.3);
-  color: #22c55e;
+  background: rgba(112,86,160,.1);
+  border: 1px solid rgba(112,86,160,.3);
+  color: #7056A0;
 }
 
 .form-status.error {
-  background: rgba(239, 68, 68, 0.1);
-  border: 1px solid rgba(239, 68, 68, 0.3);
-  color: #ef4444;
+  background: rgba(210,201,229,.15);
+  border: 1px solid rgba(210,201,229,.4);
+  color: #7056A0;
 }
 
 @keyframes slideIn {
@@ -674,9 +674,9 @@ ul.clean li:last-child{
   opacity:0; 
   pointer-events:none; 
   transition:all .3s ease;
-  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  background: linear-gradient(135deg, #7056A0, #5a4580);
   border:none;
-  color:#fff;
+  color:#FFFFFF;
   padding:14px; 
   border-radius:50%; 
   box-shadow: var(--shadow), var(--glow);
@@ -711,7 +711,7 @@ ul.clean li:last-child{
 }
 
 .about-text em {
-  color: var(--accent-bright);
+  color: #D2C9E5;
   font-style: normal;
   font-weight: 600;
 }
@@ -735,7 +735,7 @@ ul.clean li:last-child{
   top:16px; 
   padding:12px 20px;
   background:var(--accent); 
-  color:#fff; 
+  color:#FFFFFF; 
   border-radius:12px; 
   z-index:1000;
   box-shadow: var(--shadow);
@@ -771,7 +771,7 @@ ul.clean li:last-child{
           <li><a href="reports/Violet Bridge Security - Service Portfolio 2025.pdf" 
            download 
            class="btn btn-small" 
-           style="background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); color:#fff;">
+           style="background: linear-gradient(135deg, #7056A0 0%, #5a4580 100%); color:#FFFFFF;">
             Download Service Portfolio
             </a>
           </li>
