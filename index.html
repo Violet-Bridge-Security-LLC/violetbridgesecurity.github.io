@@ -13,7 +13,7 @@
   <link rel="icon" type="image/png" href="https://www.violetbridgesecurity.com/assets/logo-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:ital,wght@1,600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
 /* ====== Enhanced Violet Bridge Security LLC ====== */
 
@@ -21,7 +21,7 @@
   --bg: #1a1a1a;
   --bg-elev: #2a2a2a;
   --bg-card: #2D2D2D;
-  --text: #FFFFFFFFF;
+  --text: #FFFFFF;
   --text-secondary: #7056A0;
   --accent: #7056A0;
   --accent-bright: #D2C9E5;
@@ -37,12 +37,12 @@
 
 @media (prefers-color-scheme: light){
   :root{
-    --bg:#FFFFFFfff; 
+    --bg:#FFFFFF; 
     --bg-elev:#f5f5f5; 
-    --bg-card:#FFFFFFfff;
+    --bg-card:#FFFFFF;
     --text:#3D3D3D; 
     --text-secondary:#7056A0;
-    --card:#FFFFFFfff; 
+    --card:#FFFFFF; 
     --border:#D2C9E5; 
     --shadow:0 20px 40px -10px rgba(15,23,42,.08);
     --shadow-sm:0 4px 12px rgba(15,23,42,.04);
@@ -175,10 +175,11 @@ h3 {
 }
 
 .brand-text{ 
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight:700; 
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-style: italic;
   font-size: clamp(17px, 2.5vw, 20px);
-  letter-spacing:-0.02em; 
+  letter-spacing:-0.02em;
   line-height: 1.2;
 }
 
@@ -357,7 +358,7 @@ h3 {
   font-weight:700;
   font-size: 15px;
   background: linear-gradient(135deg, #7056A0 0%, #5a4580 100%);
-  color:#FFFFFFFFF; 
+  color:#FFFFFF; 
   text-decoration:none; 
   border:none;
   box-shadow: var(--shadow-sm), var(--glow);
@@ -507,7 +508,7 @@ h3 {
 
 .step h3{ 
   margin:0 0 16px;
-  color: #D2C9E5;
+  color: var(--text);
   font-size: 1.3rem;
 }
 
@@ -1219,4 +1220,3 @@ ul.clean li:last-child{
 
     <section class="section">
       <div class="container
-
