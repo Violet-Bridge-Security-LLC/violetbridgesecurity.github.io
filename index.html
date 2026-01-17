@@ -509,6 +509,40 @@ h3 {
   font-size: 1.3rem;
 }
 
+/* --- Partner Logos Section --- */
+.partner-logos {
+  margin-top: 4rem;
+  text-align: center;
+  border-top: 1px solid var(--border); /* Using your existing variable for consistency */
+  padding-top: 2rem;
+}
+
+.logo-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  filter: grayscale(100%);
+  opacity: 0.6; /* Matches your site's subtle feel */
+  transition: all 0.4s ease;
+}
+
+.partner-img {
+  max-height: 45px; /* Slightly increased for better visibility */
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo-grid:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.partner-img:hover {
+  transform: scale(1.05); /* Adds a small interactive pop */
+}
+
 /* Training */
 .training-grid { 
   margin-top: 32px; 
