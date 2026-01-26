@@ -33,8 +33,10 @@
   --glow: 0 0 40px rgba(112,86,160,.15);
 }
 
+/* Light theme variables */
+:root.light-theme,
 @media (prefers-color-scheme: light){
-  :root{
+  :root:not(.dark-theme){
     --bg:#FFFFFF; 
     --bg-elev:#f5f5f5; 
     --bg-card:#FFFFFF;
@@ -46,6 +48,20 @@
     --shadow-sm:0 4px 12px rgba(15,23,42,.04);
     --glow: 0 0 40px rgba(112,86,160,.08);
   }
+}
+
+/* Ensure light theme class works */
+:root.light-theme{
+  --bg:#FFFFFF; 
+  --bg-elev:#f5f5f5; 
+  --bg-card:#FFFFFF;
+  --text:#3D3D3D; 
+  --text-secondary:#7056A0;
+  --card:#FFFFFF; 
+  --border:#D2C9E5; 
+  --shadow:0 20px 40px -10px rgba(15,23,42,.08);
+  --shadow-sm:0 4px 12px rgba(15,23,42,.04);
+  --glow: 0 0 40px rgba(112,86,160,.08);
 }
 
 *{ 
@@ -136,6 +152,20 @@ h3 {
 @media (prefers-color-scheme: light){
   .site-header {
     background: rgba(255, 255, 255, 0.85);
+  }
+}
+
+:root.light-theme .site-header {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+:root.dark-theme .site-header {
+  background: rgba(26, 26, 26, 0.8);
+}
+
+@media (max-width: 940px){
+  :root.light-theme .site-nav {
+    background: rgba(255, 255, 255, 0.98);
   }
 }
 
@@ -241,6 +271,52 @@ h3 {
   border-color: #7056A0;
 }
 
+/* Theme Toggle Button */
+.theme-toggle{
+  background:transparent; 
+  color:var(--text);
+  border:1px solid var(--border); 
+  border-radius:12px;
+  padding:10px 12px; 
+  font-size:20px; 
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+}
+
+.theme-toggle:hover {
+  background: rgba(112,86,160,.1);
+  border-color: #7056A0;
+  transform: rotate(15deg);
+}
+
+.theme-toggle .sun-icon,
+.theme-toggle .moon-icon {
+  transition: all 0.3s ease;
+}
+
+:root.light-theme .theme-toggle .sun-icon,
+:root:not(.dark-theme) .theme-toggle .sun-icon {
+  display: none;
+}
+
+:root.dark-theme .theme-toggle .moon-icon {
+  display: none;
+}
+
+:root.light-theme .theme-toggle .moon-icon,
+:root:not(.dark-theme) .theme-toggle .moon-icon {
+  display: block;
+}
+
+:root.dark-theme .theme-toggle .sun-icon {
+  display: block;
+}
+
 @media (max-width: 940px){
   .nav-toggle{ display:inline-block; }
   
@@ -283,19 +359,37 @@ h3 {
   padding: 80px 0 60px; 
   position: relative;
   overflow: hidden;
+  background: linear-gradient(135deg, var(--bg) 0%, var(--bg-elev) 50%, var(--bg) 100%);
+  transition: background 0.3s ease;
 }
 
 .hero::before {
   content: '';
   position: absolute;
-  top: -50%;
-  left: -25%;
-  width: 150%;
-  height: 200%;
-  background: radial-gradient(circle at 30% 20%, rgba(139,92,246,.15) 0%, transparent 50%),
-              radial-gradient(circle at 70% 60%, rgba(109,40,217,.1) 0%, transparent 50%);
-  animation: gradient-shift 15s ease infinite;
+  width: 1000px;
+  height: 1000px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+  top: -500px;
+  right: -500px;
+  animation: float 20s ease-in-out infinite;
   pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.1) 0%, transparent 70%);
+  bottom: -400px;
+  left: -400px;
+  animation: float 25s ease-in-out infinite reverse;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(50px, 50px) rotate(10deg); }
 }
 
 @keyframes gradient-shift {
@@ -617,6 +711,7 @@ ul.clean li:last-child{
   font-family: 'Inter', sans-serif;
   font-size: 15px;
   transition: all 0.3s ease;
+  position: relative;
   
   appearance: none; 
   -webkit-appearance: none;
@@ -627,6 +722,15 @@ ul.clean li:last-child{
   background-size: 1.2em;
 }
 
+/* Hover states for form inputs */
+.contact .contact-form input:hover,
+.contact .contact-form textarea:hover,
+.contact .contact-form select:hover {
+  border-color: rgba(112,86,160,.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(112,86,160,.15);
+}
+
 .contact .contact-form input:focus,
 .contact .contact-form textarea:focus,
 /* ADDITION 3: Include the select element for focus state consistency */
@@ -635,6 +739,7 @@ ul.clean li:last-child{
   border-color:#7056A0; 
   box-shadow:0 0 0 4px rgba(112,86,160,.12);
   background: var(--bg);
+  transform: translateY(0);
 }
 
 .contact .contact-form textarea {
@@ -802,7 +907,13 @@ ul.clean li:last-child{
         </span>
       </a>
       
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu">☰</button>
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <button class="theme-toggle" type="button" aria-label="Toggle theme">
+          <span class="sun-icon">☀️</span>
+          <span class="moon-icon">🌙</span>
+        </button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu">☰</button>
+      </div>
       
       <nav id="site-nav" class="site-nav" aria-label="Primary">
         <ul>
@@ -835,7 +946,7 @@ ul.clean li:last-child{
       <div class="container hero-inner">
         <h1>SASE Architecture and Security Awareness Experts</h1>
         <p class="lead">
-          Violet Bridge Security is a trusted B2B partner that integrates seamlessly into your SASE deployment workflows. As a dedicated B2B partner, we provide certified architects to tackle your most complex integrations. We focus on delivering value-driven results for your clients while reducing overhead, shortening project timelines, and handling the heavy lifting of documentation.
+          Violet Bridge Security is a trusted partner in delivering SASE architectures and next-generation security awareness. We integrate seamlessly into your SASE deployment workflows, providing certified architects to tackle your most complex integrations. We focus on delivering value-driven results for your clients while reducing overhead, shortening project timelines, and handling the heavy lifting of documentation.
         </p>
         <div class="hero-ctas">
           <a class="btn" href="#contact">Book a consultation</a>
@@ -1144,6 +1255,39 @@ ul.clean li:last-child{
   </footer>
 
   <script>
+    // Theme toggle functionality
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.classList.contains('light-theme') ? 'light' : 'dark';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      // Remove both classes first
+      html.classList.remove('light-theme', 'dark-theme');
+      
+      // Add the new theme class
+      html.classList.add(newTheme + '-theme');
+      
+      // Save preference to localStorage
+      localStorage.setItem('theme', newTheme);
+    }
+    
+    // Initialize theme from localStorage or system preference
+    function initTheme() {
+      const html = document.documentElement;
+      const savedTheme = localStorage.getItem('theme');
+      
+      if (savedTheme) {
+        html.classList.add(savedTheme + '-theme');
+      } else {
+        // Check system preference
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        html.classList.add(prefersDark ? 'dark-theme' : 'light-theme');
+      }
+    }
+    
+    // Initialize theme on page load
+    initTheme();
+
     // Mobile navigation toggle
     const navToggle = document.querySelector('.nav-toggle');
     const siteNav = document.querySelector('.site-nav');
