@@ -33,10 +33,23 @@
   --glow: 0 0 40px rgba(112,86,160,.15);
 }
 
-/* Light theme variables */
+/* Light theme - applied via class or system preference */
 :root.light-theme,
+:root:not(.dark-theme) {
+  --bg:#FFFFFF; 
+  --bg-elev:#f5f5f5; 
+  --bg-card:#FFFFFF;
+  --text:#3D3D3D; 
+  --text-secondary:#7056A0;
+  --card:#FFFFFF; 
+  --border:#D2C9E5; 
+  --shadow:0 20px 40px -10px rgba(15,23,42,.08);
+  --shadow-sm:0 4px 12px rgba(15,23,42,.04);
+  --glow: 0 0 40px rgba(112,86,160,.08);
+}
+
 @media (prefers-color-scheme: light){
-  :root:not(.dark-theme){
+  :root:not(.dark-theme) {
     --bg:#FFFFFF; 
     --bg-elev:#f5f5f5; 
     --bg-card:#FFFFFF;
@@ -48,20 +61,6 @@
     --shadow-sm:0 4px 12px rgba(15,23,42,.04);
     --glow: 0 0 40px rgba(112,86,160,.08);
   }
-}
-
-/* Ensure light theme class works */
-:root.light-theme{
-  --bg:#FFFFFF; 
-  --bg-elev:#f5f5f5; 
-  --bg-card:#FFFFFF;
-  --text:#3D3D3D; 
-  --text-secondary:#7056A0;
-  --card:#FFFFFF; 
-  --border:#D2C9E5; 
-  --shadow:0 20px 40px -10px rgba(15,23,42,.08);
-  --shadow-sm:0 4px 12px rgba(15,23,42,.04);
-  --glow: 0 0 40px rgba(112,86,160,.08);
 }
 
 *{ 
@@ -908,7 +907,7 @@ ul.clean li:last-child{
       </a>
       
       <div style="display: flex; gap: 8px; align-items: center;">
-        <button class="theme-toggle" type="button" aria-label="Toggle theme">
+        <button class="theme-toggle" type="button" aria-label="Toggle theme" onclick="toggleTheme()">
           <span class="sun-icon">☀️</span>
           <span class="moon-icon">🌙</span>
         </button>
