@@ -1574,14 +1574,14 @@
     }
 
     // Initialize theme from localStorage or default to dark
-    function initTheme() {
+    // Run immediately to prevent flash of wrong theme
+    (function initTheme() {
         const savedTheme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', savedTheme);
-    }
+    })();
 
     // ========== INITIALIZATION ==========
     window.addEventListener('load', () => {
-        initTheme();
         renderCompanies();
         drawSK();
         
