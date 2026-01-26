@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,15 +25,95 @@
             --vbs-red: #ff0000;
         }
 
+        /* Light Mode Variables */
+        [data-theme="light"] {
+            --primary: #7c3aed;
+            --primary-light: #8b5cf6;
+            --primary-dark: #6d28d9;
+            --accent: #059669;
+            --accent-red: #dc2626;
+            --bg-deep: #f9fafb;
+            --bg-card: #ffffff;
+            --glass: rgba(255, 255, 255, 0.85);
+            --border: rgba(124, 58, 237, 0.3);
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --vbs-red: #dc2626;
+        }
+
         body {
             background: var(--bg-deep);
             color: var(--text-primary);
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1) rotate(10deg);
+            border-color: var(--primary);
+            box-shadow: 0 6px 30px rgba(124, 58, 237, 0.4);
+        }
+
+        .theme-toggle svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover svg {
+            fill: var(--primary-light);
+        }
+
+        /* Hide moon icon in dark mode, sun icon in light mode */
+        [data-theme="dark"] .sun-icon {
+            display: none;
+        }
+
+        [data-theme="light"] .moon-icon {
+            display: none;
+        }
+
+        /* Logo Image Styling */
+        .logo-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hide dark logo in light mode, light logo in dark mode */
+        [data-theme="dark"] .logo-light {
+            display: none;
+        }
+
+        [data-theme="light"] .logo-dark {
+            display: none;
+        }
 
         /* Animated Background Effects */
         .hero {
@@ -41,6 +121,11 @@
             padding: 100px 0;
             overflow: hidden;
             background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0f0f23 100%);
+            transition: background 0.3s ease;
+        }
+
+        [data-theme="light"] .hero {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f8fafc 100%);
         }
 
         .hero::before {
@@ -244,7 +329,7 @@
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 20px;
-            color: #fff;
+            color: var(--text-primary);
         }
 
         .section-subtitle {
@@ -329,7 +414,7 @@
             font-size: 26px;
             font-weight: 700;
             margin-bottom: 16px;
-            color: #fff;
+            color: var(--text-primary);
             position: relative;
             z-index: 1;
         }
@@ -445,7 +530,7 @@
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 16px;
-            color: #ffffff;
+            color: var(--text-primary);
             position: relative;
             z-index: 1;
         }
@@ -758,7 +843,7 @@
 
         .sk-node h4 {
             font-size: 1rem;
-            color: #fff;
+            color: var(--text-primary);
             margin-bottom: 8px;
         }
 
@@ -895,11 +980,30 @@
 </head>
 <body>
 
+<!-- Theme Toggle Button -->
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+    <svg class="moon-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
+    <svg class="sun-icon" viewBox="0 0 24 24" fill="currentColor">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
+        <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"/>
+        <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"/>
+        <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"/>
+    </svg>
+</button>
+
 <div class="container">
     <!-- HERO SECTION -->
     <header class="hero">
         <div class="logo-container">
-            <div style="color:var(--primary-light); font-weight:800; font-family:'JetBrains Mono'">VIOLET BRIDGE</div>
+            <img src="assets/VIOLET_BRIDGE_SECURITY_LOGO_DARK.png" alt="Violet Bridge Security Logo (Dark Theme)" class="logo-dark">
+            <img src="assets/VIOLET_BRIDGE_SECURITY_LOGO_LIGHT.png" alt="Violet Bridge Security Logo (Light Theme)" class="logo-light">
         </div>
         <h1>Enterprise SASE Architecture</h1>
         <p class="hero-desc">
@@ -1458,6 +1562,23 @@
     function cl() {
         document.querySelectorAll('.flow-line').forEach(l => l.classList.remove('highlight'));
     }
+
+    // ========== THEME TOGGLE ==========
+    function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    }
+
+    // Initialize theme from localStorage or default to dark
+    // Run immediately to prevent flash of wrong theme
+    (function initTheme() {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
 
     // ========== INITIALIZATION ==========
     window.addEventListener('load', () => {
