@@ -246,6 +246,9 @@
     .gpc-ind.vis{display:flex}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
     @media(max-width:720px){.hero-ctas{flex-direction:column}.hero-ctas .btn{width:100%;justify-content:center}}
+    .hero-og-wrap{position:absolute;right:clamp(20px,6vw,80px);bottom:0;z-index:1;pointer-events:none}
+    .hero-og-img{height:auto;max-height:340px;width:auto;max-width:480px;object-fit:contain;border-radius:var(--r);box-shadow:0 20px 60px rgba(0,0,0,.5)}
+    @media(max-width:900px){.hero-og-wrap{display:none}}
   </style>
 </head>
 <body>
@@ -256,8 +259,7 @@
 
 <header class="hdr"><div class="hdr-in">
   <a class="brand" href="#top" aria-label="Violet Bridge Security">
-    <img src="./assets/logo.png" alt="Violet Bridge Security" class="brand-logo">
-    <div class="brand-logo-placeholder">VBS</div>
+    <img src="./assets/logo-dark.png" alt="Violet Bridge Security" class="brand-logo">
     <span class="brand-name">Violet Bridge Security</span>
   </a>
   <nav class="nav-l nav-dk" aria-label="Main navigation">
@@ -292,7 +294,11 @@
       <a class="btn btn-p" href="#contact">Book a Consultation</a>
       <a class="btn btn-g" href="#capabilities">Explore Capabilities</a>
     </div>
-  </div></div>
+  </div>
+  <div class="hero-og-wrap">
+    <img src="./assets/og-cover.png" alt="Violet Bridge Security" class="hero-og-img">
+  </div>
+  </div>
 </section>
 
 <!-- INSIGHTS -->
@@ -321,7 +327,7 @@
       <div class="accred-cd"><img src="./assets/catonet.png" alt="Cato Networks Certified"><span>Cato Networks</span></div>
       <div class="accred-cd"><div class="accred-ph">LOGO</div><span>Netskope</span></div>
       <div class="accred-cd"><div class="accred-ph">LOGO</div><span>Palo Alto Networks</span></div>
-      <div class="accred-cd"><img src="./assets/Arsen.png" alt="Arsen Security"><span>Arsen Security</span></div>
+      <div class="accred-cd"><img src="./assets/arsen.png" alt="Arsen Security"><span>Arsen Security</span></div>
       <div class="accred-cd"><div class="accred-ph">LOGO</div><span>Certification</span></div>
       <div class="accred-cd"><div class="accred-ph">LOGO</div><span>Certification</span></div>
       <div class="accred-cd"><div class="accred-ph">LOGO</div><span>Certification</span></div>
@@ -344,11 +350,7 @@
         <a class="btn btn-p" href="#services" style="margin-top:12px">View Our Services</a>
       </div>
       <div class="cap-img">
-        <img src="./assets/capabilities-img.png" alt="Violet Bridge Security capabilities">
-        <div class="cap-ph">
-          <span style="font-size:2rem;opacity:.4">🛡</span>
-          Replace with image<br>./assets/capabilities-img.png
-        </div>
+        <img src="./assets/capabilities.png" alt="Violet Bridge Security capabilities">
       </div>
     </div>
   </div>
@@ -384,14 +386,14 @@
   <div class="container"><div class="eco-h"><span class="eyebrow">Trusted Partners</span><h2>Our Ecosystem</h2></div></div>
   <div class="eco-w"><div class="eco-t">
     <div class="eco-c"><img src="./assets/catonet.png" alt="Cato Networks"><span class="eco-cn">Cato Networks</span><span class="eco-cd">SASE · SD-WAN · ZTNA</span></div>
-    <div class="eco-c"><img src="./assets/Arsen.png" alt="Arsen Security"><span class="eco-cn">Arsen Security</span><span class="eco-cd">Phishing · Vishing · Awareness</span></div>
+    <div class="eco-c"><img src="./assets/arsen.png" alt="Arsen Security"><span class="eco-cn">Arsen Security</span><span class="eco-cd">Phishing · Vishing · Awareness</span></div>
     <div class="eco-c"><div class="eco-ph">Palo Alto Networks</div><span class="eco-cn">Palo Alto Networks</span><span class="eco-cd">NGFW · XDR · Cloud Security</span></div>
-    <div class="eco-c"><img src="./assets/Telarus.png" alt="Telarus"><span class="eco-cn">Telarus</span><span class="eco-cd">Channel · Procurement</span></div>
+    <div class="eco-c"><img src="./assets/telarus.png" alt="Telarus"><span class="eco-cn">Telarus</span><span class="eco-cd">Channel · Procurement</span></div>
     <div class="eco-c"><div class="eco-ph">Secure Ideas</div><span class="eco-cn">Secure Ideas</span><span class="eco-cd">Pen Testing · App Security</span></div>
     <div class="eco-c"><img src="./assets/catonet.png" alt="Cato Networks"><span class="eco-cn">Cato Networks</span><span class="eco-cd">SASE · SD-WAN · ZTNA</span></div>
-    <div class="eco-c"><img src="./assets/Arsen.png" alt="Arsen Security"><span class="eco-cn">Arsen Security</span><span class="eco-cd">Phishing · Vishing · Awareness</span></div>
+    <div class="eco-c"><img src="./assets/arsen.png" alt="Arsen Security"><span class="eco-cn">Arsen Security</span><span class="eco-cd">Phishing · Vishing · Awareness</span></div>
     <div class="eco-c"><div class="eco-ph">Palo Alto Networks</div><span class="eco-cn">Palo Alto Networks</span><span class="eco-cd">NGFW · XDR · Cloud Security</span></div>
-    <div class="eco-c"><img src="./assets/Telarus.png" alt="Telarus"><span class="eco-cn">Telarus</span><span class="eco-cd">Channel · Procurement</span></div>
+    <div class="eco-c"><img src="./assets/telarus.png" alt="Telarus"><span class="eco-cn">Telarus</span><span class="eco-cd">Channel · Procurement</span></div>
     <div class="eco-c"><div class="eco-ph">Secure Ideas</div><span class="eco-cn">Secure Ideas</span><span class="eco-cd">Pen Testing · App Security</span></div>
   </div></div>
 </section>
@@ -464,7 +466,7 @@
 <footer class="ftr"><div class="container">
   <div class="ftr-g">
     <div class="ftr-brand">
-      <img src="./assets/logo-light.png" alt="Violet Bridge Security" style="height:36px;width:auto;margin-bottom:8px">
+      <img src="./assets/logo-dark.png" alt="Violet Bridge Security" style="height:36px;width:auto;margin-bottom:8px">
       <span class="brand-name" style="font-size:1.05rem">Violet Bridge Security</span>
       <p>End-to-end cybersecurity consulting — delivering strategy, risk, compliance, and technical services globally.</p>
     </div>
