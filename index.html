@@ -3,6 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://elfsightcdn.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://www.google-analytics.com; frame-src 'none';" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZSCQFCZV23"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-ZSCQFCZV23');</script>
 
@@ -98,10 +102,14 @@
     .btn-g:hover{border-color:var(--ac);color:var(--ac2)}
 
     /* INSIGHTS */
-    .insights-sec{position:relative;overflow:hidden}
-    .insights-bg{position:absolute;inset:0;width:100%;height:100%;z-index:0;background:url('./assets/insights-bg.png') center/cover no-repeat;background-color:var(--bg-s)}
-    .insights-bg::after{content:'';position:absolute;inset:0;background:rgba(9,9,11,.65)}
+    .insights-sec{position:relative;overflow:hidden;background:var(--bg-s)}
     .insights-in{position:relative;z-index:1}
+
+    /* CONTACT BG */
+    .contact-sec{position:relative;overflow:hidden}
+    .contact-bg{position:absolute;inset:0;width:100%;height:100%;z-index:0;background:url('./assets/insights-bg.png') center/cover no-repeat;background-color:var(--bg-s)}
+    .contact-bg::after{content:'';position:absolute;inset:0;background:rgba(9,9,11,.82)}
+    .contact-in{position:relative;z-index:1}
 
     /* ACCREDITATIONS */
     .accred-sec{background:var(--bg-s)}
@@ -159,7 +167,10 @@
     .eco-cd{font-size:.8rem;color:var(--tx3);text-align:center}
 
     /* CLIENTS */
-    .port-sec{background:var(--bg-s)}
+    .port-sec{position:relative;overflow:hidden}
+    .port-bg{position:absolute;inset:0;width:100%;height:100%;z-index:0;background:url('./assets/hero-bg.png') center/cover no-repeat;background-color:var(--bg-s)}
+    .port-bg::after{content:'';position:absolute;inset:0;background:rgba(9,9,11,.80)}
+    .port-in{position:relative;z-index:1}
     .ind-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
     .tab-b{padding:8px 20px;font-size:.9rem;font-weight:600;font-family:var(--f);background:transparent;border:1px solid var(--bd);border-radius:100px;color:var(--tx2);cursor:pointer;transition:.2s}
     .tab-b.active,.tab-b:hover{background:var(--ac);color:#fff;border-color:var(--ac)}
@@ -296,7 +307,6 @@
 
 <!-- INSIGHTS -->
 <section id="insights" class="section section-b insights-sec">
-  <div class="insights-bg" role="img" aria-label="Cybersecurity trends"></div>
   <div class="container insights-in">
     <span class="eyebrow">What's Trending in Cybersecurity</span>
     <h2>Latest Insights &amp; Threat Landscape</h2>
@@ -371,10 +381,11 @@
 
       <div class="svc-g" id="svcSA"><div class="svc-gh" onclick="toggleSvc('svcSA')"><div class="svc-gn">07</div><div class="svc-gt"><h3>Staff Augmentation</h3><span>Certified cybersecurity engineers embedded into your team.</span></div><div class="svc-chv">▾</div></div><div class="svc-gb"><div class="svc-is"><div class="svc-i"><span class="svc-d d-sa"></span>SOC Analysts</div><div class="svc-i"><span class="svc-d d-sa"></span>Penetration Testers</div><div class="svc-i"><span class="svc-d d-sa"></span>Security Architects</div><div class="svc-i"><span class="svc-d d-sa"></span>Virtual CISO (vCISO)</div><div class="svc-i"><span class="svc-d d-sa"></span>GRC &amp; Compliance Specialists</div><div class="svc-i"><span class="svc-d d-sa"></span>Cloud Security Engineers</div></div></div></div>
     </div>
+    <div style="margin-top:32px;text-align:center">
+      <a class="btn btn-p" href="./service-request.html">Submit a Service Request →</a>
+    </div>
   </div>
 </section>
-
-<!-- ECOSYSTEM -->
 <section id="ecosystem" class="section section-b eco-sec">
   <div class="container"><div class="eco-h"><span class="eyebrow">Trusted Partners</span><h2>Our Ecosystem</h2></div></div>
   <div class="eco-w"><div class="eco-t">
@@ -393,7 +404,8 @@
 
 <!-- CLIENTS -->
 <section id="clients" class="section section-b port-sec">
-  <div class="container">
+  <div class="port-bg" role="img" aria-label="Global deployment footprint"></div>
+  <div class="container port-in">
     <span class="eyebrow">Engineering Legacy</span>
     <h2>Global Deployment Footprint</h2>
     <p style="color:var(--tx2);margin-bottom:28px;font-size:1.05rem;">Our team's combined experience spans these organizations and industries.</p>
@@ -431,8 +443,9 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section section-b" style="background:var(--bg-s)">
-  <div class="container">
+<section id="contact" class="section section-b contact-sec">
+  <div class="contact-bg" role="img" aria-label="Get in touch background"></div>
+  <div class="container contact-in">
     <span class="eyebrow">Let's Talk</span>
     <h2>Get in Touch</h2>
     <p style="color:var(--tx2);max-width:540px;margin-bottom:8px;font-size:1.05rem;">Whether you need a penetration test, a managed SOC, SASE migration, or a vCISO — our team is ready.</p>
@@ -444,15 +457,15 @@
         <div class="ct-ii"><div class="ct-ic">🕐</div><div><strong>Incident Response</strong><span>24/7/365</span></div></div>
       </div>
       <form class="ct-form" id="contactForm">
-        <div class="f-row"><div class="f-f"><label for="cf_name">Full Name</label><input id="cf_name" type="text" name="full_name" required></div><div class="f-f"><label for="cf_role">Role</label><input id="cf_role" type="text" name="role" required></div></div>
-        <div class="f-row"><div class="f-f"><label for="cf_company">Company</label><input id="cf_company" type="text" name="company_name" required></div><div class="f-f"><label for="cf_email">Email</label><input id="cf_email" type="email" name="email" required></div></div>
-        <div class="f-row"><div class="f-f"><label for="cf_phone">Phone</label><input id="cf_phone" type="tel" name="phone"></div><div class="f-f"><label for="cf_inquiry">Service Interest</label><select id="cf_inquiry" name="inquiry_type" required><option value="" disabled selected>Select...</option><option value="Penetration_Testing">Penetration Testing</option><option value="Managed_Security">Managed Security</option><option value="Vulnerability_Scanning">Vulnerability Scanning</option><option value="Threat_Intelligence">Threat Intelligence</option><option value="SASE">SASE / Zero Trust</option><option value="Consulting">Consulting</option><option value="Staff_Augmentation">Staff Augmentation</option><option value="Incident_Response">Incident Response</option><option value="General">General Inquiry</option></select></div></div>
-        <div class="f-f"><label for="cf_msg">Message</label><textarea id="cf_msg" name="message" rows="4" required></textarea></div>
+        <div class="f-row"><div class="f-f"><label for="cf_name">Full Name</label><input id="cf_name" type="text" name="full_name" required maxlength="100" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s'\-]+" autocomplete="name" placeholder="Jane Smith"></div><div class="f-f"><label for="cf_role">Role</label><input id="cf_role" type="text" name="role" required maxlength="80" pattern="[A-Za-zÀ-ÖØ-öø-ÿ0-9\s'\-,.]+" autocomplete="organization-title" placeholder="CISO"></div></div>
+        <div class="f-row"><div class="f-f"><label for="cf_company">Company</label><input id="cf_company" type="text" name="company_name" required maxlength="120" autocomplete="organization" placeholder="Acme Corp"></div><div class="f-f"><label for="cf_email">Email</label><input id="cf_email" type="email" name="email" required maxlength="150" autocomplete="email" placeholder="jane@company.com"></div></div>
+        <div class="f-row"><div class="f-f"><label for="cf_phone">Phone</label><input id="cf_phone" type="tel" name="phone" maxlength="30" pattern="[\+\d\s\-\(\)]+" autocomplete="tel" placeholder="+1 307-000-0000"></div><div class="f-f"><label for="cf_inquiry">Service Interest</label><select id="cf_inquiry" name="inquiry_type" required autocomplete="off"><option value="" disabled selected>Select...</option><option value="Penetration_Testing">Penetration Testing</option><option value="Managed_Security">Managed Security</option><option value="Vulnerability_Scanning">Vulnerability Scanning</option><option value="Threat_Intelligence">Threat Intelligence</option><option value="SASE">SASE / Zero Trust</option><option value="Consulting">Consulting</option><option value="Staff_Augmentation">Staff Augmentation</option><option value="Incident_Response">Incident Response</option><option value="General">General Inquiry</option></select></div></div>
+        <div class="f-f"><label for="cf_msg">Message</label><textarea id="cf_msg" name="message" rows="4" required maxlength="2000" placeholder="Tell us about your security needs..."></textarea></div>
         <button class="btn btn-p" type="submit" style="align-self:flex-start">Send Message</button>
         <div id="formStatus" style="font-size:.9rem"></div>
       </form>
     </div>
-  </div>
+  </div><!-- /contact-in -->
 </section>
 </main>
 
@@ -465,9 +478,9 @@
     </div>
     <div class="ftr-col"><h4>Services</h4><a href="#services">Incident Response</a><a href="#services">Technical Assurance</a><a href="#services">Managed Services</a><a href="#services">Consulting</a><a href="#services">Threat Intelligence</a><a href="#services">SASE Architecture</a><a href="#services">Staff Augmentation</a></div>
     <div class="ftr-col"><h4>Company</h4><a href="#about">About Us</a><a href="#clients">Clients</a><a href="#insights">Insights</a><a href="#contact">Contact</a></div>
-    <div class="ftr-col"><h4>Legal</h4><a href="#" onclick="return false">Privacy Notice</a><a href="#" onclick="return false">Cookie Policy</a><a href="#" onclick="return false">Terms of Service</a><a href="#" onclick="openCookiePrefs();return false">Manage Cookies</a></div>
+    <div class="ftr-col"><h4>Legal</h4><a href="./legal.html#privacy">Privacy Notice</a><a href="./legal.html#cookies">Cookie Policy</a><a href="./legal.html#terms">Terms of Service</a><a href="#" onclick="openCookiePrefs();return false">Manage Cookies</a></div>
   </div>
-  <div class="ftr-btm"><span>© 2026 Violet Bridge Security LLC. All rights reserved.</span><div class="ftr-legal"><a href="#" onclick="return false">Privacy</a><a href="#" onclick="return false">Cookies</a><a href="#" onclick="return false">Terms</a></div></div>
+  <div class="ftr-btm"><span>© 2026 Violet Bridge Security LLC. All rights reserved.</span><div class="ftr-legal"><a href="./legal.html#privacy">Privacy</a><a href="./legal.html#cookies">Cookies</a><a href="./legal.html#terms">Terms</a></div></div>
 </div></footer>
 
 <script>
@@ -480,7 +493,8 @@ const sn={finance:'Financial',telecom:'Telecom',retail:'Retail',energy:'Energy',
 function renderTabs(){const t=document.getElementById('industryTabs');t.innerHTML=['all',...Object.keys(sn)].map(s=>`<button class="tab-b${s==='all'?' active':''}" data-s="${s}">${s==='all'?'All Sectors':sn[s]}</button>`).join('');t.addEventListener('click',e=>{if(!e.target.classList.contains('tab-b'))return;t.querySelectorAll('.tab-b').forEach(b=>b.classList.remove('active'));e.target.classList.add('active');renderCo(e.target.dataset.s)})}
 function renderCo(f='all'){const g=document.getElementById('companiesGrid');const l=f==='all'?companies:companies.filter(c=>c.i===f);g.innerHTML=l.map(c=>`<div class="co-ch">${c.name}<small>${sn[c.i]}</small></div>`).join('')}
 function toggleSvc(id){const el=document.getElementById(id);const w=el.classList.contains('open');document.querySelectorAll('.svc-g').forEach(g=>g.classList.remove('open'));if(!w)el.classList.add('open')}
-const form=document.getElementById('contactForm');if(form)form.addEventListener('submit',async function(e){e.preventDefault();const b=form.querySelector('button[type="submit"]');const o=b.textContent;b.disabled=true;b.textContent='Sending...';try{await fetch('https://formspree.io/f/xyznznrd',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});document.getElementById('formStatus').innerHTML='<span style="color:var(--gn)">✓ Sent successfully.</span>';form.reset()}catch(r){document.getElementById('formStatus').innerHTML='<span style="color:var(--rd)">✗ Error. Please email us directly.</span>'}finally{b.disabled=false;b.textContent=o}});
+function sanitize(s){return s.replace(/[<>"'`]/g,c=>({'<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#x27;','`':'&#x60;'}[c]))}
+const form=document.getElementById('contactForm');if(form)form.addEventListener('submit',async function(e){e.preventDefault();const b=form.querySelector('button[type="submit"]');const o=b.textContent;b.disabled=true;b.textContent='Sending...';const fd=new FormData(form);for(const[k,v]of fd.entries())if(typeof v==='string')fd.set(k,sanitize(v));try{await fetch('https://formspree.io/f/xyznznrd',{method:'POST',body:fd,headers:{'Accept':'application/json'}});document.getElementById('formStatus').innerHTML='<span style="color:var(--gn)">✓ Sent successfully.</span>';form.reset()}catch(r){document.getElementById('formStatus').innerHTML='<span style="color:var(--rd)">✗ Error. Please email us directly.</span>'}finally{b.disabled=false;b.textContent=o}});
 document.addEventListener('DOMContentLoaded',()=>{renderTabs();renderCo()});
 </script>
 </body>
