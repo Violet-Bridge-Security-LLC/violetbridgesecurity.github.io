@@ -85,8 +85,8 @@
 
     /* HERO */
     .hero{position:relative;min-height:580px;display:flex;align-items:center;overflow:hidden}
-    .hero-bg{position:absolute;inset:0;z-index:0;background:url('./assets/hero-bg.png') center/cover no-repeat;background-color:var(--bg-s)}
-    .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,var(--bg) 0%,rgba(9,9,11,.93) 38%,rgba(9,9,11,.55) 68%,transparent 100%)}
+    .hero-bg{position:absolute;inset:0;z-index:0;background:url('./assets/og-cover.png') center/cover no-repeat;background-color:var(--bg-s)}
+    .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,var(--bg) 0%,rgba(9,9,11,.92) 40%,rgba(9,9,11,.55) 65%,rgba(9,9,11,.25) 100%)}
     .hero-in{position:relative;z-index:1;width:100%;max-width:var(--mw);margin-inline:auto;padding:clamp(100px,14vw,150px) clamp(20px,4vw,48px) clamp(60px,8vw,100px)}
     .hero-c{max-width:600px}
     .hero-lead{font-size:clamp(1.05rem,1.8vw,1.2rem);color:var(--tx2);line-height:1.8;margin:20px 0 32px;max-width:520px}
@@ -246,9 +246,6 @@
     .gpc-ind.vis{display:flex}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
     @media(max-width:720px){.hero-ctas{flex-direction:column}.hero-ctas .btn{width:100%;justify-content:center}}
-    .hero-og-wrap{position:absolute;right:clamp(20px,6vw,80px);bottom:0;z-index:1;pointer-events:none}
-    .hero-og-img{height:auto;max-height:340px;width:auto;max-width:480px;object-fit:contain;border-radius:var(--r);box-shadow:0 20px 60px rgba(0,0,0,.5)}
-    @media(max-width:900px){.hero-og-wrap{display:none}}
   </style>
 </head>
 <body>
@@ -294,11 +291,7 @@
       <a class="btn btn-p" href="#contact">Book a Consultation</a>
       <a class="btn btn-g" href="#capabilities">Explore Capabilities</a>
     </div>
-  </div>
-  <div class="hero-og-wrap">
-    <img src="./assets/og-cover.png" alt="Violet Bridge Security" class="hero-og-img">
-  </div>
-  </div>
+  </div></div>
 </section>
 
 <!-- INSIGHTS -->
