@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; frame-src 'none';" />
+  <title>Legal — Violet Bridge Security</title>
+  <meta name="robots" content="noindex, follow" />
+  <meta name="description" content="Privacy Notice, Cookie Policy, and Terms of Service for Violet Bridge Security LLC." />
+  <link rel="icon" type="image/png" href="./assets/logo-icon.png">
+  <link rel="canonical" href="https://www.violetbridgesecurity.com/legal.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#09090b;--bg-s:#111113;--bg-c:#161618;--bg-e:#1c1c20;
+      --tx:#f0f0f2;--tx2:#a0a0aa;--tx3:#64646e;
+      --ac:#7c5cfc;--ac2:#9b7eff;--ac3:#5b3fd9;
+      --gn:#22c55e;--bd:rgba(255,255,255,.06);--bd2:rgba(255,255,255,.1);
+      --mw:860px;--r:12px;--rs:6px;--f:'Inter',-apple-system,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{background:var(--bg);color:var(--tx);font-family:var(--f);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased}
+    a{color:var(--ac2);text-decoration:none;transition:.2s}
+    a:hover{color:var(--ac)}
+    h1,h2,h3,h4{font-weight:700;line-height:1.2;letter-spacing:-.02em}
+    h1{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:.3em}
+    h2{font-size:clamp(1.3rem,2.5vw,1.7rem);margin-bottom:.4em;color:var(--tx)}
+    h3{font-size:1.05rem;font-weight:600;margin-bottom:.3em;color:var(--ac2)}
+    p{color:var(--tx2);margin-bottom:1em}
+    ul{padding-left:1.4em;margin-bottom:1em;color:var(--tx2)}
+    ul li{margin-bottom:.4em}
+    strong{color:var(--tx);font-weight:600}
+
+    /* HEADER */
+    .hdr{position:sticky;top:0;z-index:200;background:rgba(9,9,11,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd)}
+    .hdr-in{display:flex;align-items:center;justify-content:space-between;min-height:68px;padding:0 clamp(20px,4vw,48px);max-width:1200px;margin:0 auto}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+    .brand-logo{height:38px;width:auto}
+    .brand-name{font-size:1rem;font-weight:700;letter-spacing:-.01em}
+    .back-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:100px;background:transparent;border:1px solid var(--bd2);color:var(--tx2);font-size:.85rem;font-weight:600;font-family:var(--f);cursor:pointer;transition:.2s;text-decoration:none}
+    .back-btn:hover{border-color:var(--ac);color:var(--ac2)}
+
+    /* SIDEBAR NAV */
+    .page-wrap{display:grid;grid-template-columns:220px 1fr;gap:48px;max-width:1100px;margin:0 auto;padding:60px clamp(20px,4vw,48px) 100px}
+    @media(max-width:768px){.page-wrap{grid-template-columns:1fr}.side-nav{display:none}}
+    .side-nav{position:sticky;top:100px;align-self:start}
+    .side-nav-title{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tx3);margin-bottom:12px}
+    .side-nav a{display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:var(--rs);color:var(--tx2);font-size:.9rem;font-weight:500;transition:.2s;margin-bottom:2px}
+    .side-nav a:hover,.side-nav a.active{background:rgba(124,92,252,.1);color:var(--ac2)}
+    .side-nav a::before{content:'';width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.5;flex-shrink:0}
+
+    /* CONTENT */
+    .legal-content{min-width:0}
+    .page-hero{margin-bottom:52px;padding-bottom:32px;border-bottom:1px solid var(--bd)}
+    .eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ac2);margin-bottom:10px;display:block}
+    .page-meta{font-size:.85rem;color:var(--tx3);margin-top:10px}
+
+    /* SECTION BLOCKS */
+    .legal-sec{padding:40px 0;border-bottom:1px solid var(--bd)}
+    .legal-sec:last-child{border-bottom:none}
+    .legal-sec h2{margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--bd)}
+    .legal-sec h3{margin-top:24px;margin-bottom:8px}
+    .info-card{background:var(--bg-c);border:1px solid var(--bd);border-radius:var(--r);padding:20px 24px;margin:16px 0}
+    .info-card p{margin-bottom:0}
+
+    /* COOKIE PREFS */
+    .ck-cat{padding:16px 0;border-top:1px solid var(--bd)}
+    .ck-cat:first-of-type{border-top:none}
+    .ck-ch{display:flex;justify-content:space-between;align-items:center;gap:16px}
+    .ck-ch h4{font-size:.95rem;font-weight:600;color:var(--tx)}
+    .ck-cat p{font-size:.88rem;color:var(--tx3);margin-top:4px;margin-bottom:0}
+    .tgl{position:relative;width:44px;height:24px;flex-shrink:0}
+    .tgl input{opacity:0;width:0;height:0}
+    .tgl-s{position:absolute;inset:0;background:var(--bd2);border-radius:100px;cursor:pointer;transition:.3s}
+    .tgl-s::before{content:'';position:absolute;height:18px;width:18px;left:3px;bottom:3px;background:var(--tx);border-radius:50%;transition:.3s}
+    .tgl input:checked+.tgl-s{background:var(--ac)}
+    .tgl input:checked+.tgl-s::before{transform:translateX(20px)}
+    .tgl input:disabled+.tgl-s{opacity:.5;cursor:not-allowed}
+    .save-prefs-row{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 26px;border-radius:100px;font-weight:700;font-size:.9rem;font-family:var(--f);border:none;cursor:pointer;transition:.25s}
+    .btn-p{background:var(--ac);color:#fff;box-shadow:0 4px 16px rgba(124,92,252,.3)}
+    .btn-p:hover{background:var(--ac3);transform:translateY(-1px)}
+    .btn-g{background:transparent;color:var(--tx);border:2px solid var(--bd2)}
+    .btn-g:hover{border-color:var(--ac);color:var(--ac2)}
+    #prefStatus{font-size:.88rem;margin-top:10px}
+
+    /* CONTACT TABLE */
+    .data-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.9rem}
+    .data-table th{text-align:left;padding:10px 14px;background:var(--bg-c);border:1px solid var(--bd);color:var(--tx);font-weight:600}
+    .data-table td{padding:10px 14px;border:1px solid var(--bd);color:var(--tx2);vertical-align:top}
+    .data-table tr:hover td{background:var(--bg-e)}
+
+    /* FOOTER */
+    .ftr{background:var(--bg-s);border-top:1px solid var(--bd);padding:24px clamp(20px,4vw,48px);text-align:center;font-size:.85rem;color:var(--tx3)}
+    .ftr a{color:var(--tx3);margin:0 8px}
+    .ftr a:hover{color:var(--ac2)}
+  </style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="brand" href="./index.html" aria-label="Violet Bridge Security — Home">
+      <img src="./assets/logo-dark.png" alt="Violet Bridge Security" class="brand-logo">
+      <span class="brand-name">Violet Bridge Security</span>
+    </a>
+    <a class="back-btn" href="./index.html">← Back to Site</a>
+  </div>
+</header>
+
+<div class="page-wrap">
+
+  <!-- SIDEBAR -->
+  <nav class="side-nav" aria-label="Legal sections">
+    <div class="side-nav-title">On this page</div>
+    <a href="#privacy">Privacy Notice</a>
+    <a href="#cookies">Cookie Policy</a>
+    <a href="#terms">Terms of Service</a>
+    <a href="#manage-cookies">Manage Cookies</a>
+    <a href="#contact-dpo">Contact / DPO</a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="legal-content">
+
+    <div class="page-hero">
+      <span class="eyebrow">Legal &amp; Privacy</span>
+      <h1>Legal Documentation</h1>
+      <p>These documents govern your use of the Violet Bridge Security website and describe how we collect, process, and protect your data.</p>
+      <p class="page-meta">Violet Bridge Security LLC · Last updated: May 2026 · Effective: January 1, 2025</p>
+    </div>
+
+    <!-- PRIVACY NOTICE -->
+    <section class="legal-sec" id="privacy">
+      <h2>Privacy Notice</h2>
+      <p>Violet Bridge Security LLC ("VBS", "we", "us", or "our") is committed to protecting your personal information. This Privacy Notice explains what data we collect, why we collect it, and your rights regarding that data.</p>
+
+      <h3>1. Data Controller</h3>
+      <p>Violet Bridge Security LLC, incorporated in Wyoming, USA, with operations in Panama City, Panama, is the data controller for all personal data collected through this website.</p>
+
+      <h3>2. What Data We Collect</h3>
+      <ul>
+        <li><strong>Contact &amp; inquiry data:</strong> Name, email address, phone number, job title, company, and message content submitted via our contact or service request forms.</li>
+        <li><strong>Usage data:</strong> IP address (anonymized), browser type, pages visited, time on page, and referral source — collected via Google Analytics.</li>
+        <li><strong>Cookie data:</strong> Preferences stored in your browser. See our Cookie Policy below.</li>
+      </ul>
+
+      <h3>3. How We Use Your Data</h3>
+      <ul>
+        <li>To respond to your inquiry or service request.</li>
+        <li>To improve our website and understand visitor behavior (analytics only with consent).</li>
+        <li>To comply with applicable legal obligations.</li>
+        <li>We <strong>never sell, rent, or share</strong> your personal data with third parties for marketing purposes.</li>
+      </ul>
+
+      <h3>4. Legal Basis for Processing (GDPR / LGPD)</h3>
+      <table class="data-table">
+        <thead><tr><th>Purpose</th><th>Legal Basis</th></tr></thead>
+        <tbody>
+          <tr><td>Responding to inquiries</td><td>Legitimate interest / Contract performance</td></tr>
+          <tr><td>Analytics &amp; usage tracking</td><td>Consent (opt-in via cookie banner)</td></tr>
+          <tr><td>Legal compliance</td><td>Legal obligation</td></tr>
+        </tbody>
+      </table>
+
+      <h3>5. Data Retention</h3>
+      <p>Contact form submissions are retained for up to 24 months. Anonymized analytics data may be retained indefinitely. You may request deletion at any time.</p>
+
+      <h3>6. Your Rights</h3>
+      <ul>
+        <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+        <li><strong>Rectification:</strong> Ask us to correct inaccurate data.</li>
+        <li><strong>Erasure:</strong> Request deletion of your personal data ("right to be forgotten").</li>
+        <li><strong>Restriction:</strong> Ask us to limit how we process your data.</li>
+        <li><strong>Portability:</strong> Receive your data in a structured, machine-readable format.</li>
+        <li><strong>Objection:</strong> Object to processing based on legitimate interests.</li>
+        <li><strong>Withdraw consent:</strong> Withdraw analytics/marketing consent at any time via the cookie preferences panel.</li>
+      </ul>
+      <p>To exercise any of these rights, contact us at <a href="mailto:privacy@violetbridgesecurity.com">privacy@violetbridgesecurity.com</a>.</p>
+
+      <h3>7. International Transfers</h3>
+      <p>Your data may be processed in the United States and Panama. Where required by law, we apply appropriate transfer mechanisms (e.g., Standard Contractual Clauses) to protect data transferred outside the EEA or Brazil.</p>
+
+      <h3>8. Third-Party Processors</h3>
+      <table class="data-table">
+        <thead><tr><th>Processor</th><th>Purpose</th><th>Location</th></tr></thead>
+        <tbody>
+          <tr><td>Google Analytics</td><td>Website analytics (anonymized)</td><td>USA</td></tr>
+          <tr><td>Formspree</td><td>Contact &amp; service request form delivery</td><td>USA</td></tr>
+          <tr><td>Elfsight</td><td>Blog/insights widget</td><td>EU / USA</td></tr>
+          <tr><td>Google Fonts</td><td>Web typography</td><td>USA</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- COOKIE POLICY -->
+    <section class="legal-sec" id="cookies">
+      <h2>Cookie Policy</h2>
+      <p>This website uses cookies and similar technologies to operate correctly and to help us understand how visitors use the site. This policy explains what cookies we use and how you can control them.</p>
+
+      <h3>What Are Cookies?</h3>
+      <p>Cookies are small text files stored on your device when you visit a website. They help websites remember your preferences and gather analytics.</p>
+
+      <h3>Cookies We Use</h3>
+      <table class="data-table">
+        <thead><tr><th>Category</th><th>Name / Provider</th><th>Purpose</th><th>Duration</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Strictly Necessary</strong></td><td>vbs-cookies (1st party)</td><td>Stores your cookie consent preferences</td><td>12 months</td></tr>
+          <tr><td><strong>Analytics</strong></td><td>_ga, _ga_* (Google Analytics)</td><td>Anonymized visitor statistics — page views, session duration, referral source</td><td>2 years</td></tr>
+          <tr><td><strong>Analytics</strong></td><td>_gid (Google Analytics)</td><td>Distinguishes users within a 24-hour session</td><td>24 hours</td></tr>
+          <tr><td><strong>Marketing</strong></td><td>Reserved for future use</td><td>Advertising attribution (not currently active)</td><td>—</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Global Privacy Control (GPC)</h3>
+      <p>This website respects the <a href="https://globalprivacycontrol.org" target="_blank" rel="noopener noreferrer">Global Privacy Control</a> signal. If your browser sends a GPC signal, analytics and marketing cookies will be automatically disabled.</p>
+
+      <h3>How to Manage Cookies</h3>
+      <p>You can change your preferences at any time using our <a href="#manage-cookies">cookie preference panel below</a>, or by clearing cookies in your browser settings. Note that disabling strictly necessary cookies may affect site functionality.</p>
+    </section>
+
+    <!-- TERMS OF SERVICE -->
+    <section class="legal-sec" id="terms">
+      <h2>Terms of Service</h2>
+      <p>By accessing this website, you agree to these terms. If you do not agree, please do not use the site.</p>
+
+      <h3>1. Use of This Website</h3>
+      <p>This website is provided for informational and business inquiry purposes only. You agree not to:</p>
+      <ul>
+        <li>Use automated tools to scrape, crawl, or harvest data from this site without prior written consent.</li>
+        <li>Attempt to probe, scan, or test the vulnerability of this website or any related systems.</li>
+        <li>Submit false, misleading, or malicious content through any form on this site.</li>
+        <li>Impersonate Violet Bridge Security, its employees, or any other person or entity.</li>
+      </ul>
+
+      <h3>2. Intellectual Property</h3>
+      <p>All content on this website — including text, graphics, logos, and design — is the property of Violet Bridge Security LLC and is protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works without express written permission.</p>
+
+      <h3>3. No Professional Advice</h3>
+      <p>Content on this website is for general informational purposes only and does not constitute legal, technical, or cybersecurity advice. Engage our team directly for professional services.</p>
+
+      <h3>4. Limitation of Liability</h3>
+      <p>To the maximum extent permitted by law, Violet Bridge Security LLC shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of this website or its content.</p>
+
+      <h3>5. Third-Party Links</h3>
+      <p>This site may contain links to third-party websites. We are not responsible for the content, privacy practices, or security of those sites.</p>
+
+      <h3>6. Changes to These Terms</h3>
+      <p>We reserve the right to update these terms at any time. Continued use of the website after changes constitutes acceptance of the revised terms. The "Last updated" date at the top of this page reflects the most recent revision.</p>
+
+      <h3>7. Governing Law</h3>
+      <p>These terms are governed by the laws of the State of Wyoming, USA. Disputes shall be resolved in the courts of Wyoming, unless otherwise required by applicable law in your jurisdiction.</p>
+
+      <h3>8. Contact</h3>
+      <p>For any questions about these terms, contact us at <a href="mailto:legal@violetbridgesecurity.com">legal@violetbridgesecurity.com</a>.</p>
+    </section>
+
+    <!-- MANAGE COOKIES -->
+    <section class="legal-sec" id="manage-cookies">
+      <h2>Manage Cookie Preferences</h2>
+      <p>Update your consent choices below. Your preferences are stored locally in your browser and applied immediately. Strictly necessary cookies cannot be disabled — they are required for the site to function.</p>
+
+      <div class="info-card">
+        <div class="ck-cat">
+          <div class="ck-ch">
+            <div>
+              <h4>Strictly Necessary</h4>
+              <p>Required for core functionality (cookie consent storage). Cannot be disabled.</p>
+            </div>
+            <label class="tgl"><input type="checkbox" checked disabled><span class="tgl-s"></span></label>
+          </div>
+        </div>
+        <div class="ck-cat">
+          <div class="ck-ch">
+            <div>
+              <h4>Analytics Cookies</h4>
+              <p>Help us understand how visitors interact with our website (Google Analytics, anonymized).</p>
+            </div>
+            <label class="tgl"><input type="checkbox" id="legalAnalytics"><span class="tgl-s"></span></label>
+          </div>
+        </div>
+        <div class="ck-cat">
+          <div class="ck-ch">
+            <div>
+              <h4>Marketing Cookies</h4>
+              <p>Used for advertising attribution. Not currently active on this website.</p>
+            </div>
+            <label class="tgl"><input type="checkbox" id="legalMarketing"><span class="tgl-s"></span></label>
+          </div>
+        </div>
+        <div class="save-prefs-row">
+          <button class="btn btn-p" onclick="saveLegalPrefs()">Save Preferences</button>
+          <button class="btn btn-g" onclick="acceptAllLegal()">Accept All</button>
+          <button class="btn btn-g" onclick="rejectAllLegal()">Reject Non-Essential</button>
+        </div>
+        <div id="prefStatus"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT / DPO -->
+    <section class="legal-sec" id="contact-dpo">
+      <h2>Contact &amp; Data Protection</h2>
+      <div class="info-card">
+        <p><strong>Violet Bridge Security LLC</strong><br>
+        Wyoming, USA &amp; Panama City, Panama</p>
+        <p>General inquiries: <a href="mailto:info@violetbridgesecurity.com">info@violetbridgesecurity.com</a><br>
+        Privacy &amp; data requests: <a href="mailto:privacy@violetbridgesecurity.com">privacy@violetbridgesecurity.com</a><br>
+        Legal notices: <a href="mailto:legal@violetbridgesecurity.com">legal@violetbridgesecurity.com</a><br>
+        Phone: <a href="tel:+13073409155">+1 307-340-9155</a></p>
+        <p style="margin-bottom:0">We aim to respond to all privacy-related requests within <strong>30 days</strong> as required by applicable regulations (GDPR, LGPD, CCPA).</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="ftr">
+  <span>© 2026 Violet Bridge Security LLC. All rights reserved.</span>
+  <a href="./index.html">Home</a>
+  <a href="#privacy">Privacy</a>
+  <a href="#cookies">Cookies</a>
+  <a href="#terms">Terms</a>
+</footer>
+
+<script>
+// Load saved prefs into toggles
+(function(){
+  try{
+    const c=localStorage.getItem('vbs-cookies');
+    if(c){
+      const p=JSON.parse(c);
+      document.getElementById('legalAnalytics').checked=!!p.a;
+      document.getElementById('legalMarketing').checked=!!p.m;
+    }
+  }catch(e){}
+})();
+
+function saveLegalPrefs(){
+  const a=document.getElementById('legalAnalytics').checked;
+  const m=document.getElementById('legalMarketing').checked;
+  localStorage.setItem('vbs-cookies',JSON.stringify({n:1,a:a?1:0,m:m?1:0}));
+  if(!a)window['ga-disable-G-ZSCQFCZV23']=true;
+  showStatus('✓ Preferences saved.');
+}
+function acceptAllLegal(){
+  document.getElementById('legalAnalytics').checked=true;
+  document.getElementById('legalMarketing').checked=true;
+  localStorage.setItem('vbs-cookies',JSON.stringify({n:1,a:1,m:1}));
+  showStatus('✓ All cookies accepted.');
+}
+function rejectAllLegal(){
+  document.getElementById('legalAnalytics').checked=false;
+  document.getElementById('legalMarketing').checked=false;
+  localStorage.setItem('vbs-cookies',JSON.stringify({n:1,a:0,m:0}));
+  window['ga-disable-G-ZSCQFCZV23']=true;
+  showStatus('✓ Non-essential cookies rejected.');
+}
+function showStatus(msg){
+  const el=document.getElementById('prefStatus');
+  el.innerHTML='<span style="color:var(--gn)">'+msg+'</span>';
+  setTimeout(()=>{el.innerHTML=''},4000);
+}
+
+// Highlight active sidebar link on scroll
+const secs=document.querySelectorAll('.legal-sec');
+const links=document.querySelectorAll('.side-nav a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id});
+  links.forEach(l=>{l.classList.toggle('active',l.getAttribute('href')==='#'+cur)});
+},{passive:true});
+</script>
+</body>
+</html>

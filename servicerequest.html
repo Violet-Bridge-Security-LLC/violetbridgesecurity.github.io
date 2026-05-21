@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; frame-src 'none';" />
+  <title>Service Request — Violet Bridge Security</title>
+  <meta name="robots" content="noindex, follow" />
+  <meta name="description" content="Submit a service request to Violet Bridge Security. Our team will respond within one business day." />
+  <link rel="icon" type="image/png" href="./assets/logo-icon.png">
+  <link rel="canonical" href="https://www.violetbridgesecurity.com/service-request.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#09090b;--bg-s:#111113;--bg-c:#161618;--bg-e:#1c1c20;
+      --tx:#f0f0f2;--tx2:#a0a0aa;--tx3:#64646e;
+      --ac:#7c5cfc;--ac2:#9b7eff;--ac3:#5b3fd9;
+      --gn:#22c55e;--rd:#ef4444;--am:#f59e0b;--cy:#06b6d4;
+      --bd:rgba(255,255,255,.06);--bd2:rgba(255,255,255,.1);
+      --mw:780px;--r:12px;--rs:6px;--f:'Inter',-apple-system,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--tx);font-family:var(--f);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:var(--ac2);text-decoration:none;transition:.2s}
+    a:hover{color:var(--ac)}
+    h1,h2,h3{font-weight:700;line-height:1.2;letter-spacing:-.02em}
+    h1{font-size:clamp(1.8rem,4vw,2.6rem)}
+    h2{font-size:1.15rem;font-weight:600;color:var(--tx)}
+    p{color:var(--tx2)}
+
+    /* HEADER */
+    .hdr{position:sticky;top:0;z-index:200;background:rgba(9,9,11,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd)}
+    .hdr-in{display:flex;align-items:center;justify-content:space-between;min-height:68px;padding:0 clamp(20px,4vw,48px);max-width:1200px;margin:0 auto}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+    .brand-logo{height:38px;width:auto}
+    .brand-name{font-size:1rem;font-weight:700;letter-spacing:-.01em}
+    .back-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:100px;background:transparent;border:1px solid var(--bd2);color:var(--tx2);font-size:.85rem;font-weight:600;font-family:var(--f);cursor:pointer;transition:.2s;text-decoration:none}
+    .back-btn:hover{border-color:var(--ac);color:var(--ac2)}
+
+    /* HERO BAND */
+    .page-hero{background:var(--bg-s);border-bottom:1px solid var(--bd);padding:52px clamp(20px,4vw,48px) 48px}
+    .page-hero-in{max-width:var(--mw);margin:0 auto}
+    .eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ac2);margin-bottom:10px;display:block}
+    .page-hero p{font-size:1.05rem;color:var(--tx2);margin-top:10px;max-width:560px}
+
+    /* STEPS INDICATOR */
+    .steps{display:flex;align-items:center;gap:0;margin-top:32px;max-width:var(--mw)}
+    .step{display:flex;align-items:center;gap:8px;font-size:.85rem;font-weight:600;color:var(--tx3)}
+    .step.active{color:var(--ac2)}
+    .step.done{color:var(--gn)}
+    .step-dot{width:28px;height:28px;border-radius:50%;border:2px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0;background:transparent;transition:.3s}
+    .step.active .step-dot{background:var(--ac);border-color:var(--ac);color:#fff}
+    .step.done .step-dot{background:var(--gn);border-color:var(--gn);color:#fff}
+    .step-line{flex:1;height:2px;background:var(--bd2);margin:0 8px;max-width:60px}
+    .step-line.done{background:var(--gn)}
+
+    /* MAIN FORM AREA */
+    .form-wrap{max-width:var(--mw);margin:0 auto;padding:48px clamp(20px,4vw,48px) 80px}
+
+    /* CARD */
+    .form-card{background:var(--bg-c);border:1px solid var(--bd);border-radius:var(--r);padding:28px 32px;margin-bottom:20px}
+    @media(max-width:520px){.form-card{padding:20px 18px}}
+    .form-card-header{display:flex;align-items:center;gap:12px;margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--bd)}
+    .card-icon{width:38px;height:38px;background:rgba(124,92,252,.1);border:1px solid rgba(124,92,252,.2);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+    .card-title{font-size:1rem;font-weight:700;color:var(--tx)}
+    .card-sub{font-size:.85rem;color:var(--tx3);margin-top:2px}
+
+    /* FIELDS */
+    .f-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media(max-width:580px){.f-grid{grid-template-columns:1fr}}
+    .f-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+    @media(max-width:680px){.f-grid-3{grid-template-columns:1fr 1fr}}
+    @media(max-width:420px){.f-grid-3{grid-template-columns:1fr}}
+    .f-full{grid-column:1/-1}
+    .f-f{display:flex;flex-direction:column;gap:5px;margin-bottom:0}
+    .f-f label{font-size:.88rem;font-weight:600;color:var(--tx2)}
+    .f-f label .req{color:var(--ac2);margin-left:2px}
+    .f-f input,.f-f select,.f-f textarea{padding:11px 14px;background:var(--bg-s);color:var(--tx);border:1px solid var(--bd);border-radius:var(--rs);font-family:var(--f);font-size:.95rem;transition:.2s;width:100%}
+    .f-f input:focus,.f-f select:focus,.f-f textarea:focus{outline:none;border-color:var(--ac);box-shadow:0 0 0 3px rgba(124,92,252,.15)}
+    .f-f input::placeholder,.f-f textarea::placeholder{color:var(--tx3)}
+    .f-hint{font-size:.8rem;color:var(--tx3);margin-top:4px}
+    .field-error{font-size:.8rem;color:var(--rd);margin-top:4px;display:none}
+
+    /* SERVICE CHECKBOXES */
+    .svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:4px}
+    .svc-opt{display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:var(--rs);background:var(--bg-s);border:1px solid var(--bd);cursor:pointer;transition:.2s;font-size:.9rem;font-weight:500}
+    .svc-opt:hover{border-color:var(--bd2)}
+    .svc-opt input[type="checkbox"]{accent-color:var(--ac);width:16px;height:16px;flex-shrink:0;cursor:pointer}
+    .svc-opt.checked{border-color:var(--ac);background:rgba(124,92,252,.06)}
+    .svc-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+
+    /* URGENCY TOGGLE */
+    .urgency-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+    .urg-btn{padding:9px 18px;border-radius:100px;border:1px solid var(--bd2);background:transparent;color:var(--tx2);font-family:var(--f);font-size:.88rem;font-weight:600;cursor:pointer;transition:.2s}
+    .urg-btn:hover{border-color:var(--bd2);color:var(--tx)}
+    .urg-btn.active{border-color:var(--ac);color:var(--ac2);background:rgba(124,92,252,.08)}
+    .urg-btn[data-v="Critical"].active{border-color:var(--rd);color:var(--rd);background:rgba(239,68,68,.06)}
+    .urg-btn[data-v="High"].active{border-color:var(--am);color:var(--am);background:rgba(245,158,11,.06)}
+
+    /* BUDGET RANGE */
+    .budget-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-top:4px}
+    .budget-opt{padding:10px 14px;border-radius:var(--rs);border:1px solid var(--bd);background:var(--bg-s);color:var(--tx2);font-family:var(--f);font-size:.85rem;font-weight:600;cursor:pointer;transition:.2s;text-align:center}
+    .budget-opt:hover{border-color:var(--bd2)}
+    .budget-opt.active{border-color:var(--ac);color:var(--ac2);background:rgba(124,92,252,.06)}
+
+    /* PENTEST NOTICE */
+    .pentest-notice{display:none;align-items:flex-start;gap:14px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);border-radius:var(--rs);padding:16px 18px;margin-bottom:20px}
+    .pentest-notice .nti{font-size:1.3rem;flex-shrink:0;line-height:1}
+    .pentest-notice strong{font-size:.95rem;color:var(--am);display:block;margin-bottom:4px}
+    .pentest-notice p{font-size:.87rem;color:var(--tx2);margin:0}
+
+    /* SUMMARY PANEL */
+    .summary-card{background:rgba(124,92,252,.06);border:1px solid rgba(124,92,252,.2);border-radius:var(--r);padding:20px 24px;margin-bottom:20px}
+    .summary-card h3{font-size:.95rem;color:var(--ac2);margin-bottom:12px}
+    .summary-row{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:7px 0;border-bottom:1px solid var(--bd);font-size:.9rem}
+    .summary-row:last-child{border-bottom:none}
+    .summary-row span:first-child{color:var(--tx3);font-weight:500;flex-shrink:0}
+    .summary-row span:last-child{color:var(--tx);text-align:right}
+
+    /* SUBMIT AREA */
+    .submit-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:8px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 32px;border-radius:100px;font-weight:700;font-size:1rem;font-family:var(--f);border:none;cursor:pointer;transition:.25s}
+    .btn-p{background:var(--ac);color:#fff;box-shadow:0 6px 24px rgba(124,92,252,.3)}
+    .btn-p:hover{background:var(--ac3);transform:translateY(-2px);box-shadow:0 10px 32px rgba(124,92,252,.4)}
+    .btn-p:disabled{opacity:.5;cursor:not-allowed;transform:none}
+    .btn-g{background:transparent;color:var(--tx);border:2px solid var(--bd2);padding:11px 26px;font-size:.9rem}
+    .btn-g:hover{border-color:var(--ac);color:var(--ac2)}
+    #srStatus{font-size:.9rem;margin-top:12px}
+    .privacy-note{font-size:.82rem;color:var(--tx3);margin-top:12px}
+    .privacy-note a{color:var(--tx3);text-decoration:underline}
+    .privacy-note a:hover{color:var(--ac2)}
+
+    /* SUCCESS STATE */
+    .success-screen{display:none;text-align:center;padding:60px 20px}
+    .success-screen .icon{font-size:3.5rem;margin-bottom:16px}
+    .success-screen h2{font-size:1.8rem;margin-bottom:10px;color:var(--gn)}
+    .success-screen > p{color:var(--tx2);max-width:480px;margin:0 auto 24px}
+    .questionnaire-cta{background:var(--bg-c);border:1px solid rgba(124,92,252,.25);border-radius:var(--r);padding:28px 32px;max-width:520px;margin:24px auto 0}
+    .questionnaire-cta .q-icon{font-size:2.2rem;margin-bottom:12px}
+    .questionnaire-cta h3{font-size:1.1rem;color:var(--ac2);margin-bottom:10px}
+    .questionnaire-cta p{font-size:.9rem;color:var(--tx2);max-width:420px;margin:0 auto}
+    .questionnaire-cta .btn{margin:18px auto 0;text-decoration:none;display:inline-flex}
+    .q-skip{display:block;margin-top:14px;font-size:.82rem;color:var(--tx3)}
+    .q-home{display:inline-block;margin-top:8px;font-size:.85rem;color:var(--tx3)}
+
+    /* FOOTER */
+    .ftr{background:var(--bg-s);border-top:1px solid var(--bd);padding:20px clamp(20px,4vw,48px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.83rem;color:var(--tx3)}
+    .ftr a{color:var(--tx3);margin-left:12px}
+    .ftr a:hover{color:var(--ac2)}
+
+    /* Honeypot: visually hidden but accessible to screen readers is fine */
+    .hp-field{position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none;tabindex:-1}
+  </style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="brand" href="./index.html" aria-label="Violet Bridge Security — Home">
+      <img src="./assets/logo-dark.png" alt="Violet Bridge Security" class="brand-logo">
+      <span class="brand-name">Violet Bridge Security</span>
+    </a>
+    <a class="back-btn" href="./index.html#services">← Back to Services</a>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-in">
+    <span class="eyebrow">Engage Our Team</span>
+    <h1>Submit a Service Request</h1>
+    <p>Tell us about your security needs and we'll assign the right specialist. We respond within one business day — critical incidents within 2 hours.</p>
+
+    <div class="steps">
+      <div class="step active" id="step1-ind"><div class="step-dot">1</div><span>Your Details</span></div>
+      <div class="step-line" id="line1"></div>
+      <div class="step" id="step2-ind"><div class="step-dot">2</div><span>Service &amp; Scope</span></div>
+      <div class="step-line" id="line2"></div>
+      <div class="step" id="step3-ind"><div class="step-dot">3</div><span>Review &amp; Submit</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- FORM -->
+<div class="form-wrap">
+  <form id="srForm" novalidate>
+
+    <!-- Honeypot: bots fill this, humans don't -->
+    <div class="hp-field" aria-hidden="true">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+    </div>
+    <input type="hidden" name="_subject" value="New Service Request — Violet Bridge Security">
+    <input type="hidden" name="_form_type" value="service_request">
+
+    <!-- STEP 1: Contact Details -->
+    <div id="step1">
+      <div class="form-card">
+        <div class="form-card-header">
+          <div class="card-icon">👤</div>
+          <div><div class="card-title">Contact Information</div><div class="card-sub">Who should we get in touch with?</div></div>
+        </div>
+        <div class="f-grid">
+          <div class="f-f">
+            <label for="sr_fname">First Name <span class="req">*</span></label>
+            <input id="sr_fname" type="text" name="first_name" required maxlength="60" autocomplete="given-name" placeholder="Jane">
+            <span class="field-error" id="err_fname">Please enter your first name.</span>
+          </div>
+          <div class="f-f">
+            <label for="sr_lname">Last Name <span class="req">*</span></label>
+            <input id="sr_lname" type="text" name="last_name" required maxlength="60" autocomplete="family-name" placeholder="Smith">
+            <span class="field-error" id="err_lname">Please enter your last name.</span>
+          </div>
+          <div class="f-f">
+            <label for="sr_email">Business Email <span class="req">*</span></label>
+            <input id="sr_email" type="email" name="email" required maxlength="150" autocomplete="email" placeholder="jane@company.com">
+            <span class="field-error" id="err_email">Please enter a valid email address.</span>
+          </div>
+          <div class="f-f">
+            <label for="sr_phone">Phone Number</label>
+            <input id="sr_phone" type="tel" name="phone" maxlength="30" pattern="[\+\d\s\-\(\)]+" autocomplete="tel" placeholder="+1 307-000-0000">
+          </div>
+          <div class="f-f">
+            <label for="sr_title">Job Title <span class="req">*</span></label>
+            <input id="sr_title" type="text" name="job_title" required maxlength="80" autocomplete="organization-title" placeholder="CISO">
+            <span class="field-error" id="err_title">Please enter your job title.</span>
+          </div>
+          <div class="f-f">
+            <label for="sr_company">Company / Organization <span class="req">*</span></label>
+            <input id="sr_company" type="text" name="company" required maxlength="120" autocomplete="organization" placeholder="Acme Corp">
+            <span class="field-error" id="err_company">Please enter your company name.</span>
+          </div>
+          <div class="f-f">
+            <label for="sr_country">Country</label>
+            <select id="sr_country" name="country" autocomplete="country-name">
+              <option value="">Select country...</option>
+              <option>United States</option><option>Panama</option><option>Brazil</option><option>Colombia</option>
+              <option>Mexico</option><option>Argentina</option><option>United Kingdom</option><option>Germany</option>
+              <option>Spain</option><option>Canada</option><option>Other</option>
+            </select>
+          </div>
+          <div class="f-f">
+            <label for="sr_industry">Industry</label>
+            <select id="sr_industry" name="industry" autocomplete="off">
+              <option value="">Select industry...</option>
+              <option>Financial Services</option><option>Telecommunications</option><option>Energy &amp; Utilities</option>
+              <option>Healthcare</option><option>Retail &amp; E-Commerce</option><option>Aviation &amp; Transportation</option>
+              <option>Government &amp; Public Sector</option><option>Technology</option><option>Manufacturing</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:flex-end;margin-top:8px">
+        <button type="button" class="btn btn-p" onclick="goToStep(2)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Service & Scope -->
+    <div id="step2" style="display:none">
+
+      <div class="form-card">
+        <div class="form-card-header">
+          <div class="card-icon">🛡</div>
+          <div><div class="card-title">Services Required</div><div class="card-sub">Select all that apply. You can request multiple services.</div></div>
+        </div>
+        <div class="svc-grid" id="svcCheckboxes">
+          <label class="svc-opt"><input type="checkbox" name="services" value="Incident Response"><span class="svc-dot" style="background:#ef4444"></span>Incident Response</label>
+          <label class="svc-opt"><input type="checkbox" name="services" value="Penetration Testing"><span class="svc-dot" style="background:#7c5cfc"></span>Penetration Testing</label>
+          <label class="svc-opt"><input type="checkbox" name="services" value="Social Engineering"><span class="svc-dot" style="background:#7c5cfc"></span>Social Engineering</label>
+          <label class="svc-opt"><input type="checkbox" name="services" value="Application Security"><span class="svc-dot" style="background:#7c5cfc"></span>Application Security</label>
+          <label class="svc-opt"><input type="checkbox" name="services" value="Managed MXDR"><span class="svc-dot" style="background:#22c55e"></span>Managed MXDR</label>
+          <label class="svc-opt"><input type="checkbox" name="services" value="Vulnerability Management"><span class="svc-dot" style="background:#22c55e"></span>Vulnerability Mgmt</label>
+          <label class="svc-opt"><input type="checkbox" name="services" value="Threat Intelligence"><span class="svc-dot" style="background:#f59e0b"></span>Threat Intelligence</label>
+          <label class="svc-opt"><input type="checkbox" name="services" value="SASE / Zero Trust"><span class="svc-dot" style="background:#f97316"></span>SASE / Zero Trust</label>
+          <label class="svc-opt"><input type="checkbox" name="services" value="Consulting / vCISO"><span class="svc-dot" style="background:#06b6d4"></span>Consulting / vCISO</label>
+          <label class="svc-opt"><input type="checkbox" name="services" value="Staff Augmentation"><span class="svc-dot" style="background:#e879f9"></span>Staff Augmentation</label>
+          <label class="svc-opt"><input type="checkbox" name="services" value="Cloud Security"><span class="svc-dot" style="background:#7c5cfc"></span>Cloud Security</label>
+          <label class="svc-opt"><input type="checkbox" name="services" value="GRC / Compliance"><span class="svc-dot" style="background:#06b6d4"></span>GRC / Compliance</label>
+        </div>
+        <span class="field-error" id="err_services" style="display:none;margin-top:8px">Please select at least one service.</span>
+      </div>
+
+      <div class="form-card">
+        <div class="form-card-header">
+          <div class="card-icon">⚡</div>
+          <div><div class="card-title">Urgency Level</div><div class="card-sub">How time-sensitive is this request?</div></div>
+        </div>
+        <div class="urgency-row" id="urgencyRow">
+          <button type="button" class="urg-btn" data-v="Critical" onclick="setUrgency(this)">🔴 Critical — Active Incident</button>
+          <button type="button" class="urg-btn" data-v="High" onclick="setUrgency(this)">🟠 High — Within 48h</button>
+          <button type="button" class="urg-btn active" data-v="Standard" onclick="setUrgency(this)">🟡 Standard — This Week</button>
+          <button type="button" class="urg-btn" data-v="Planning" onclick="setUrgency(this)">🟢 Planning — No Rush</button>
+        </div>
+        <input type="hidden" id="sr_urgency" name="urgency" value="Standard">
+      </div>
+
+      <div class="form-card">
+        <div class="form-card-header">
+          <div class="card-icon">💰</div>
+          <div><div class="card-title">Estimated Budget Range</div><div class="card-sub">Optional — helps us tailor the right proposal.</div></div>
+        </div>
+        <div class="budget-grid" id="budgetRow">
+          <button type="button" class="budget-opt" data-v="Under $10K" onclick="setBudget(this)">Under $10K</button>
+          <button type="button" class="budget-opt" data-v="$10K – $50K" onclick="setBudget(this)">$10K – $50K</button>
+          <button type="button" class="budget-opt" data-v="$50K – $150K" onclick="setBudget(this)">$50K – $150K</button>
+          <button type="button" class="budget-opt" data-v="$150K – $500K" onclick="setBudget(this)">$150K – $500K</button>
+          <button type="button" class="budget-opt" data-v="$500K+" onclick="setBudget(this)">$500K+</button>
+          <button type="button" class="budget-opt" data-v="Undecided" onclick="setBudget(this)">Undecided</button>
+        </div>
+        <input type="hidden" id="sr_budget" name="budget" value="">
+      </div>
+
+      <div class="form-card">
+        <div class="form-card-header">
+          <div class="card-icon">📋</div>
+          <div><div class="card-title">Project Details</div><div class="card-sub">Help us understand the scope and context.</div></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="f-f">
+            <label for="sr_env">Environment / Scope</label>
+            <select id="sr_env" name="environment" autocomplete="off">
+              <option value="">Select...</option>
+              <option>Cloud-only (AWS / Azure / GCP)</option>
+              <option>On-premises</option>
+              <option>Hybrid (Cloud + On-prem)</option>
+              <option>OT / Industrial / ICS</option>
+              <option>Mobile applications</option>
+              <option>Web applications</option>
+              <option>Enterprise network</option>
+              <option>Multiple / Enterprise-wide</option>
+            </select>
+          </div>
+          <div class="f-f">
+            <label for="sr_employees">Organization Size</label>
+            <select id="sr_employees" name="org_size" autocomplete="off">
+              <option value="">Select...</option>
+              <option>1–50 employees</option>
+              <option>51–250 employees</option>
+              <option>251–1,000 employees</option>
+              <option>1,001–5,000 employees</option>
+              <option>5,000+ employees</option>
+            </select>
+          </div>
+          <div class="f-f">
+            <label for="sr_timeline">Desired Start Timeline</label>
+            <select id="sr_timeline" name="timeline" autocomplete="off">
+              <option value="">Select...</option>
+              <option>ASAP / Immediate</option>
+              <option>Within 2 weeks</option>
+              <option>Within 1 month</option>
+              <option>1–3 months</option>
+              <option>3–6 months</option>
+              <option>Flexible / Planning phase</option>
+            </select>
+          </div>
+          <div class="f-f">
+            <label for="sr_desc">Describe your security challenge or objective <span class="req">*</span></label>
+            <textarea id="sr_desc" name="description" rows="5" required maxlength="3000" placeholder="Provide as much detail as possible — current security posture, specific concerns, recent incidents, compliance requirements, or desired outcomes..."></textarea>
+            <span class="field-error" id="err_desc">Please describe your security needs.</span>
+          </div>
+          <div class="f-f">
+            <label for="sr_prev">Previous Security Assessments or Vendors (optional)</label>
+            <input id="sr_prev" type="text" name="previous_vendors" maxlength="200" placeholder="e.g. Crowdstrike EDR, last pentest 2023...">
+          </div>
+          <div class="f-f">
+            <label for="sr_ref">How did you hear about us?</label>
+            <select id="sr_ref" name="referral_source" autocomplete="off">
+              <option value="">Select...</option>
+              <option>LinkedIn</option><option>Google Search</option><option>Referral from colleague</option>
+              <option>Partner / Vendor referral</option><option>Conference / Event</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:8px">
+        <button type="button" class="btn btn-g" onclick="goToStep(1)">← Back</button>
+        <button type="button" class="btn btn-p" onclick="goToStep(3)">Review Request →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Review & Submit -->
+    <div id="step3" style="display:none">
+
+      <div class="summary-card">
+        <h3>📋 Request Summary</h3>
+        <div class="summary-row"><span>Contact</span><span id="sum_contact">—</span></div>
+        <div class="summary-row"><span>Company</span><span id="sum_company">—</span></div>
+        <div class="summary-row"><span>Email</span><span id="sum_email">—</span></div>
+        <div class="summary-row"><span>Services</span><span id="sum_services">—</span></div>
+        <div class="summary-row"><span>Urgency</span><span id="sum_urgency">—</span></div>
+        <div class="summary-row"><span>Budget</span><span id="sum_budget">—</span></div>
+        <div class="summary-row"><span>Timeline</span><span id="sum_timeline">—</span></div>
+      </div>
+
+      <!-- Pen Testing Questionnaire Notice -->
+      <div class="pentest-notice" id="pentestNotice">
+        <div class="nti">📋</div>
+        <div>
+          <strong>Technical Scoping Questionnaire Required</strong>
+          <p>One or more of your selected services require a detailed scoping questionnaire. After you submit this request, you'll be redirected to complete it — this helps us deliver an accurate proposal and assign the right specialist.</p>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <div class="form-card-header">
+          <div class="card-icon">✅</div>
+          <div><div class="card-title">Confirm &amp; Submit</div><div class="card-sub">Your request will be reviewed by our team within one business day.</div></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:.9rem;color:var(--tx2)">
+            <input type="checkbox" id="sr_consent" name="consent" required style="margin-top:3px;accent-color:var(--ac);width:16px;height:16px;flex-shrink:0">
+            I agree that Violet Bridge Security may contact me about this request. I have read the <a href="./legal.html#privacy" target="_blank" rel="noopener noreferrer" style="color:var(--ac2)">Privacy Notice</a>.
+          </label>
+          <span class="field-error" id="err_consent">You must agree to continue.</span>
+          <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:.9rem;color:var(--tx2)">
+            <input type="checkbox" id="sr_nda" name="nda_requested" style="margin-top:3px;accent-color:var(--ac);width:16px;height:16px;flex-shrink:0">
+            I would like an NDA in place before sharing additional details.
+          </label>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:8px">
+        <button type="button" class="btn btn-g" onclick="goToStep(2)">← Back</button>
+        <div>
+          <button type="submit" class="btn btn-p" id="srSubmitBtn">Submit Service Request →</button>
+          <div id="srStatus"></div>
+          <p class="privacy-note">Your data is handled in accordance with our <a href="./legal.html#privacy" target="_blank" rel="noopener noreferrer">Privacy Notice</a>. We never sell your information.</p>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+  <!-- SUCCESS — Standard -->
+  <div class="success-screen" id="successScreen">
+    <div class="icon">✅</div>
+    <h2>Request Submitted</h2>
+    <p>Thank you. A member of our team will review your request and reach out within <strong>one business day</strong>. Critical incident requests are escalated within 2 hours.</p>
+    <a href="./index.html" class="btn btn-p" style="margin:0 auto;text-decoration:none">← Back to Homepage</a>
+  </div>
+
+  <!-- SUCCESS — Penetration Testing / Technical Assessment -->
+  <div class="success-screen" id="successScreenPentest">
+    <div class="icon">✅</div>
+    <h2>Request Received</h2>
+    <p>Thank you. A Violet Bridge Security consultant will review your request and reach out within <strong>one business day</strong>. Critical incidents are escalated within 2 hours.</p>
+    <div class="questionnaire-cta">
+      <div class="q-icon">📋</div>
+      <h3>Next Step: Technical Scoping</h3>
+      <p>Your selected services require detailed technical scoping. Please complete our questionnaire — it takes 10–15 minutes and enables us to prepare an accurate proposal for your engagement.</p>
+      <a id="questionnaireLink" href="./questionnaire.html" class="btn btn-p">Complete Technical Questionnaire →</a>
+      <span class="q-skip">You can also skip for now — our consultant will send you the questionnaire separately.</span>
+      <a href="./index.html" class="q-home">← Return to Homepage</a>
+    </div>
+  </div>
+</div>
+
+<footer class="ftr">
+  <span>© 2026 Violet Bridge Security LLC.</span>
+  <div>
+    <a href="./index.html">Home</a>
+    <a href="./legal.html#privacy">Privacy</a>
+    <a href="mailto:info@violetbridgesecurity.com">Contact</a>
+  </div>
+</footer>
+
+<script>
+function sanitize(s){return String(s).replace(/[<>"'`]/g,c=>({'<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#x27;','`':'&#x60;'}[c]))}
+
+// Services that trigger the technical scoping questionnaire
+const SCOPING_SERVICES=new Set(['Penetration Testing','Social Engineering','Application Security','GRC / Compliance','Consulting / vCISO']);
+
+// Map service values to questionnaire URL keys
+const SERVICE_PARAM_MAP={
+  'Penetration Testing':'pentest',
+  'Application Security':'appsec',
+  'Social Engineering':'social',
+  'GRC / Compliance':'grc',
+  'Consulting / vCISO':'consulting'
+};
+
+function needsQuestionnaire(){
+  return [...document.querySelectorAll('input[name="services"]:checked')]
+    .some(cb=>SCOPING_SERVICES.has(cb.value));
+}
+
+function buildQuestionnaireUrl(){
+  const svcs=[...document.querySelectorAll('input[name="services"]:checked')].map(c=>c.value);
+  const keys=svcs.filter(s=>SERVICE_PARAM_MAP[s]).map(s=>SERVICE_PARAM_MAP[s]);
+  const name=encodeURIComponent((
+    document.getElementById('sr_fname').value.trim()+' '+
+    document.getElementById('sr_lname').value.trim()
+  ).trim());
+  const company=encodeURIComponent(document.getElementById('sr_company').value.trim());
+  return './questionnaire.html?services='+encodeURIComponent(keys.join(','))
+    +'&name='+name+'&company='+company;
+}
+
+function updatePentestNotice(){
+  const notice=document.getElementById('pentestNotice');
+  if(notice)notice.style.display=needsQuestionnaire()?'flex':'none';
+}
+
+// STEP NAVIGATION
+function goToStep(n){
+  if(n===2&&!validateStep1())return;
+  if(n===3&&!validateStep2())return;
+  if(n===3)populateSummary();
+  [1,2,3].forEach(i=>{
+    document.getElementById('step'+i).style.display=i===n?'block':'none';
+    const ind=document.getElementById('step'+i+'-ind');
+    ind.className='step'+(i===n?' active':i<n?' done':'');
+    if(i>1){const line=document.getElementById('line'+(i-1));if(line)line.className='step-line'+(i<=n?' done':'')}
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// VALIDATION
+function showErr(id,show){const el=document.getElementById(id);if(el)el.style.display=show?'block':'none'}
+function validateStep1(){
+  let ok=true;
+  const checks=[
+    ['sr_fname','err_fname',v=>v.trim().length>0],
+    ['sr_lname','err_lname',v=>v.trim().length>0],
+    ['sr_email','err_email',v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)],
+    ['sr_title','err_title',v=>v.trim().length>0],
+    ['sr_company','err_company',v=>v.trim().length>0],
+  ];
+  checks.forEach(([fid,eid,fn])=>{const v=document.getElementById(fid).value;const pass=fn(v);showErr(eid,!pass);if(!pass)ok=false});
+  return ok;
+}
+function validateStep2(){
+  const checked=[...document.querySelectorAll('input[name="services"]:checked')].length>0;
+  showErr('err_services',!checked);
+  if(!checked)return false;
+  const desc=document.getElementById('sr_desc').value.trim();
+  showErr('err_desc',!desc);
+  return !!desc;
+}
+
+// URGENCY & BUDGET TOGGLES
+function setUrgency(btn){
+  document.querySelectorAll('.urg-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('sr_urgency').value=btn.dataset.v;
+}
+function setBudget(btn){
+  document.querySelectorAll('.budget-opt').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('sr_budget').value=btn.dataset.v;
+}
+
+// SERVICE CHECKBOX STYLING + pentest notice update
+document.querySelectorAll('.svc-opt input').forEach(cb=>{
+  cb.addEventListener('change',()=>{
+    cb.closest('.svc-opt').classList.toggle('checked',cb.checked);
+    updatePentestNotice();
+  });
+});
+
+// SUMMARY
+function populateSummary(){
+  const g=id=>document.getElementById(id)?.value||'';
+  document.getElementById('sum_contact').textContent=sanitize(g('sr_fname')+' '+g('sr_lname'));
+  document.getElementById('sum_company').textContent=sanitize(g('sr_company'));
+  document.getElementById('sum_email').textContent=sanitize(g('sr_email'));
+  const svcs=[...document.querySelectorAll('input[name="services"]:checked')].map(c=>c.value).join(', ');
+  document.getElementById('sum_services').textContent=sanitize(svcs||'—');
+  document.getElementById('sum_urgency').textContent=sanitize(g('sr_urgency'));
+  document.getElementById('sum_budget').textContent=sanitize(g('sr_budget')||'Not specified');
+  document.getElementById('sum_timeline').textContent=sanitize(g('sr_timeline')||'Not specified');
+  // Show/hide questionnaire notice based on current selections
+  updatePentestNotice();
+}
+
+// SUBMIT
+document.getElementById('srForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  // Honeypot check — if filled, silently discard
+  if(this.querySelector('input[name="_gotcha"]').value)return;
+  const consent=document.getElementById('sr_consent').checked;
+  showErr('err_consent',!consent);
+  if(!consent)return;
+  const btn=document.getElementById('srSubmitBtn');
+  const orig=btn.textContent;
+  btn.disabled=true;btn.textContent='Submitting...';
+  const fd=new FormData(this);
+  // Consolidate checkbox list
+  const svcs=[...document.querySelectorAll('input[name="services"]:checked')].map(c=>c.value);
+  fd.set('services_requested',svcs.join(', '));
+  try{
+    const res=await fetch('https://formspree.io/f/xyznznrd',{method:'POST',body:fd,headers:{'Accept':'application/json'}});
+    if(!res.ok)throw new Error('Non-OK response');
+    document.getElementById('srForm').style.display='none';
+    if(needsQuestionnaire()){
+      document.getElementById('questionnaireLink').href=buildQuestionnaireUrl();
+      document.getElementById('successScreenPentest').style.display='block';
+    }else{
+      document.getElementById('successScreen').style.display='block';
+    }
+    window.scrollTo({top:0,behavior:'smooth'});
+  }catch(err){
+    document.getElementById('srStatus').innerHTML='<span style="color:var(--rd)">✗ Submission failed. Please email us at <a href="mailto:info@violetbridgesecurity.com">info@violetbridgesecurity.com</a></span>';
+    btn.disabled=false;btn.textContent=orig;
+  }
+});
+</script>
+</body>
+</html>
