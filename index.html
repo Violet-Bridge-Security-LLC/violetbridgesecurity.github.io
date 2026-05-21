@@ -85,7 +85,7 @@
 
     /* HERO */
     .hero{position:relative;min-height:580px;display:flex;align-items:center;overflow:hidden}
-    .hero-bg{position:absolute;inset:0;z-index:0;background:url('./assets/hero-bg.jpg') center/cover no-repeat;background-color:var(--bg-s)}
+    .hero-bg{position:absolute;inset:0;z-index:0;background:url('./assets/hero-bg.png') center/cover no-repeat;background-color:var(--bg-s)}
     .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,var(--bg) 0%,rgba(9,9,11,.93) 38%,rgba(9,9,11,.55) 68%,transparent 100%)}
     .hero-in{position:relative;z-index:1;width:100%;max-width:var(--mw);margin-inline:auto;padding:clamp(100px,14vw,150px) clamp(20px,4vw,48px) clamp(60px,8vw,100px)}
     .hero-c{max-width:600px}
@@ -99,7 +99,7 @@
 
     /* INSIGHTS */
     .insights-sec{position:relative;overflow:hidden}
-    .insights-bg{position:absolute;inset:0;z-index:0;background:url('./assets/insights-bg.jpg') center/cover no-repeat;background-color:var(--bg-s)}
+    .insights-bg{position:absolute;inset:0;z-index:0;background:url('./assets/insights-bg.png') center/cover no-repeat;background-color:var(--bg-s)}
     .insights-bg::after{content:'';position:absolute;inset:0;background:rgba(9,9,11,.88)}
     .insights-in{position:relative;z-index:1}
 
@@ -256,7 +256,7 @@
 
 <header class="hdr"><div class="hdr-in">
   <a class="brand" href="#top" aria-label="Violet Bridge Security">
-    <!-- LOGO PLACEHOLDER: Replace with <img src="./assets/logo.png" alt="Violet Bridge Security" class="brand-logo"> -->
+    <img src="./assets/logo.png" alt="Violet Bridge Security" class="brand-logo">
     <div class="brand-logo-placeholder">VBS</div>
     <span class="brand-name">Violet Bridge Security</span>
   </a>
@@ -344,10 +344,10 @@
         <a class="btn btn-p" href="#services" style="margin-top:12px">View Our Services</a>
       </div>
       <div class="cap-img">
-        <!-- PLACEHOLDER: Replace with <img src="./assets/capabilities-img.jpg" alt="Violet Bridge Security capabilities"> -->
+        <img src="./assets/capabilities-img.png" alt="Violet Bridge Security capabilities">
         <div class="cap-ph">
           <span style="font-size:2rem;opacity:.4">🛡</span>
-          Replace with image<br>./assets/capabilities-img.jpg
+          Replace with image<br>./assets/capabilities-img.png
         </div>
       </div>
     </div>
@@ -409,24 +409,30 @@
 
 <!-- ABOUT -->
 <section id="about" class="section section-b about-sec">
-  <div class="container"><div class="about-g">
-    <div class="about-t">
-      <span class="eyebrow">About Us</span>
-      <h2>Headquartered in the Americas, Serving Globally</h2>
-      <p>Violet Bridge Security is a cybersecurity consulting firm passionate about protecting the organizations that power our connected world. We specialize in helping organizations transition from legacy network infrastructure to modern, cloud-native security frameworks — reducing cost, complexity, and risk simultaneously.</p>
-      <p>Our consulting approach is rooted in real-world deployment experience across financial services, retail, healthcare, and multinational enterprises. We don't just advise — we architect, deploy, and optimize. From SASE platform selection and Zero Trust Network Access (ZTNA) implementation to ongoing security awareness programs that measurably reduce human-factor risk, our team delivers end-to-end cybersecurity transformation.</p>
-     <p> As certified partners of Cato Networks, Palo Alto Networks, Nestkope and Arsen Security, we bring vendor-neutral expertise combined with deep platform knowledge. Whether you are consolidating multiple point solutions into a unified SASE architecture, defending against sophisticated social engineering attacks, or seeking strategic guidance on your cybersecurity roadmap, Violet Bridge Security provides the engineering talent and strategic vision to accelerate your security posture.
-      </p>
-      <div class="about-locs">
-        <div class="about-loc"><div class="about-li">🇵🇦</div><div><strong>Panama City, Panama</strong><span>LATAM Operations</span></div></div>
-        <div class="about-loc"><div class="about-li">🇺🇸</div><div><strong>Wyoming, USA</strong><span>Corporate HQ</span></div></div>
+  <div class="container">
+    <div class="about-g">
+      <div class="about-t">
+        <span class="eyebrow">About Us</span>
+        <h2>Headquartered in the Americas, Serving Globally</h2>
+        <p>Violet Bridge Security is a cybersecurity consulting firm passionate about protecting the organizations that power our connected world. We specialize in helping organizations transition from legacy network infrastructure to modern, cloud-native security frameworks — reducing cost, complexity, and risk simultaneously.</p>
+        <p>Our consulting approach is rooted in real-world deployment experience across financial services, retail, healthcare, and multinational enterprises. We don't just advise — we architect, deploy, and optimize. From SASE platform selection and Zero Trust Network Access (ZTNA) implementation to ongoing security awareness programs that measurably reduce human-factor risk, our team delivers end-to-end cybersecurity transformation.</p>
+        <p>As certified partners of Cato Networks, Palo Alto Networks, Netskope and Arsen Security, we bring vendor-neutral expertise combined with deep platform knowledge. Whether you are consolidating multiple point solutions into a unified SASE architecture, defending against sophisticated social engineering attacks, or seeking strategic guidance on your cybersecurity roadmap, Violet Bridge Security provides the engineering talent and strategic vision to accelerate your security posture.</p>
+        <div class="about-locs">
+          <div class="about-loc">
+            <div class="about-li">🇵🇦</div>
+            <div><strong>Panama City, Panama</strong><span>LATAM Operations</span></div>
+          </div>
+          <div class="about-loc">
+            <div class="about-li">🇺🇸</div>
+            <div><strong>Wyoming, USA</strong><span>Corporate HQ</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="about-mw">
+        <img src="./assets/geomap.png" alt="Violet Bridge Security offices — Panama and Wyoming">
       </div>
     </div>
-    <div class="about-mw">
-      <!-- PLACEHOLDER: <img src="./assets/geomap.png" alt="Violet Bridge Security offices — Panama and Wyoming"> -->
-      <div class="about-mph"><span style="font-size:2.2rem;opacity:.4">🗺</span>Replace with geomap<br>./assets/geomap.png</div>
-    </div>
-  </div></div>
+  </div>
 </section>
 
 <!-- CONTACT -->
@@ -458,7 +464,7 @@
 <footer class="ftr"><div class="container">
   <div class="ftr-g">
     <div class="ftr-brand">
-      <!-- LOGO PLACEHOLDER: Replace with <img src="./assets/logo-light.png" alt="Violet Bridge Security" style="height:36px;width:auto;margin-bottom:8px"> -->
+      <img src="./assets/logo-light.png" alt="Violet Bridge Security" style="height:36px;width:auto;margin-bottom:8px">
       <span class="brand-name" style="font-size:1.05rem">Violet Bridge Security</span>
       <p>End-to-end cybersecurity consulting — delivering strategy, risk, compliance, and technical services globally.</p>
     </div>
