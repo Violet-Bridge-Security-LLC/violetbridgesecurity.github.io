@@ -149,7 +149,7 @@
     .d-ir{background:var(--rd)}.d-ta{background:var(--ac)}.d-ms{background:var(--gn)}.d-ci{background:var(--cy)}.d-ti{background:var(--am)}.d-sa{background:#e879f9}.d-se{background:#f97316}
 
     /* ECOSYSTEM SLIDER */
-    .eco-sec{background:var(--bg-s)}
+    .eco-sec{background:var(--bg);position:relative;overflow:hidden}
     .eco-h{text-align:center;margin-bottom:36px}
     .eco-w{position:relative;overflow:hidden;mask-image:linear-gradient(to right,transparent,black 6%,black 94%,transparent);padding:16px 0}
     .eco-t{display:flex;gap:28px;width:max-content;animation:ecoS 60s linear infinite}
@@ -163,8 +163,7 @@
     .eco-cd{font-size:.8rem;color:#666;text-align:center}
 
     /* ECOSYSTEM BG */
-    .eco-sec{position:relative;overflow:hidden}
-    .eco-sec::before{content:'';position:absolute;inset:0;background:url('./assets/og-cover.png') center/cover no-repeat;opacity:.07;pointer-events:none;z-index:0}
+    .eco-sec::before{content:'';position:absolute;inset:0;background:url('./assets/og-cover.png') center/cover no-repeat;opacity:.18;pointer-events:none;z-index:0}
     .eco-sec .container,.eco-sec .eco-w{position:relative;z-index:1}
 
     /* CLIENTS */
@@ -222,6 +221,8 @@
     .contact-sec .f-f input::placeholder,.contact-sec .f-f textarea::placeholder{color:#a1a1aa}
     .contact-sec .f-f select option{background:#fff;color:#0a0a0e}
     .contact-sec .f-f input:focus,.contact-sec .f-f select:focus,.contact-sec .f-f textarea:focus{background:#fff;border-color:var(--ac)}
+    .contact-sec .ct-g{display:block;max-width:760px}
+    .contact-sec p{color:#606068}
 
     /* FOOTER */
     .ftr{background:var(--bg-s);border-top:1px solid var(--bd);padding:clamp(40px,6vw,72px) 0 28px}
@@ -342,8 +343,7 @@
       <div class="cap-t">
         <span class="eyebrow">Why Violet Bridge Security</span>
         <h2>Explore Our End-to-End Cyber Security Capabilities</h2>
-        <p>We are a relatively new cybersecurity consulting firm, but Violet Bridge Security's team has a well-known footprint whose members' insight, intelligence, and innovation has fueled cutting-edge cyber solutions that help organizations around the world to be confident in their cyber resilience and protect their business.</p>
-        <p>Our consultants have operated across financial services, telecommunications, energy, aviation, and retail — building security programs from the ground up and hardening the most complex enterprise environments.</p>
+        <p>While Violet Bridge Security is built for modern threat landscapes, our engineering core possesses a decades-long legacy of enterprise defense. Our technical architects have engineered, deployed, and hardened security programs from the ground up across critical infrastructure — including financial services, telecommunications, energy, aviation, and global retail. We transform complex, distributed environments into resilient, zero-trust architectures, giving organizations around the world total operational confidence.</p>
         <a class="btn btn-p" href="./assets/VioletBridge_capabilities_statement.pdf" download style="margin-top:12px">Download Capability Statement ↓</a>
       </div>
       <div class="cap-img">
@@ -358,7 +358,6 @@
   <div class="container">
     <span class="eyebrow">Full-Spectrum Cybersecurity</span>
     <h2>Our Services</h2>
-    <p style="max-width:780px;color:var(--tx2);font-size:1.05rem;line-height:1.8;">While Violet Bridge Security is built for modern threat landscapes, our engineering core possesses a decades-long legacy of enterprise defense. Our technical architects have engineered, deployed, and hardened security programs from the ground up across critical infrastructure — including financial services, telecommunications, energy, aviation, and global retail. We transform complex, distributed environments into resilient, zero-trust architectures, giving organizations around the world total operational confidence.</p>
 
     <div class="svc-grid">
       <div class="svc-card svc-bento-wide">
@@ -532,12 +531,9 @@
   <div class="container contact-in">
     <span class="eyebrow">Let's Talk</span>
     <h2>Get in Touch</h2>
-    <p style="color:var(--tx2);max-width:540px;margin-bottom:8px;font-size:1.05rem;">Whether you need a penetration test, a managed SOC, SASE migration, or a vCISO — our team is ready.</p>
+    <p style="max-width:680px;margin-bottom:6px;font-size:1.05rem;">Cyber threats don't wait, and neither should your defenses. Whether you need a penetration test, a managed SOC, SASE migration, or a vCISO — our team is ready to design a solution tailored to your environment.</p>
+    <p style="max-width:680px;margin-bottom:32px;font-size:1.05rem;">Share your contact information and a brief overview of your current challenges below. Our team will analyze your needs and reach out promptly to discuss how we can strengthen your security posture.</p>
     <div class="ct-g">
-      <div class="ct-info">
-        <div class="ct-ii"><div class="ct-ic">📧</div><div><strong>Email</strong><span><a href="mailto:info@violetbridgesecurity.com">info@violetbridgesecurity.com</a></span></div></div>
-        <div class="ct-ii"><div class="ct-ic">📞</div><div><strong>Phone</strong><span>+1 307-340-9155</span></div></div>
-      </div>
       <form class="ct-form" id="contactForm">
         <div class="f-row"><div class="f-f"><label for="cf_name">Full Name</label><input id="cf_name" type="text" name="full_name" required maxlength="100" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s'\-]+" autocomplete="name" placeholder="Jane Smith"></div><div class="f-f"><label for="cf_role">Role</label><input id="cf_role" type="text" name="role" required maxlength="80" pattern="[A-Za-zÀ-ÖØ-öø-ÿ0-9\s'\-,.]+" autocomplete="organization-title" placeholder="CISO"></div></div>
         <div class="f-row"><div class="f-f"><label for="cf_company">Company</label><input id="cf_company" type="text" name="company_name" required maxlength="120" autocomplete="organization" placeholder="Acme Corp"></div><div class="f-f"><label for="cf_email">Email</label><input id="cf_email" type="email" name="email" required maxlength="150" autocomplete="email" placeholder="jane@company.com"></div></div>
