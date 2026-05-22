@@ -128,7 +128,14 @@
     .svc-card.scanning::before{animation:hudScan .55s ease-in-out forwards}
     .svc-card:hover{border-color:var(--ac);transform:translateY(-2px);box-shadow:0 8px 32px rgba(124,92,252,.15)}
     .svc-ch{display:flex;align-items:center;gap:14px;margin-bottom:10px}
-    .svc-ci{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+    .svc-ci{width:42px;height:42px;border-radius:0;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:5px;box-sizing:border-box}
+    .svc-ci svg{display:block;width:100%;height:100%}
+    .sg-path{fill:none;stroke:rgba(255,255,255,.2);stroke-width:.65;transition:none}
+    .sg-thin{fill:none;stroke:rgba(255,255,255,.12);stroke-width:.5;transition:none}
+    .sg-node{fill:rgba(255,255,255,.2);stroke:none;transition:none}
+    .svc-card:hover .sg-path{stroke:#00e8ff;transition:stroke .06s}
+    .svc-card:hover .sg-thin{stroke:rgba(0,232,255,.4);transition:stroke .06s}
+    .svc-card:hover .sg-node{fill:#00e8ff;transition:fill .06s}
     .svc-ch h3{font-size:1.05rem;font-weight:700;margin:0}
     .svc-cdesc{font-size:.88rem;color:var(--tx2);line-height:1.5;min-height:2.6em}
     .svc-cdesc.scrambling{font-family:'Courier New',monospace;color:rgba(0,232,255,.85);letter-spacing:.03em}
@@ -334,7 +341,7 @@
 
     <div class="svc-grid">
       <div class="svc-card">
-        <div class="svc-ch"><div class="svc-ci" style="background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.2)">🛡️</div><h3>Incident Response</h3></div>
+        <div class="svc-ch"><div class="svc-ci"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path class="sg-path" d="M16,16L4,4M16,16L28,4M16,16L4,28M16,16L28,28" vector-effect="non-scaling-stroke"/><path class="sg-thin" d="M13,16H19M16,13V19" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="4" cy="4" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="28" cy="4" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="4" cy="28" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="28" cy="28" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="16" cy="16" r="2" vector-effect="non-scaling-stroke"/></svg></div><h3>Incident Response</h3></div>
         <p class="svc-cdesc">Readiness, containment, investigation, and full recovery when it matters most.</p>
         <div class="svc-items">
           <div class="svc-item"><span class="svc-dot" style="background:#ef4444"></span>Incident Readiness</div>
@@ -345,7 +352,7 @@
       </div>
 
       <div class="svc-card">
-        <div class="svc-ch"><div class="svc-ci" style="background:rgba(124,92,252,.12);border:1px solid rgba(124,92,252,.2)">🔐</div><h3>Technical Assurance</h3></div>
+        <div class="svc-ch"><div class="svc-ci"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path class="sg-path" d="M6,6H22V16H28" vector-effect="non-scaling-stroke"/><path class="sg-path" d="M6,6V26H16" vector-effect="non-scaling-stroke"/><path class="sg-thin" d="M22,16V26" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="6" cy="6" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="22" cy="6" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="22" cy="16" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="28" cy="16" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="6" cy="26" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="16" cy="26" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="22" cy="26" r="1.2" vector-effect="non-scaling-stroke"/></svg></div><h3>Technical Assurance</h3></div>
         <p class="svc-cdesc">Offensive security testing, application security, and architecture reviews.</p>
         <div class="svc-items">
           <div class="svc-item"><span class="svc-dot" style="background:#7c5cfc"></span>Penetration Testing Services</div>
@@ -361,7 +368,7 @@
       </div>
 
       <div class="svc-card">
-        <div class="svc-ch"><div class="svc-ci" style="background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.2)">📡</div><h3>Managed Services</h3></div>
+        <div class="svc-ch"><div class="svc-ci"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path class="sg-thin" d="M6,6H26M6,16H26M6,26H26M6,6V26M16,6V26M26,6V26" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="6" cy="6" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="16" cy="6" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="26" cy="6" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="6" cy="16" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="16" cy="16" r="1.8" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="26" cy="16" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="6" cy="26" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="16" cy="26" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="26" cy="26" r="1.2" vector-effect="non-scaling-stroke"/></svg></div><h3>Managed Services</h3></div>
         <p class="svc-cdesc">24/7 detection, response, vulnerability management, and attack surface reduction.</p>
         <div class="svc-items">
           <div class="svc-item"><span class="svc-dot" style="background:#22c55e"></span>Managed Extended Detection &amp; Response (MXDR)</div>
@@ -374,7 +381,7 @@
       </div>
 
       <div class="svc-card">
-        <div class="svc-ch"><div class="svc-ci" style="background:rgba(6,182,212,.12);border:1px solid rgba(6,182,212,.2)">⚙️</div><h3>Consulting &amp; Implementation</h3></div>
+        <div class="svc-ch"><div class="svc-ci"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path class="sg-path" d="M4,8H28" vector-effect="non-scaling-stroke"/><path class="sg-path" d="M8,17H24" vector-effect="non-scaling-stroke"/><path class="sg-path" d="M12,26H20" vector-effect="non-scaling-stroke"/><path class="sg-thin" d="M16,8V26" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="4" cy="8" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="28" cy="8" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="8" cy="17" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="24" cy="17" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="12" cy="26" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="20" cy="26" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="16" cy="8" r="1.1" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="16" cy="17" r="1.1" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="16" cy="26" r="1.1" vector-effect="non-scaling-stroke"/></svg></div><h3>Consulting &amp; Implementation</h3></div>
         <p class="svc-cdesc">Strategy, compliance, IAM, OT security, and program management.</p>
         <div class="svc-items">
           <div class="svc-item"><span class="svc-dot" style="background:#06b6d4"></span>Identity &amp; Access Management</div>
@@ -386,7 +393,7 @@
       </div>
 
       <div class="svc-card">
-        <div class="svc-ch"><div class="svc-ci" style="background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.2)">🔭</div><h3>Threat Intelligence</h3></div>
+        <div class="svc-ch"><div class="svc-ci"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path class="sg-path" d="M4,4A24,24 0 0,1 28,28" vector-effect="non-scaling-stroke"/><path class="sg-path" d="M4,28L4,4M4,28L28,28M4,28L21,11" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="4" cy="4" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="28" cy="28" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="4" cy="28" r="2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="15" cy="17" r="1.5" vector-effect="non-scaling-stroke"/></svg></div><h3>Threat Intelligence</h3></div>
         <p class="svc-cdesc">Proactive exposure monitoring and digital footprint analysis.</p>
         <div class="svc-items">
           <div class="svc-item"><span class="svc-dot" style="background:#f59e0b"></span>Online Exposure Monitoring</div>
@@ -395,7 +402,7 @@
       </div>
 
       <div class="svc-card">
-        <div class="svc-ch"><div class="svc-ci" style="background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.2)">🌐</div><h3>SASE Architecture &amp; Zero Trust</h3></div>
+        <div class="svc-ch"><div class="svc-ci"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path class="sg-thin" d="M16,4L27,12L23,24L9,24L5,12Z" vector-effect="non-scaling-stroke"/><path class="sg-path" d="M16,4L23,24M27,12L9,24" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="16" cy="4" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="27" cy="12" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="23" cy="24" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="9" cy="24" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="5" cy="12" r="1.5" vector-effect="non-scaling-stroke"/></svg></div><h3>SASE Architecture &amp; Zero Trust</h3></div>
         <p class="svc-cdesc">Cloud-native secure access, SD-WAN, ZTNA, CASB, and FWaaS.</p>
         <div class="svc-items">
           <div class="svc-item"><span class="svc-dot" style="background:#f97316"></span>SASE Design &amp; Deployment</div>
@@ -409,7 +416,7 @@
       </div>
 
       <div class="svc-card" style="grid-column:1/-1">
-        <div class="svc-ch"><div class="svc-ci" style="background:rgba(232,121,249,.12);border:1px solid rgba(232,121,249,.2)">👥</div><h3>Staff Augmentation</h3></div>
+        <div class="svc-ch"><div class="svc-ci"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path class="sg-path" d="M4,4H28V28H4Z" vector-effect="non-scaling-stroke"/><path class="sg-thin" d="M16,4V14M4,14H28M4,22H28M12,22V28" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="4" cy="4" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="28" cy="4" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="28" cy="28" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="4" cy="28" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="16" cy="4" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="16" cy="14" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="4" cy="14" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="28" cy="14" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="4" cy="22" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="28" cy="22" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="12" cy="22" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="12" cy="28" r="1.2" vector-effect="non-scaling-stroke"/></svg></div><h3>Staff Augmentation</h3></div>
         <p class="svc-cdesc">Certified cybersecurity engineers embedded into your team, scaling capacity without the overhead.</p>
         <div class="svc-items" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0 16px">
           <div class="svc-item"><span class="svc-dot" style="background:#e879f9"></span>SOC Analysts</div>
