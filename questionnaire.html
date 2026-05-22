@@ -884,8 +884,7 @@ document.getElementById('qForm').addEventListener('submit',async function(e){
   });
   fd.set('activities_included',actSummary.join(', ')||'All');
   try{
-    // NOTE: Replace 'xyznznrd' with your dedicated questionnaire Formspree form ID
-    const res=await fetch('https://formspree.io/f/xyznznrd',{method:'POST',body:fd,headers:{'Accept':'application/json'}});
+    const res=await fetch('https://formspree.io/f/mkgqqeqo',{method:'POST',body:fd,headers:{'Accept':'application/json'}});
     if(!res.ok)throw new Error('Non-OK');
     // Clear autosave on successful submission
     try{localStorage.removeItem(SAVE_KEY)}catch(ex){}
