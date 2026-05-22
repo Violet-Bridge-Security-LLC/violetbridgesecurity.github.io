@@ -120,24 +120,19 @@
     .cap-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:2px dashed var(--bd2);border-radius:var(--r);color:var(--tx3);font-size:.85rem;text-align:center;padding:24px}
 
     /* SERVICES ACCORDION */
-    .svc-list{display:flex;flex-direction:column;margin-top:40px}
-    .svc-g{border:1px solid var(--bd);border-bottom:none;background:var(--bg-c);transition:.2s}
-    .svc-g:first-child{border-radius:var(--r) var(--r) 0 0}
-    .svc-g:last-child{border-radius:0 0 var(--r) var(--r);border-bottom:1px solid var(--bd)}
-    .svc-gh{display:grid;grid-template-columns:52px 1fr auto;gap:18px;align-items:center;padding:22px 28px;cursor:pointer;user-select:none;transition:.2s}
-    .svc-gh:hover{background:var(--bg-e)}
-    .svc-gn{width:44px;height:44px;background:rgba(124,92,252,.1);border:1px solid rgba(124,92,252,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;color:var(--ac2);flex-shrink:0}
-    .svc-gt h3{margin:0;font-size:1.15rem}
-    .svc-gt span{font-size:.9rem;color:var(--tx2)}
-    .svc-chv{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid var(--bd);color:var(--tx3);font-size:1rem;transition:.3s;flex-shrink:0}
-    .svc-g.open .svc-chv{transform:rotate(180deg);color:var(--ac2);border-color:var(--ac)}
-    .svc-gb{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;padding:0 28px 0 98px}
-    .svc-g.open .svc-gb{max-height:600px;padding:0 28px 24px 98px}
-    @media(max-width:600px){.svc-gh{grid-template-columns:1fr auto;gap:10px;padding:18px}.svc-gn{display:none}.svc-gb{padding:0 18px}.svc-g.open .svc-gb{padding:0 18px 18px}}
-    .svc-is{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px}
-    .svc-i{display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:var(--rs);background:var(--bg-s);border:1px solid var(--bd);font-size:.95rem;transition:.2s}
-    .svc-i:hover{border-color:var(--bd2);background:var(--bg-e)}
-    .svc-d{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+    .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
+    @media(max-width:720px){.svc-grid{grid-template-columns:1fr}}
+    .svc-card{background:var(--bg-c);border:1px solid var(--bd);border-radius:var(--r);padding:26px 28px;transition:.25s;cursor:default}
+    .svc-card:hover{border-color:var(--ac);transform:translateY(-3px);box-shadow:0 8px 32px rgba(124,92,252,.12)}
+    .svc-ch{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+    .svc-ci{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+    .svc-ch h3{font-size:1.05rem;font-weight:700;margin:0}
+    .svc-cdesc{font-size:.88rem;color:var(--tx2);line-height:1.5}
+    .svc-items{max-height:0;overflow:hidden;opacity:0;transition:max-height .35s ease,opacity .25s .05s,padding .25s}
+    .svc-card:hover .svc-items{max-height:400px;opacity:1;padding-top:14px}
+    .svc-item{display:flex;align-items:center;gap:8px;padding:5px 0;font-size:.85rem;color:var(--tx2);border-top:1px solid var(--bd)}
+    .svc-item:first-child{border-top:none;padding-top:2px}
+    .svc-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
     .d-ir{background:var(--rd)}.d-ta{background:var(--ac)}.d-ms{background:var(--gn)}.d-ci{background:var(--cy)}.d-ti{background:var(--am)}.d-sa{background:#e879f9}.d-se{background:#f97316}
 
     /* ECOSYSTEM SLIDER */
@@ -328,22 +323,96 @@
   <div class="container">
     <span class="eyebrow">Full-Spectrum Cybersecurity</span>
     <h2>Our Services</h2>
-    <p style="max-width:620px;color:var(--tx2);font-size:1.05rem;">Seven service groups covering every stage of your security lifecycle. Expand each to explore capabilities.</p>
+    <p style="max-width:620px;color:var(--tx2);font-size:1.05rem;">Seven service groups covering every stage of your security lifecycle. Hover over each to explore capabilities.</p>
 
-    <div class="svc-list">
-      <div class="svc-g" id="svcIR"><div class="svc-gh" onclick="toggleSvc('svcIR')"><div class="svc-gn">01</div><div class="svc-gt"><h3>Incident Response</h3><span>Readiness, containment, investigation, and recovery.</span></div><div class="svc-chv">▾</div></div><div class="svc-gb"><div class="svc-is"><div class="svc-i"><span class="svc-d d-ir"></span>Incident Readiness</div><div class="svc-i"><span class="svc-d d-ir"></span>Cyber Incident Response Management</div><div class="svc-i"><span class="svc-d d-ir"></span>Incident Response Recovery</div><div class="svc-i"><span class="svc-d d-ir"></span>Cyber Incident Response Retainer</div></div></div></div>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <div class="svc-ch"><div class="svc-ci" style="background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.2)">🛡️</div><h3>Incident Response</h3></div>
+        <p class="svc-cdesc">Readiness, containment, investigation, and full recovery when it matters most.</p>
+        <div class="svc-items">
+          <div class="svc-item"><span class="svc-dot" style="background:#ef4444"></span>Incident Readiness</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#ef4444"></span>Cyber Incident Response Management</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#ef4444"></span>Incident Response Recovery</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#ef4444"></span>Cyber Incident Response Retainer</div>
+        </div>
+      </div>
 
-      <div class="svc-g" id="svcTA"><div class="svc-gh" onclick="toggleSvc('svcTA')"><div class="svc-gn">02</div><div class="svc-gt"><h3>Technical Assurance</h3><span>Offensive security testing, application security, and architecture reviews.</span></div><div class="svc-chv">▾</div></div><div class="svc-gb"><div class="svc-is"><div class="svc-i"><span class="svc-d d-ta"></span>Penetration Testing Services</div><div class="svc-i"><span class="svc-d d-ta"></span>Social Engineering Prevention</div><div class="svc-i"><span class="svc-d d-ta"></span>Application Security</div><div class="svc-i"><span class="svc-d d-ta"></span>Attack Simulation</div><div class="svc-i"><span class="svc-d d-ta"></span>Hardware &amp; Embedded Services</div><div class="svc-i"><span class="svc-d d-ta"></span>Network Infrastructure, Architecture &amp; Container Security</div><div class="svc-i"><span class="svc-d d-ta"></span>Cloud Security Services</div><div class="svc-i"><span class="svc-d d-ta"></span>Cryptography &amp; Encryption</div><div class="svc-i"><span class="svc-d d-ta"></span>Blockchain Security</div><div class="svc-i"><span class="svc-d d-ta"></span>Cyber Services Portal</div></div></div></div>
+      <div class="svc-card">
+        <div class="svc-ch"><div class="svc-ci" style="background:rgba(124,92,252,.12);border:1px solid rgba(124,92,252,.2)">🔐</div><h3>Technical Assurance</h3></div>
+        <p class="svc-cdesc">Offensive security testing, application security, and architecture reviews.</p>
+        <div class="svc-items">
+          <div class="svc-item"><span class="svc-dot" style="background:#7c5cfc"></span>Penetration Testing Services</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#7c5cfc"></span>Social Engineering Prevention</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#7c5cfc"></span>Application Security</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#7c5cfc"></span>Attack Simulation</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#7c5cfc"></span>Hardware &amp; Embedded Services</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#7c5cfc"></span>Network Infrastructure, Architecture &amp; Container Security</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#7c5cfc"></span>Cloud Security Services</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#7c5cfc"></span>Cryptography &amp; Encryption</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#7c5cfc"></span>Blockchain Security</div>
+        </div>
+      </div>
 
-      <div class="svc-g" id="svcMS"><div class="svc-gh" onclick="toggleSvc('svcMS')"><div class="svc-gn">03</div><div class="svc-gt"><h3>Managed Services</h3><span>24/7 detection, response, vulnerability management, and attack surface reduction.</span></div><div class="svc-chv">▾</div></div><div class="svc-gb"><div class="svc-is"><div class="svc-i"><span class="svc-d d-ms"></span>Managed Extended Detection &amp; Response (MXDR)</div><div class="svc-i"><span class="svc-d d-ms"></span>Network Detection &amp; Response for OT</div><div class="svc-i"><span class="svc-d d-ms"></span>Vulnerability Scanning &amp; Management</div><div class="svc-i"><span class="svc-d d-ms"></span>Bug Bounty &amp; Vulnerability Disclosure</div><div class="svc-i"><span class="svc-d d-ms"></span>Attack Surface Management</div><div class="svc-i"><span class="svc-d d-ms"></span>Unified Cyber Platform</div></div></div></div>
+      <div class="svc-card">
+        <div class="svc-ch"><div class="svc-ci" style="background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.2)">📡</div><h3>Managed Services</h3></div>
+        <p class="svc-cdesc">24/7 detection, response, vulnerability management, and attack surface reduction.</p>
+        <div class="svc-items">
+          <div class="svc-item"><span class="svc-dot" style="background:#22c55e"></span>Managed Extended Detection &amp; Response (MXDR)</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#22c55e"></span>Network Detection &amp; Response for OT</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#22c55e"></span>Vulnerability Scanning &amp; Management</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#22c55e"></span>Bug Bounty &amp; Vulnerability Disclosure</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#22c55e"></span>Attack Surface Management</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#22c55e"></span>Unified Cyber Platform</div>
+        </div>
+      </div>
 
-      <div class="svc-g" id="svcCI"><div class="svc-gh" onclick="toggleSvc('svcCI')"><div class="svc-gn">04</div><div class="svc-gt"><h3>Consulting &amp; Implementation</h3><span>Strategy, compliance, IAM, OT security, and program management.</span></div><div class="svc-chv">▾</div></div><div class="svc-gb"><div class="svc-is"><div class="svc-i"><span class="svc-d d-ci"></span>Identity &amp; Access Management</div><div class="svc-i"><span class="svc-d d-ci"></span>Operational Technology</div><div class="svc-i"><span class="svc-d d-ci"></span>People: Training &amp; Awareness</div><div class="svc-i"><span class="svc-d d-ci"></span>Strategy, Risk &amp; Compliance</div><div class="svc-i"><span class="svc-d d-ci"></span>Project &amp; Program Management</div></div></div></div>
+      <div class="svc-card">
+        <div class="svc-ch"><div class="svc-ci" style="background:rgba(6,182,212,.12);border:1px solid rgba(6,182,212,.2)">⚙️</div><h3>Consulting &amp; Implementation</h3></div>
+        <p class="svc-cdesc">Strategy, compliance, IAM, OT security, and program management.</p>
+        <div class="svc-items">
+          <div class="svc-item"><span class="svc-dot" style="background:#06b6d4"></span>Identity &amp; Access Management</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#06b6d4"></span>Operational Technology</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#06b6d4"></span>People: Training &amp; Awareness</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#06b6d4"></span>Strategy, Risk &amp; Compliance</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#06b6d4"></span>Project &amp; Program Management</div>
+        </div>
+      </div>
 
-      <div class="svc-g" id="svcTI"><div class="svc-gh" onclick="toggleSvc('svcTI')"><div class="svc-gn">05</div><div class="svc-gt"><h3>Threat Intelligence</h3><span>Proactive exposure monitoring and digital footprint analysis.</span></div><div class="svc-chv">▾</div></div><div class="svc-gb"><div class="svc-is"><div class="svc-i"><span class="svc-d d-ti"></span>Online Exposure Monitoring</div><div class="svc-i"><span class="svc-d d-ti"></span>Digital Footprint Review</div></div></div></div>
+      <div class="svc-card">
+        <div class="svc-ch"><div class="svc-ci" style="background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.2)">🔭</div><h3>Threat Intelligence</h3></div>
+        <p class="svc-cdesc">Proactive exposure monitoring and digital footprint analysis.</p>
+        <div class="svc-items">
+          <div class="svc-item"><span class="svc-dot" style="background:#f59e0b"></span>Online Exposure Monitoring</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#f59e0b"></span>Digital Footprint Review</div>
+        </div>
+      </div>
 
-      <div class="svc-g" id="svcSASE"><div class="svc-gh" onclick="toggleSvc('svcSASE')"><div class="svc-gn">06</div><div class="svc-gt"><h3>SASE Architecture &amp; Zero Trust</h3><span>Cloud-native secure access, SD-WAN, ZTNA, CASB, and FWaaS.</span></div><div class="svc-chv">▾</div></div><div class="svc-gb"><div class="svc-is"><div class="svc-i"><span class="svc-d d-se"></span>SASE Design &amp; Deployment</div><div class="svc-i"><span class="svc-d d-se"></span>Zero Trust Network Access (ZTNA)</div><div class="svc-i"><span class="svc-d d-se"></span>Cloud Access Security Broker (CASB)</div><div class="svc-i"><span class="svc-d d-se"></span>Secure Web Gateway (SWG)</div><div class="svc-i"><span class="svc-d d-se"></span>SD-WAN Optimization</div><div class="svc-i"><span class="svc-d d-se"></span>Firewall-as-a-Service (FWaaS)</div><div class="svc-i"><span class="svc-d d-se"></span>Data Loss Prevention (DLP)</div></div></div></div>
+      <div class="svc-card">
+        <div class="svc-ch"><div class="svc-ci" style="background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.2)">🌐</div><h3>SASE Architecture &amp; Zero Trust</h3></div>
+        <p class="svc-cdesc">Cloud-native secure access, SD-WAN, ZTNA, CASB, and FWaaS.</p>
+        <div class="svc-items">
+          <div class="svc-item"><span class="svc-dot" style="background:#f97316"></span>SASE Design &amp; Deployment</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#f97316"></span>Zero Trust Network Access (ZTNA)</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#f97316"></span>Cloud Access Security Broker (CASB)</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#f97316"></span>Secure Web Gateway (SWG)</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#f97316"></span>SD-WAN Optimization</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#f97316"></span>Firewall-as-a-Service (FWaaS)</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#f97316"></span>Data Loss Prevention (DLP)</div>
+        </div>
+      </div>
 
-      <div class="svc-g" id="svcSA"><div class="svc-gh" onclick="toggleSvc('svcSA')"><div class="svc-gn">07</div><div class="svc-gt"><h3>Staff Augmentation</h3><span>Certified cybersecurity engineers embedded into your team.</span></div><div class="svc-chv">▾</div></div><div class="svc-gb"><div class="svc-is"><div class="svc-i"><span class="svc-d d-sa"></span>SOC Analysts</div><div class="svc-i"><span class="svc-d d-sa"></span>Penetration Testers</div><div class="svc-i"><span class="svc-d d-sa"></span>Security Architects</div><div class="svc-i"><span class="svc-d d-sa"></span>Virtual CISO (vCISO)</div><div class="svc-i"><span class="svc-d d-sa"></span>GRC &amp; Compliance Specialists</div><div class="svc-i"><span class="svc-d d-sa"></span>Cloud Security Engineers</div></div></div></div>
+      <div class="svc-card" style="grid-column:1/-1">
+        <div class="svc-ch"><div class="svc-ci" style="background:rgba(232,121,249,.12);border:1px solid rgba(232,121,249,.2)">👥</div><h3>Staff Augmentation</h3></div>
+        <p class="svc-cdesc">Certified cybersecurity engineers embedded into your team, scaling capacity without the overhead.</p>
+        <div class="svc-items" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0 16px">
+          <div class="svc-item"><span class="svc-dot" style="background:#e879f9"></span>SOC Analysts</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#e879f9"></span>Penetration Testers</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#e879f9"></span>Security Architects</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#e879f9"></span>Virtual CISO (vCISO)</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#e879f9"></span>GRC &amp; Compliance Specialists</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#e879f9"></span>Cloud Security Engineers</div>
+        </div>
+      </div>
     </div>
     <div style="margin-top:32px;text-align:center">
       <a class="btn btn-p" href="./service-request.html">Submit a Service Request →</a>
@@ -470,7 +539,6 @@ const companies=[{name:'Banco do Brasil',i:'finance'},{name:'Banco Itaú',i:'fin
 const sn={finance:'Financial',telecom:'Telecom',retail:'Retail',energy:'Energy',aviation:'Aviation'};
 function renderTabs(){const t=document.getElementById('industryTabs');t.innerHTML=['all',...Object.keys(sn)].map(s=>`<button class="tab-b${s==='all'?' active':''}" data-s="${s}">${s==='all'?'All Sectors':sn[s]}</button>`).join('');t.addEventListener('click',e=>{if(!e.target.classList.contains('tab-b'))return;t.querySelectorAll('.tab-b').forEach(b=>b.classList.remove('active'));e.target.classList.add('active');renderCo(e.target.dataset.s)})}
 function renderCo(f='all'){const g=document.getElementById('companiesGrid');const l=f==='all'?companies:companies.filter(c=>c.i===f);g.innerHTML=l.map(c=>`<div class="co-ch">${c.name}<small>${sn[c.i]}</small></div>`).join('')}
-function toggleSvc(id){const el=document.getElementById(id);const w=el.classList.contains('open');document.querySelectorAll('.svc-g').forEach(g=>g.classList.remove('open'));if(!w)el.classList.add('open')}
 function sanitize(s){return s.replace(/[<>"'`]/g,c=>({'<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#x27;','`':'&#x60;'}[c]))}
 const form=document.getElementById('contactForm');if(form)form.addEventListener('submit',async function(e){e.preventDefault();const b=form.querySelector('button[type="submit"]');const o=b.textContent;b.disabled=true;b.textContent='Sending...';const fd=new FormData(form);for(const[k,v]of fd.entries())if(typeof v==='string')fd.set(k,sanitize(v));try{await fetch('https://formspree.io/f/xyznznrd',{method:'POST',body:fd,headers:{'Accept':'application/json'}});document.getElementById('formStatus').innerHTML='<span style="color:var(--gn)">✓ Sent successfully.</span>';form.reset()}catch(r){document.getElementById('formStatus').innerHTML='<span style="color:var(--rd)">✗ Error. Please email us directly.</span>'}finally{b.disabled=false;b.textContent=o}});
 document.addEventListener('DOMContentLoaded',()=>{renderTabs();renderCo()});
