@@ -121,8 +121,10 @@
 
     /* SERVICES — HUD SCAN + TERMINAL DECRYPT */
     @keyframes hudScan{0%{left:-80px;opacity:0}5%{opacity:1}95%{opacity:1}100%{left:calc(100% + 80px);opacity:0}}
-    .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
-    @media(max-width:720px){.svc-grid{grid-template-columns:1fr}}
+    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+    .svc-bento-wide{grid-column:span 2}
+    @media(max-width:900px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){.svc-grid{grid-template-columns:1fr}.svc-bento-wide{grid-column:span 1}}
     .svc-card{background:var(--bg-c);border:1px solid var(--bd);border-radius:var(--r);padding:26px 28px;transition:border-color .25s,transform .25s,box-shadow .25s;cursor:default;position:relative;overflow:hidden}
     .svc-card::before{content:'';position:absolute;top:0;bottom:0;left:-80px;width:80px;background:linear-gradient(90deg,transparent,rgba(0,232,255,.12),rgba(0,232,255,.28),rgba(0,232,255,.12),transparent);pointer-events:none;z-index:2;opacity:0}
     .svc-card.scanning::before{animation:hudScan .55s ease-in-out forwards}
@@ -160,10 +162,14 @@
     .eco-cn{font-weight:700;font-size:.9rem;text-align:center;color:#1a1a1a}
     .eco-cd{font-size:.8rem;color:#666;text-align:center}
 
+    /* ECOSYSTEM BG */
+    .eco-sec{position:relative;overflow:hidden}
+    .eco-sec::before{content:'';position:absolute;inset:0;background:url('./assets/og-cover.png') center/cover no-repeat;opacity:.07;pointer-events:none;z-index:0}
+    .eco-sec .container,.eco-sec .eco-w{position:relative;z-index:1}
+
     /* CLIENTS */
     .port-sec{position:relative;overflow:hidden}
-    .port-bg{position:absolute;inset:0;width:100%;height:100%;z-index:0;background:url('./assets/og-cover.png') center/cover no-repeat;background-color:var(--bg-s)}
-    .port-bg::after{content:'';position:absolute;inset:0;background:rgba(9,9,11,.80)}
+    .port-bg{display:none}
     .port-in{position:relative;z-index:1}
     .ind-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
     .tab-b{padding:8px 20px;font-size:.9rem;font-weight:600;font-family:var(--f);background:transparent;border:1px solid var(--bd);border-radius:100px;color:var(--tx2);cursor:pointer;transition:.2s}
@@ -204,12 +210,27 @@
     .f-f input,.f-f select,.f-f textarea{padding:12px 14px;background:var(--bg-s);color:var(--tx);border:1px solid var(--bd);border-radius:var(--rs);font-family:var(--f);font-size:.95rem;transition:.2s;width:100%}
     .f-f input:focus,.f-f select:focus,.f-f textarea:focus{outline:none;border-color:var(--ac);box-shadow:0 0 0 3px rgba(124,92,252,.15)}
 
+    /* CONTACT – light variant */
+    .contact-sec{background:#ffffff;border-top-color:#e4e4e8}
+    .contact-sec .contact-bg{display:none}
+    .contact-sec h2,.contact-sec .ct-ii strong{color:#0a0a0e}
+    .contact-sec p{color:#606068!important}
+    .contact-sec .ct-ii span,.contact-sec .ct-ii a{color:#606068}
+    .contact-sec .ct-ic{background:rgba(124,92,252,.08);border-color:rgba(124,92,252,.18)}
+    .contact-sec .f-f label{color:#3a3a42}
+    .contact-sec .f-f input,.contact-sec .f-f select,.contact-sec .f-f textarea{background:#f7f7f9;color:#0a0a0e;border-color:#d4d4d8}
+    .contact-sec .f-f input::placeholder,.contact-sec .f-f textarea::placeholder{color:#a1a1aa}
+    .contact-sec .f-f select option{background:#fff;color:#0a0a0e}
+    .contact-sec .f-f input:focus,.contact-sec .f-f select:focus,.contact-sec .f-f textarea:focus{background:#fff;border-color:var(--ac)}
+
     /* FOOTER */
     .ftr{background:var(--bg-s);border-top:1px solid var(--bd);padding:clamp(40px,6vw,72px) 0 28px}
     .ftr-g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px}
     @media(max-width:768px){.ftr-g{grid-template-columns:1fr 1fr}}
     @media(max-width:480px){.ftr-g{grid-template-columns:1fr}}
-    .ftr-brand p{font-size:.9rem;color:var(--tx2);margin-top:10px}
+    .ftr-brand{display:flex;flex-direction:column}
+    .ftr-brand .brand{margin-bottom:10px}
+    .ftr-brand p{font-size:.9rem;color:var(--tx2);line-height:1.7}
     .ftr-col h4{font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:var(--tx3);margin-bottom:14px;font-weight:700}
     .ftr-col a{display:block;font-size:.9rem;color:var(--tx2);margin-bottom:7px;transition:.2s}
     .ftr-col a:hover{color:var(--ac2)}
@@ -287,7 +308,7 @@
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <video class="hero-vid" autoplay muted loop playsinline poster="./assets/hero-bg.png">
+  <video class="hero-vid" autoplay muted loop playsinline>
     <source src="./assets/hero-video.mp4" type="video/mp4">
   </video>
   <div class="hero-ov"></div>
@@ -323,7 +344,7 @@
         <h2>Explore Our End-to-End Cyber Security Capabilities</h2>
         <p>We are a relatively new cybersecurity consulting firm, but Violet Bridge Security's team has a well-known footprint whose members' insight, intelligence, and innovation has fueled cutting-edge cyber solutions that help organizations around the world to be confident in their cyber resilience and protect their business.</p>
         <p>Our consultants have operated across financial services, telecommunications, energy, aviation, and retail — building security programs from the ground up and hardening the most complex enterprise environments.</p>
-        <a class="btn btn-p" href="#services" style="margin-top:12px">View Our Services</a>
+        <a class="btn btn-p" href="./assets/VioletBridge_capabilities_statement.pdf" download style="margin-top:12px">Download Capability Statement ↓</a>
       </div>
       <div class="cap-img">
         <img src="./assets/new-capabilities.png" alt="Violet Bridge Security capabilities">
@@ -337,10 +358,10 @@
   <div class="container">
     <span class="eyebrow">Full-Spectrum Cybersecurity</span>
     <h2>Our Services</h2>
-    <p style="max-width:620px;color:var(--tx2);font-size:1.05rem;">Seven service groups covering every stage of your security lifecycle. Hover over each to explore capabilities.</p>
+    <p style="max-width:780px;color:var(--tx2);font-size:1.05rem;line-height:1.8;">While Violet Bridge Security is built for modern threat landscapes, our engineering core possesses a decades-long legacy of enterprise defense. Our technical architects have engineered, deployed, and hardened security programs from the ground up across critical infrastructure — including financial services, telecommunications, energy, aviation, and global retail. We transform complex, distributed environments into resilient, zero-trust architectures, giving organizations around the world total operational confidence.</p>
 
     <div class="svc-grid">
-      <div class="svc-card">
+      <div class="svc-card svc-bento-wide">
         <div class="svc-ch"><div class="svc-ci"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path class="sg-path" d="M16,16L4,4M16,16L28,4M16,16L4,28M16,16L28,28" vector-effect="non-scaling-stroke"/><path class="sg-thin" d="M13,16H19M16,13V19" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="4" cy="4" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="28" cy="4" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="4" cy="28" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="28" cy="28" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="16" cy="16" r="2" vector-effect="non-scaling-stroke"/></svg></div><h3>Incident Response</h3></div>
         <p class="svc-cdesc">Readiness, containment, investigation, and full recovery when it matters most.</p>
         <div class="svc-items">
@@ -415,14 +436,16 @@
         </div>
       </div>
 
-      <div class="svc-card" style="grid-column:1/-1">
-        <div class="svc-ch"><div class="svc-ci"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path class="sg-path" d="M4,4H28V28H4Z" vector-effect="non-scaling-stroke"/><path class="sg-thin" d="M16,4V14M4,14H28M4,22H28M12,22V28" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="4" cy="4" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="28" cy="4" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="28" cy="28" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="4" cy="28" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="16" cy="4" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="16" cy="14" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="4" cy="14" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="28" cy="14" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="4" cy="22" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="28" cy="22" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="12" cy="22" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="12" cy="28" r="1.2" vector-effect="non-scaling-stroke"/></svg></div><h3>Staff Augmentation</h3></div>
-        <p class="svc-cdesc">Certified cybersecurity engineers embedded into your team, scaling capacity without the overhead.</p>
+      <div class="svc-card svc-bento-wide">
+        <div class="svc-ch"><div class="svc-ci"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path class="sg-path" d="M4,4H28V28H4Z" vector-effect="non-scaling-stroke"/><path class="sg-thin" d="M16,4V14M4,14H28M4,22H28M12,22V28" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="4" cy="4" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="28" cy="4" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="28" cy="28" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="4" cy="28" r="1.5" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="16" cy="4" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="16" cy="14" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="4" cy="14" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="28" cy="14" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="4" cy="22" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="28" cy="22" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="12" cy="22" r="1.2" vector-effect="non-scaling-stroke"/><circle class="sg-node" cx="12" cy="28" r="1.2" vector-effect="non-scaling-stroke"/></svg></div><h3>Security Workforce &amp; Advisory</h3></div>
+        <p class="svc-cdesc">Flexible security talent and executive leadership — from vCISO advisory and specialist subcontracting to embedded team augmentation.</p>
         <div class="svc-items" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0 16px">
+          <div class="svc-item"><span class="svc-dot" style="background:#e879f9"></span>Virtual CISO (vCISO)</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#e879f9"></span>Staff Augmentation</div>
+          <div class="svc-item"><span class="svc-dot" style="background:#e879f9"></span>Security Subcontracting</div>
           <div class="svc-item"><span class="svc-dot" style="background:#e879f9"></span>SOC Analysts</div>
           <div class="svc-item"><span class="svc-dot" style="background:#e879f9"></span>Penetration Testers</div>
           <div class="svc-item"><span class="svc-dot" style="background:#e879f9"></span>Security Architects</div>
-          <div class="svc-item"><span class="svc-dot" style="background:#e879f9"></span>Virtual CISO (vCISO)</div>
           <div class="svc-item"><span class="svc-dot" style="background:#e879f9"></span>GRC &amp; Compliance Specialists</div>
           <div class="svc-item"><span class="svc-dot" style="background:#e879f9"></span>Cloud Security Engineers</div>
         </div>
@@ -514,8 +537,6 @@
       <div class="ct-info">
         <div class="ct-ii"><div class="ct-ic">📧</div><div><strong>Email</strong><span><a href="mailto:info@violetbridgesecurity.com">info@violetbridgesecurity.com</a></span></div></div>
         <div class="ct-ii"><div class="ct-ic">📞</div><div><strong>Phone</strong><span>+1 307-340-9155</span></div></div>
-        <div class="ct-ii"><div class="ct-ic">📍</div><div><strong>Locations</strong><span>Panama City, Panama · Wyoming, USA</span></div></div>
-        <div class="ct-ii"><div class="ct-ic">🕐</div><div><strong>Incident Response</strong><span>24/7/365</span></div></div>
       </div>
       <form class="ct-form" id="contactForm">
         <div class="f-row"><div class="f-f"><label for="cf_name">Full Name</label><input id="cf_name" type="text" name="full_name" required maxlength="100" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s'\-]+" autocomplete="name" placeholder="Jane Smith"></div><div class="f-f"><label for="cf_role">Role</label><input id="cf_role" type="text" name="role" required maxlength="80" pattern="[A-Za-zÀ-ÖØ-öø-ÿ0-9\s'\-,.]+" autocomplete="organization-title" placeholder="CISO"></div></div>
@@ -533,11 +554,13 @@
 <footer class="ftr"><div class="container">
   <div class="ftr-g">
     <div class="ftr-brand">
-      <img src="./assets/logo-dark.png" alt="Violet Bridge Security" style="height:36px;width:auto;margin-bottom:8px">
-      <span class="brand-name" style="font-size:1.05rem">Violet Bridge Security</span>
-      <p>End-to-end cybersecurity consulting — delivering strategy, risk, compliance, and technical services globally.</p>
+      <a class="brand" href="#top" aria-label="Violet Bridge Security">
+        <img src="./assets/logo-dark.png" alt="Violet Bridge Security" class="brand-logo">
+        <span class="brand-name">Violet Bridge Security</span>
+      </a>
+      <p>Converged security for a connected world. Violet Bridge Security delivers advanced cybersecurity engineering and strategic consulting globally. Backed by a proven legacy of hardening complex enterprise environments across critical infrastructure, we transform distributed ecosystems into resilient, zero-trust architectures to guarantee absolute business continuity.</p>
     </div>
-    <div class="ftr-col"><h4>Services</h4><a href="#services">Incident Response</a><a href="#services">Technical Assurance</a><a href="#services">Managed Services</a><a href="#services">Consulting</a><a href="#services">Threat Intelligence</a><a href="#services">SASE Architecture</a><a href="#services">Staff Augmentation</a></div>
+    <div class="ftr-col"><h4>Services</h4><a href="#services">Incident Response</a><a href="#services">Technical Assurance</a><a href="#services">Managed Services</a><a href="#services">Consulting</a><a href="#services">Threat Intelligence</a><a href="#services">SASE Architecture</a><a href="#services">Security Workforce &amp; Advisory</a></div>
     <div class="ftr-col"><h4>Company</h4><a href="#about">About Us</a><a href="#clients">Clients</a><a href="#insights">Insights</a><a href="#contact">Contact</a></div>
     <div class="ftr-col"><h4>Legal</h4><a href="./legal.html#privacy">Privacy Notice</a><a href="./legal.html#cookies">Cookie Policy</a><a href="./legal.html#terms">Terms of Service</a><a href="#" onclick="openCookiePrefs();return false">Manage Cookies</a></div>
   </div>
