@@ -119,17 +119,21 @@
     .cap-img img{width:100%;height:100%;object-fit:cover}
     .cap-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:2px dashed var(--bd2);border-radius:var(--r);color:var(--tx3);font-size:.85rem;text-align:center;padding:24px}
 
-    /* SERVICES ACCORDION */
+    /* SERVICES — HUD SCAN + TERMINAL DECRYPT */
+    @keyframes hudScan{0%{left:-80px;opacity:0}5%{opacity:1}95%{opacity:1}100%{left:calc(100% + 80px);opacity:0}}
     .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
     @media(max-width:720px){.svc-grid{grid-template-columns:1fr}}
-    .svc-card{background:var(--bg-c);border:1px solid var(--bd);border-radius:var(--r);padding:26px 28px;transition:.25s;cursor:default}
-    .svc-card:hover{border-color:var(--ac);transform:translateY(-3px);box-shadow:0 8px 32px rgba(124,92,252,.12)}
+    .svc-card{background:var(--bg-c);border:1px solid var(--bd);border-radius:var(--r);padding:26px 28px;transition:border-color .25s,transform .25s,box-shadow .25s;cursor:default;position:relative;overflow:hidden}
+    .svc-card::before{content:'';position:absolute;top:0;bottom:0;left:-80px;width:80px;background:linear-gradient(90deg,transparent,rgba(0,232,255,.12),rgba(0,232,255,.28),rgba(0,232,255,.12),transparent);pointer-events:none;z-index:2;opacity:0}
+    .svc-card.scanning::before{animation:hudScan .55s ease-in-out forwards}
+    .svc-card:hover{border-color:var(--ac);transform:translateY(-2px);box-shadow:0 8px 32px rgba(124,92,252,.15)}
     .svc-ch{display:flex;align-items:center;gap:14px;margin-bottom:10px}
     .svc-ci{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
     .svc-ch h3{font-size:1.05rem;font-weight:700;margin:0}
-    .svc-cdesc{font-size:.88rem;color:var(--tx2);line-height:1.5}
-    .svc-items{max-height:0;overflow:hidden;opacity:0;transition:max-height .35s ease,opacity .25s .05s,padding .25s}
-    .svc-card:hover .svc-items{max-height:400px;opacity:1;padding-top:14px}
+    .svc-cdesc{font-size:.88rem;color:var(--tx2);line-height:1.5;min-height:2.6em}
+    .svc-cdesc.scrambling{font-family:'Courier New',monospace;color:rgba(0,232,255,.85);letter-spacing:.03em}
+    .svc-items{max-height:0;overflow:hidden;opacity:0;transition:max-height .4s ease,opacity .3s,padding .25s}
+    .svc-card.revealed .svc-items{max-height:400px;opacity:1;padding-top:14px}
     .svc-item{display:flex;align-items:center;gap:8px;padding:5px 0;font-size:.85rem;color:var(--tx2);border-top:1px solid var(--bd)}
     .svc-item:first-child{border-top:none;padding-top:2px}
     .svc-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
@@ -545,6 +549,7 @@ function renderCo(f='all'){const g=document.getElementById('companiesGrid');cons
 function sanitize(s){return s.replace(/[<>"'`]/g,c=>({'<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#x27;','`':'&#x60;'}[c]))}
 const form=document.getElementById('contactForm');if(form)form.addEventListener('submit',async function(e){e.preventDefault();const b=form.querySelector('button[type="submit"]');const o=b.textContent;b.disabled=true;b.textContent='Sending...';const fd=new FormData(form);for(const[k,v]of fd.entries())if(typeof v==='string')fd.set(k,sanitize(v));try{await fetch('https://formspree.io/f/xyznznrd',{method:'POST',body:fd,headers:{'Accept':'application/json'}});document.getElementById('formStatus').innerHTML='<span style="color:var(--gn)">✓ Sent successfully.</span>';form.reset()}catch(r){document.getElementById('formStatus').innerHTML='<span style="color:var(--rd)">✗ Error. Please email us directly.</span>'}finally{b.disabled=false;b.textContent=o}});
 document.addEventListener('DOMContentLoaded',()=>{renderTabs();renderCo()});
+(function(){var ch='0123456789ABCDEF#$%@&*<>{}|/\\?^~';function scramble(el,txt,ms,done){var n=txt.length,frame=0,total=Math.ceil(ms/35),t=setInterval(function(){frame++;var p=frame/total,rev=Math.floor(p*n),s='';for(var i=0;i<n;i++){if(txt[i]===' '){s+=' '}else if(i<rev){s+=txt[i]}else{s+=ch[Math.floor(Math.random()*ch.length)]}}el.textContent=s;if(frame>=total){clearInterval(t);el.textContent=txt;el.classList.remove('scrambling');if(done)done()}},35);return t}document.querySelectorAll('.svc-card').forEach(function(card){var desc=card.querySelector('.svc-cdesc');if(!desc)return;var orig=desc.textContent,timer=null,st=null;card.addEventListener('mouseenter',function(){card.classList.add('scanning');timer=setTimeout(function(){desc.classList.add('scrambling');st=scramble(desc,orig,480,function(){card.classList.add('revealed')})},90)});card.addEventListener('mouseleave',function(){card.classList.remove('scanning','revealed');clearTimeout(timer);if(st)clearInterval(st);desc.textContent=orig;desc.classList.remove('scrambling')});card.addEventListener('animationend',function(e){if(e.animationName==='hudScan')card.classList.remove('scanning')})})})();
 </script>
 </body>
 </html>
