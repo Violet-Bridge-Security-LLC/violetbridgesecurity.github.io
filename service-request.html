@@ -154,6 +154,14 @@
     .ftr a{color:var(--tx3);margin-left:12px}
     .ftr a:hover{color:var(--ac2)}
 
+    /* PEN TEST SHORTCUT */
+    .pentest-shortcut{display:flex;align-items:center;gap:16px;background:rgba(124,92,252,.07);border:1px solid rgba(124,92,252,.22);border-radius:var(--r);padding:20px 24px;margin-bottom:28px;flex-wrap:wrap}
+    .ps-icon{font-size:1.5rem;flex-shrink:0}
+    .ps-body{flex:1;min-width:180px}
+    .ps-body strong{display:block;font-size:.95rem;color:var(--ac2);margin-bottom:4px;font-weight:700}
+    .ps-body p{font-size:.87rem;color:var(--tx2);margin:0}
+    .ps-btn{padding:10px 22px!important;font-size:.88rem!important;white-space:nowrap}
+
     /* Honeypot: visually hidden but accessible to screen readers is fine */
     .hp-field{position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none;tabindex:-1}
   </style>
@@ -189,6 +197,17 @@
 
 <!-- FORM -->
 <div class="form-wrap">
+
+  <!-- PEN TEST SHORTCUT -->
+  <div class="pentest-shortcut">
+    <div class="ps-icon">🔒</div>
+    <div class="ps-body">
+      <strong>Requesting a Penetration Test?</strong>
+      <p>Go directly to our scoping form — it captures the technical detail needed to prepare your proposal and assign the right specialist from the start.</p>
+    </div>
+    <a href="./questionnaire.html?services=pentest" class="btn btn-p ps-btn">Start Pen Test Scoping →</a>
+  </div>
+
   <form id="srForm" novalidate>
 
     <!-- Honeypot: bots fill this, humans don't -->
@@ -403,8 +422,8 @@
       <div class="pentest-notice" id="pentestNotice">
         <div class="nti">📋</div>
         <div>
-          <strong>Technical Scoping Questionnaire Required</strong>
-          <p>One or more of your selected services require a detailed scoping questionnaire. After you submit this request, you'll be redirected to complete it — this helps us deliver an accurate proposal and assign the right specialist.</p>
+          <strong>Pen Test Scoping Required</strong>
+          <p>Your selected services require detailed technical scoping. After submitting, you'll be redirected to our scoping form — this helps us prepare an accurate proposal and assign the right specialist.</p>
         </div>
       </div>
 
@@ -453,10 +472,10 @@
     <p>Thank you. A Violet Bridge Security consultant will review your request and reach out within <strong>one business day</strong>. Critical incidents are escalated within 2 hours.</p>
     <div class="questionnaire-cta">
       <div class="q-icon">📋</div>
-      <h3>Next Step: Technical Scoping</h3>
-      <p>Your selected services require detailed technical scoping. Please complete our questionnaire — it takes 10–15 minutes and enables us to prepare an accurate proposal for your engagement.</p>
-      <a id="questionnaireLink" href="./questionnaire.html" class="btn btn-p">Complete Technical Questionnaire →</a>
-      <span class="q-skip">You can also skip for now — our consultant will send you the questionnaire separately.</span>
+      <h3>Next Step: Pen Test Scoping</h3>
+      <p>Please complete our scoping form — it takes 10–15 minutes and enables us to prepare an accurate proposal for your engagement.</p>
+      <a id="questionnaireLink" href="./questionnaire.html" class="btn btn-p">Complete Pen Test Scoping →</a>
+      <span class="q-skip">You can also skip for now — our consultant will send you the scoping form separately.</span>
       <a href="./index.html" class="q-home">← Return to Homepage</a>
     </div>
   </div>
