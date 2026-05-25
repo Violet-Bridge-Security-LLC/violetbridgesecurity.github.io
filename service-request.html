@@ -6,7 +6,7 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; frame-src 'none';" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; frame-src 'none'; form-action 'self' https://formspree.io;" />
   <title>Service Request — Violet Bridge Security</title>
   <meta name="robots" content="noindex, follow" />
   <meta name="description" content="Submit a service request to Violet Bridge Security. Our team will respond within one business day." />
@@ -212,7 +212,7 @@
 
     <!-- Honeypot: bots fill this, humans don't -->
     <div class="hp-field" aria-hidden="true">
-      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+      <input type="text" name="organization_website" tabindex="-1" autocomplete="off">
     </div>
     <input type="hidden" name="_subject" value="New Service Request — Violet Bridge Security">
     <input type="hidden" name="_form_type" value="service_request">
@@ -276,7 +276,7 @@
       </div>
 
       <div style="display:flex;justify-content:flex-end;margin-top:8px">
-        <button type="button" class="btn btn-p" onclick="goToStep(2)">Continue →</button>
+        <button type="button" class="btn btn-p" data-goto="2">Continue →</button>
       </div>
     </div>
 
@@ -311,10 +311,10 @@
           <div><div class="card-title">Urgency Level</div><div class="card-sub">How time-sensitive is this request?</div></div>
         </div>
         <div class="urgency-row" id="urgencyRow">
-          <button type="button" class="urg-btn" data-v="Critical" onclick="setUrgency(this)">🔴 Critical — Active Incident</button>
-          <button type="button" class="urg-btn" data-v="High" onclick="setUrgency(this)">🟠 High — Within 48h</button>
-          <button type="button" class="urg-btn active" data-v="Standard" onclick="setUrgency(this)">🟡 Standard — This Week</button>
-          <button type="button" class="urg-btn" data-v="Planning" onclick="setUrgency(this)">🟢 Planning — No Rush</button>
+          <button type="button" class="urg-btn" data-v="Critical">🔴 Critical — Active Incident</button>
+          <button type="button" class="urg-btn" data-v="High">🟠 High — Within 48h</button>
+          <button type="button" class="urg-btn active" data-v="Standard">🟡 Standard — This Week</button>
+          <button type="button" class="urg-btn" data-v="Planning">🟢 Planning — No Rush</button>
         </div>
         <input type="hidden" id="sr_urgency" name="urgency" value="Standard">
       </div>
@@ -325,12 +325,12 @@
           <div><div class="card-title">Estimated Budget Range</div><div class="card-sub">Optional — helps us tailor the right proposal.</div></div>
         </div>
         <div class="budget-grid" id="budgetRow">
-          <button type="button" class="budget-opt" data-v="Under $10K" onclick="setBudget(this)">Under $10K</button>
-          <button type="button" class="budget-opt" data-v="$10K – $50K" onclick="setBudget(this)">$10K – $50K</button>
-          <button type="button" class="budget-opt" data-v="$50K – $150K" onclick="setBudget(this)">$50K – $150K</button>
-          <button type="button" class="budget-opt" data-v="$150K – $500K" onclick="setBudget(this)">$150K – $500K</button>
-          <button type="button" class="budget-opt" data-v="$500K+" onclick="setBudget(this)">$500K+</button>
-          <button type="button" class="budget-opt" data-v="Undecided" onclick="setBudget(this)">Undecided</button>
+          <button type="button" class="budget-opt" data-v="Under $10K">Under $10K</button>
+          <button type="button" class="budget-opt" data-v="$10K – $50K">$10K – $50K</button>
+          <button type="button" class="budget-opt" data-v="$50K – $150K">$50K – $150K</button>
+          <button type="button" class="budget-opt" data-v="$150K – $500K">$150K – $500K</button>
+          <button type="button" class="budget-opt" data-v="$500K+">$500K+</button>
+          <button type="button" class="budget-opt" data-v="Undecided">Undecided</button>
         </div>
         <input type="hidden" id="sr_budget" name="budget" value="">
       </div>
@@ -399,8 +399,8 @@
       </div>
 
       <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:8px">
-        <button type="button" class="btn btn-g" onclick="goToStep(1)">← Back</button>
-        <button type="button" class="btn btn-p" onclick="goToStep(3)">Review Request →</button>
+        <button type="button" class="btn btn-g" data-goto="1">← Back</button>
+        <button type="button" class="btn btn-p" data-goto="3">Review Request →</button>
       </div>
     </div>
 
@@ -446,7 +446,7 @@
       </div>
 
       <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:8px">
-        <button type="button" class="btn btn-g" onclick="goToStep(2)">← Back</button>
+        <button type="button" class="btn btn-g" data-goto="2">← Back</button>
         <div>
           <button type="submit" class="btn btn-p" id="srSubmitBtn">Submit Service Request →</button>
           <div id="srStatus"></div>
@@ -490,146 +490,6 @@
   </div>
 </footer>
 
-<script>
-function sanitize(s){return String(s).replace(/[<>"'`]/g,c=>({'<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#x27;','`':'&#x60;'}[c]))}
-
-// Services that trigger the technical scoping questionnaire
-const SCOPING_SERVICES=new Set(['Penetration Testing','Social Engineering','Application Security','GRC / Compliance','Consulting / vCISO']);
-
-// Map service values to questionnaire URL keys
-const SERVICE_PARAM_MAP={
-  'Penetration Testing':'pentest',
-  'Application Security':'appsec',
-  'Social Engineering':'social',
-  'GRC / Compliance':'grc',
-  'Consulting / vCISO':'consulting'
-};
-
-function needsQuestionnaire(){
-  return [...document.querySelectorAll('input[name="services"]:checked')]
-    .some(cb=>SCOPING_SERVICES.has(cb.value));
-}
-
-function buildQuestionnaireUrl(){
-  const svcs=[...document.querySelectorAll('input[name="services"]:checked')].map(c=>c.value);
-  const keys=svcs.filter(s=>SERVICE_PARAM_MAP[s]).map(s=>SERVICE_PARAM_MAP[s]);
-  const name=encodeURIComponent((
-    document.getElementById('sr_fname').value.trim()+' '+
-    document.getElementById('sr_lname').value.trim()
-  ).trim());
-  const company=encodeURIComponent(document.getElementById('sr_company').value.trim());
-  return './questionnaire.html?services='+encodeURIComponent(keys.join(','))
-    +'&name='+name+'&company='+company;
-}
-
-function updatePentestNotice(){
-  const notice=document.getElementById('pentestNotice');
-  if(notice)notice.style.display=needsQuestionnaire()?'flex':'none';
-}
-
-// STEP NAVIGATION
-function goToStep(n){
-  if(n===2&&!validateStep1())return;
-  if(n===3&&!validateStep2())return;
-  if(n===3)populateSummary();
-  [1,2,3].forEach(i=>{
-    document.getElementById('step'+i).style.display=i===n?'block':'none';
-    const ind=document.getElementById('step'+i+'-ind');
-    ind.className='step'+(i===n?' active':i<n?' done':'');
-    if(i>1){const line=document.getElementById('line'+(i-1));if(line)line.className='step-line'+(i<=n?' done':'')}
-  });
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-// VALIDATION
-function showErr(id,show){const el=document.getElementById(id);if(el)el.style.display=show?'block':'none'}
-function validateStep1(){
-  let ok=true;
-  const checks=[
-    ['sr_fname','err_fname',v=>v.trim().length>0],
-    ['sr_lname','err_lname',v=>v.trim().length>0],
-    ['sr_email','err_email',v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)],
-    ['sr_title','err_title',v=>v.trim().length>0],
-    ['sr_company','err_company',v=>v.trim().length>0],
-  ];
-  checks.forEach(([fid,eid,fn])=>{const v=document.getElementById(fid).value;const pass=fn(v);showErr(eid,!pass);if(!pass)ok=false});
-  return ok;
-}
-function validateStep2(){
-  const checked=[...document.querySelectorAll('input[name="services"]:checked')].length>0;
-  showErr('err_services',!checked);
-  if(!checked)return false;
-  const desc=document.getElementById('sr_desc').value.trim();
-  showErr('err_desc',!desc);
-  return !!desc;
-}
-
-// URGENCY & BUDGET TOGGLES
-function setUrgency(btn){
-  document.querySelectorAll('.urg-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('sr_urgency').value=btn.dataset.v;
-}
-function setBudget(btn){
-  document.querySelectorAll('.budget-opt').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('sr_budget').value=btn.dataset.v;
-}
-
-// SERVICE CHECKBOX STYLING + pentest notice update
-document.querySelectorAll('.svc-opt input').forEach(cb=>{
-  cb.addEventListener('change',()=>{
-    cb.closest('.svc-opt').classList.toggle('checked',cb.checked);
-    updatePentestNotice();
-  });
-});
-
-// SUMMARY
-function populateSummary(){
-  const g=id=>document.getElementById(id)?.value||'';
-  document.getElementById('sum_contact').textContent=sanitize(g('sr_fname')+' '+g('sr_lname'));
-  document.getElementById('sum_company').textContent=sanitize(g('sr_company'));
-  document.getElementById('sum_email').textContent=sanitize(g('sr_email'));
-  const svcs=[...document.querySelectorAll('input[name="services"]:checked')].map(c=>c.value).join(', ');
-  document.getElementById('sum_services').textContent=sanitize(svcs||'—');
-  document.getElementById('sum_urgency').textContent=sanitize(g('sr_urgency'));
-  document.getElementById('sum_budget').textContent=sanitize(g('sr_budget')||'Not specified');
-  document.getElementById('sum_timeline').textContent=sanitize(g('sr_timeline')||'Not specified');
-  // Show/hide questionnaire notice based on current selections
-  updatePentestNotice();
-}
-
-// SUBMIT
-document.getElementById('srForm').addEventListener('submit',async function(e){
-  e.preventDefault();
-  // Honeypot check — if filled, silently discard
-  if(this.querySelector('input[name="_gotcha"]').value)return;
-  const consent=document.getElementById('sr_consent').checked;
-  showErr('err_consent',!consent);
-  if(!consent)return;
-  const btn=document.getElementById('srSubmitBtn');
-  const orig=btn.textContent;
-  btn.disabled=true;btn.textContent='Submitting...';
-  const fd=new FormData(this);
-  // Consolidate checkbox list
-  const svcs=[...document.querySelectorAll('input[name="services"]:checked')].map(c=>c.value);
-  fd.set('services_requested',svcs.join(', '));
-  try{
-    const res=await fetch('https://formspree.io/f/xyznznrd',{method:'POST',body:fd,headers:{'Accept':'application/json'}});
-    if(!res.ok)throw new Error('Non-OK response');
-    document.getElementById('srForm').style.display='none';
-    if(needsQuestionnaire()){
-      document.getElementById('questionnaireLink').href=buildQuestionnaireUrl();
-      document.getElementById('successScreenPentest').style.display='block';
-    }else{
-      document.getElementById('successScreen').style.display='block';
-    }
-    window.scrollTo({top:0,behavior:'smooth'});
-  }catch(err){
-    document.getElementById('srStatus').innerHTML='<span style="color:var(--rd)">✗ Submission failed. Please email us at <a href="mailto:info@violetbridgesecurity.com">info@violetbridgesecurity.com</a></span>';
-    btn.disabled=false;btn.textContent=orig;
-  }
-});
-</script>
+<script src="./assets/service-request.js" defer></script>
 </body>
 </html>
