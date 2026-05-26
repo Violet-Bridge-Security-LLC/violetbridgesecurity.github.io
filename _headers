@@ -28,3 +28,7 @@
 /service-request.html
   # No inline scripts remain — 'unsafe-inline' fully removed from script-src.
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; frame-src 'none'; form-action 'self' https://formspree.io; frame-ancestors 'none';
+
+/questionnaire.html
+  # No inline scripts remain — 'unsafe-inline' fully removed from script-src.
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; frame-src 'none'; form-action 'self' https://formspree.io; frame-ancestors 'none';
