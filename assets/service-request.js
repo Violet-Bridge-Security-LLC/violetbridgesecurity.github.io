@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function () {
     e.preventDefault();
 
     // Honeypot: silently discard if the hidden field was filled by a bot
-    if (form.querySelector('input[name="organization_website"]').value) return;
+    if (form.querySelector('input[name="organization_website"]')?.value) return;
 
     // Timing check: bots submit in milliseconds; humans need at least 3 seconds
     if (Date.now() - FORM_INIT_TIME < 3000) return;
@@ -188,6 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
     btn.textContent = 'Submitting...';
 
     const fd = new FormData(form);
+    fd.delete('organization_website');
     const svcs = [...document.querySelectorAll('input[name="services"]:checked')].map(c => c.value);
     fd.set('services_requested', svcs.join(', '));
 

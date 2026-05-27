@@ -140,13 +140,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
-    if (this.querySelector('[name="organization_website"]').value) return;
+    if (this.querySelector('[name="organization_website"]')?.value) return;
     const btn  = document.getElementById('qSubmitBtn');
     const orig = btn.textContent;
     btn.disabled = true;
     btn.textContent = 'Submitting...';
     const fd = new FormData(this);
-    for (const [k, v] of fd.entries()) {
+    fd.delete('organization_website');
+    for (const [k, v] of [...fd.entries()]) {
       if (typeof v === 'string') fd.set(k, sanitize(v));
     }
     const actSummary = [];

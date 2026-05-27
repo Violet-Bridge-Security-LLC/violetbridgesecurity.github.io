@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
       btn.disabled = true;
       btn.textContent = 'Sending...';
       const fd = new FormData(form);
-      for (const [k, v] of fd.entries()) {
+      for (const [k, v] of [...fd.entries()]) {
         if (typeof v === 'string') fd.set(k, sanitize(v));
       }
       const statusEl = document.getElementById('formStatus');

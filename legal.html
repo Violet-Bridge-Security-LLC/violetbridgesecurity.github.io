@@ -192,7 +192,6 @@
           <tr><td>Google Analytics</td><td>Website analytics (anonymized)</td><td>USA</td></tr>
           <tr><td>Formspree</td><td>Contact &amp; service request form delivery</td><td>USA</td></tr>
           <tr><td>Elfsight</td><td>Blog/insights widget</td><td>EU / USA</td></tr>
-          <tr><td>Google Fonts</td><td>Web typography</td><td>USA</td></tr>
         </tbody>
       </table>
     </section>
@@ -293,9 +292,9 @@
           </div>
         </div>
         <div class="save-prefs-row">
-          <button class="btn btn-p" onclick="saveLegalPrefs()">Save Preferences</button>
-          <button class="btn btn-g" onclick="acceptAllLegal()">Accept All</button>
-          <button class="btn btn-g" onclick="rejectAllLegal()">Reject Non-Essential</button>
+          <button class="btn btn-p" id="legalSaveBtn">Save Preferences</button>
+          <button class="btn btn-g" id="legalAcceptBtn">Accept All</button>
+          <button class="btn btn-g" id="legalRejectBtn">Reject Non-Essential</button>
         </div>
         <div id="prefStatus"></div>
       </div>
@@ -361,9 +360,16 @@ function rejectAllLegal(){
 }
 function showStatus(msg){
   const el=document.getElementById('prefStatus');
-  el.innerHTML='<span style="color:var(--gn)">'+msg+'</span>';
-  setTimeout(()=>{el.innerHTML=''},4000);
+  el.textContent='';
+  const sp=document.createElement('span');
+  sp.style.color='var(--gn)';
+  sp.textContent=msg;
+  el.appendChild(sp);
+  setTimeout(()=>{el.textContent=''},4000);
 }
+document.getElementById('legalSaveBtn').addEventListener('click',saveLegalPrefs);
+document.getElementById('legalAcceptBtn').addEventListener('click',acceptAllLegal);
+document.getElementById('legalRejectBtn').addEventListener('click',rejectAllLegal);
 
 // Highlight active sidebar link on scroll
 const secs=document.querySelectorAll('.legal-sec');
