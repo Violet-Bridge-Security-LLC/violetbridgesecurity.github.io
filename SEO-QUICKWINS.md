@@ -96,7 +96,7 @@ Resolver antes de las fases indicadas.
 | **B2** | `foundingDate`: el JSON-LD dice 2024, la documentación de negocio dice 2025. ¿Cuál es correcta? | Fase 3, Fase 4 | Mike |
 | **B3** | Email público: el JSON-LD dice `info@`, el Service Portfolio PDF dice `sales@`. Elegir uno y usarlo de forma consistente en JSON-LD, llms.txt, sitio y perfiles externos. La consistencia de entidad importa para el reconocimiento por Google y por los LLM. | Fase 3, Fase 4 | Mike |
 | **B4** | Logo para el JSON-LD: ¿`logo-icon.png` o `logo-dark.png`? "dark" probablemente significa *para fondo oscuro*, es decir un logo claro — que sería invisible si Google lo renderiza sobre blanco. Claude Code: revisar ambos, reportar dimensiones y sobre qué fondo funcionan. | Fase 3 | Ambos |
-| **B5** | `reports/netskope_report.html` y `reports/Netskope SASE - Tenant Health Check Report.pdf`: ¿contienen datos identificables de un cliente real? | Fase 1.0 | Mike — **urgente** |
+| ~~**B5**~~ | ~~`reports/netskope_report.html` y `reports/Netskope SASE - Tenant Health Check Report.pdf`: ¿contienen datos identificables de un cliente real?~~ **RESUELTA 14/09/2026:** no. Son documentos de ejemplo, sin datos de cliente real. No se eliminan del repo. | Fase 1.0 | ✅ Mike |
 | **B6** | Confirmar en Netlify → Site configuration → Build & deploy: build command vacío, publish directory `.` o vacío. | Fase 2 | Mike |
 
 ---
@@ -164,7 +164,9 @@ Este archivo es rastreable y no debería serlo. Añadir a su `<head>`:
 <link rel="canonical" href="https://violetbridgesecurity.com/" />
 ```
 
-Hacerlo en el primer commit de la fase, antes que nada. Si B5 confirma que contiene datos de cliente, Mike decidirá si además se elimina del repo — pero el `noindex` va igual y va ya.
+Hacerlo en el primer commit de la fase, antes que nada.
+
+**B5 resuelta (14/09/2026):** son documentos de ejemplo, sin datos de cliente real, y **no se eliminan del repo**. El `noindex` se mantiene igual por otras tres razones: la página es huérfana (nada enlaza a ella), su `<head>` está incompleto y no está etiquetada como muestra. Se republicará correctamente como activo de ventas en una fase posterior.
 
 ### 1.1 — Verificar B1 antes de escribir canonicals
 
@@ -512,7 +514,7 @@ curl -s https://violetbridgesecurity.com/reports/netskope_report.html | grep -i 
 | Baseline: Screaming Frog, PageSpeed campo, dominios de referencia | Herramientas externas |
 | LinkedIn Post Inspector tras Fase 1 | Web |
 | Confirmar publish directory (B6) | UI de Netlify |
-| Revisar contenido de los reports de Netskope (B5) | Mike |
+| ~~Revisar contenido de los reports de Netskope (B5)~~ ✅ hecho 14/09/2026 | Mike |
 
 ---
 
