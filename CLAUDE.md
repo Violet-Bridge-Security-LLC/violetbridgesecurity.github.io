@@ -20,14 +20,15 @@ Servicios: penetration testing, external attack surface management, SASE/Zero Tr
 
 ## Stack y build
 
-> ⚠️ **Pendiente de completar tras la Fase 0 de `/SEO-QUICKWINS.md`.**
-> Cuando termines el reconocimiento, actualiza esta sección con los datos reales
-> y elimina este aviso.
+Confirmado en la Fase 0 de `/SEO-QUICKWINS.md` (13/09/2026).
 
-- **Stack:** _(por determinar)_
-- **Comando de build:** _(por determinar)_
-- **Directorio de publicación:** _(por determinar)_
-- **Plantillas/parciales compartidos:** _(por determinar — importa para saber si el `<head>` se edita en un sitio o en varios)_
+- **Stack:** HTML escrito a mano. Sin generador estático, sin framework, sin `package.json`, sin CI. CSS embebido en un `<style>` dentro de cada archivo; JS embebido al final del `<body>`.
+- **Comando de build:** ninguno. No hay nada que ejecutar.
+- **Directorio de publicación:** la raíz del repo. Source y publish son el mismo sitio, así que cualquier archivo que deba servirse (`robots.txt`, `sitemap.xml`, `llms.txt`, `_headers`) va en la raíz.
+- **Plantillas/parciales compartidos:** no hay. Ni parciales, ni includes SSI, ni templating. El `<head>` está **duplicado literalmente** en los cuatro HTML de la raíz (`index.html`, `legal.html`, `questionnaire.html`, `service-request.html`); `reports/netskope_report.html` tiene un `<head>` mínimo aparte. Cada corrección de cabecera hay que aplicarla archivo por archivo.
+- **Configuración de Netlify:** vive íntegramente en la UI. No hay `netlify.toml`, `_headers` ni `_redirects` en el repo. El HSTS, los Pretty URLs y el primary domain se configuran allí, no aquí.
+
+**Decisión sobre extraer parciales: no se hace.** Introducir un build system es una decisión de arquitectura fuera del alcance de los quick wins, y la duplicación de cabeceras de seguridad desaparece sola al migrarlas a `_headers`. Se reevalúa al empezar la Fase 2 del programa.
 
 ---
 
