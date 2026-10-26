@@ -151,36 +151,6 @@
     .svc-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
     .d-ir{background:var(--rd)}.d-ta{background:var(--ac)}.d-ms{background:var(--gn)}.d-ci{background:var(--cy)}.d-ti{background:var(--am)}.d-sa{background:#e879f9}.d-se{background:#f97316}
 
-    /* ECOSYSTEM SLIDER */
-    .eco-sec{background:var(--bg);position:relative;overflow:hidden}
-    .eco-h{text-align:center;margin-bottom:36px}
-    .eco-w{position:relative;overflow:hidden;mask-image:linear-gradient(to right,transparent,black 6%,black 94%,transparent);padding:16px 0}
-    .eco-t{display:flex;gap:28px;width:max-content;animation:ecoS 60s linear infinite}
-    .eco-t:hover{animation-play-state:paused}
-    @keyframes ecoS{0%{transform:translateX(0)}100%{transform:translateX(calc(-50% - 14px))}}
-    .eco-c{flex-shrink:0;width:200px;background:#fff;border:1px solid #e0e0e0;border-radius:var(--r);padding:24px 18px;display:flex;flex-direction:column;align-items:center;gap:12px;transition:.25s}
-    .eco-c:hover{border-color:var(--ac);transform:translateY(-3px);box-shadow:0 8px 24px rgba(124,92,252,.15)}
-    .eco-c img{height:40px;width:auto;max-width:130px;object-fit:contain}
-    .eco-ph{height:40px;display:flex;align-items:center;font-weight:800;font-size:.85rem;color:#1a1a1a}
-    .eco-cn{font-weight:700;font-size:.9rem;text-align:center;color:#1a1a1a}
-    .eco-cd{font-size:.8rem;color:#666;text-align:center}
-
-    /* ECOSYSTEM BG */
-    .eco-sec::before{content:'';position:absolute;inset:0;background:url('./assets/og-cover.png') center/cover no-repeat;opacity:.18;pointer-events:none;z-index:0}
-    .eco-sec .container,.eco-sec .eco-w{position:relative;z-index:1}
-
-    /* CLIENTS */
-    .port-sec{position:relative;overflow:hidden}
-    .port-bg{display:none}
-    .port-in{position:relative;z-index:1}
-    .ind-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
-    .tab-b{padding:8px 20px;font-size:.9rem;font-weight:600;font-family:var(--f);background:transparent;border:1px solid var(--bd);border-radius:100px;color:var(--tx2);cursor:pointer;transition:.2s}
-    .tab-b.active,.tab-b:hover{background:var(--ac);color:#fff;border-color:var(--ac)}
-    .co-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
-    .co-ch{background:var(--bg-c);border:1px solid var(--bd);border-radius:var(--rs);padding:14px 18px;text-align:center;transition:.2s;font-size:.95rem;font-weight:500}
-    .co-ch:hover{border-color:var(--ac);transform:translateY(-2px)}
-    .co-ch small{display:block;font-size:.8rem;color:var(--tx3);margin-top:3px;text-transform:uppercase;letter-spacing:.06em}
-
     /* ABOUT */
     .about-sec{background:var(--bg-s)}
     .about-g{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
@@ -290,7 +260,7 @@
     <span class="brand-name">Violet Bridge Security</span>
   </a>
   <nav class="nav-l nav-dk" aria-label="Main navigation">
-    <a href="#services">Services</a><a href="#ecosystem">Ecosystem</a><a href="#clients">Clients</a><a href="#about">About</a><a href="#insights">Insights</a><a href="#contact">Contact</a>
+    <a href="#services">Services</a><a href="#about">About</a><a href="#insights">Insights</a><a href="#contact">Contact</a>
   </nav>
   <div class="hdr-acts">
     <button class="btn-sm nav-dk" onclick="location.href='#contact'">Get in Touch</button>
@@ -301,8 +271,6 @@
 <div class="mn-mob" id="mNav">
   <button class="mn-mob-x" onclick="this.parentElement.classList.remove('open')">✕</button>
   <a href="#services" onclick="this.parentElement.classList.remove('open')">Services</a>
-  <a href="#ecosystem" onclick="this.parentElement.classList.remove('open')">Ecosystem</a>
-  <a href="#clients" onclick="this.parentElement.classList.remove('open')">Clients</a>
   <a href="#about" onclick="this.parentElement.classList.remove('open')">About</a>
   <a href="#insights" onclick="this.parentElement.classList.remove('open')">Insights</a>
   <a href="#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
@@ -347,7 +315,6 @@
         <span class="eyebrow">Why Violet Bridge Security</span>
         <h2>Explore Our End-to-End Cyber Security Capabilities</h2>
         <p>While Violet Bridge Security is built for modern threat landscapes, our engineering core possesses a decades-long legacy of enterprise defense. Our technical architects have engineered, deployed, and hardened security programs from the ground up across critical infrastructure — including financial services, telecommunications, energy, aviation, and global retail. We transform complex, distributed environments into resilient, zero-trust architectures, giving organizations around the world total operational confidence.</p>
-        <a class="btn btn-p" href="./assets/VioletBridge_capabilities_statement.pdf" download style="margin-top:12px">Download Capability Statement ↓</a>
       </div>
       <div class="cap-img">
         <img src="./assets/new-capabilities.png" alt="Violet Bridge Security capabilities">
@@ -458,48 +425,6 @@
     </div>
   </div>
 </section>
-<section id="ecosystem" class="section section-b eco-sec">
-  <div class="container"><div class="eco-h"><span class="eyebrow">Trusted Partners</span><h2>Our Ecosystem</h2></div></div>
-  <div class="eco-w"><div class="eco-t">
-    <div class="eco-c"><img src="./assets/cato-logo.png" alt="Cato Networks"><span class="eco-cn">Cato Networks</span><span class="eco-cd">SASE · SD-WAN · ZTNA</span></div>
-    <div class="eco-c"><img src="./assets/Arsen.png" alt="Arsen Security"><span class="eco-cn">Arsen Security</span><span class="eco-cd">Phishing · Vishing · Awareness</span></div>
-    <div class="eco-c"><img src="./assets/PaloAltoNetworks.png" alt="Palo Alto Networks"><span class="eco-cn">Palo Alto Networks</span><span class="eco-cd">NGFW · XDR · Cloud Security</span></div>
-    <div class="eco-c"><img src="./assets/netskope-logo.png" alt="Netskope"><span class="eco-cn">Netskope</span><span class="eco-cd">CASB · SASE · DLP</span></div>
-    <div class="eco-c"><img src="./assets/cisco-logo.png" alt="Cisco"><span class="eco-cn">Cisco</span><span class="eco-cd">Networking · Security · Cloud</span></div>
-    <div class="eco-c"><img src="./assets/akamai-logo.png" alt="Akamai"><span class="eco-cn">Akamai</span><span class="eco-cd">CDN · Zero Trust · DDoS</span></div>
-    <div class="eco-c"><img src="./assets/aryaka-logo.png" alt="Aryaka"><span class="eco-cn">Aryaka</span><span class="eco-cd">SASE · SD-WAN · WAN Optimization</span></div>
-    <div class="eco-c"><img src="./assets/appgate-logo.png" alt="Appgate"><span class="eco-cn">Appgate</span><span class="eco-cd">Zero Trust · ZTNA · SDP</span></div>
-    <div class="eco-c"><img src="./assets/NordSecurity-logo.png" alt="Nord Security"><span class="eco-cn">Nord Security</span><span class="eco-cd">VPN · Threat Protection</span></div>
-    <div class="eco-c"><img src="./assets/adaptiv-logo.png" alt="Adaptiv Networks"><span class="eco-cn">Adaptiv Networks</span><span class="eco-cd">SD-WAN · Secure Connectivity</span></div>
-    <div class="eco-c"><img src="./assets/lumen-logo.png" alt="Lumen"><span class="eco-cn">Lumen</span><span class="eco-cd">Edge · Connectivity · Security</span></div>
-    <div class="eco-c"><img src="./assets/xcitium-cybersecurity-logo.png" alt="Xcitium Cybersecurity"><span class="eco-cn">Xcitium Cybersecurity</span><span class="eco-cd">ZeroDwell · Endpoint · XDR</span></div>
-    <div class="eco-c"><img src="./assets/cato-logo.png" alt="Cato Networks"><span class="eco-cn">Cato Networks</span><span class="eco-cd">SASE · SD-WAN · ZTNA</span></div>
-    <div class="eco-c"><img src="./assets/Arsen.png" alt="Arsen Security"><span class="eco-cn">Arsen Security</span><span class="eco-cd">Phishing · Vishing · Awareness</span></div>
-    <div class="eco-c"><img src="./assets/PaloAltoNetworks.png" alt="Palo Alto Networks"><span class="eco-cn">Palo Alto Networks</span><span class="eco-cd">NGFW · XDR · Cloud Security</span></div>
-    <div class="eco-c"><img src="./assets/netskope-logo.png" alt="Netskope"><span class="eco-cn">Netskope</span><span class="eco-cd">CASB · SASE · DLP</span></div>
-    <div class="eco-c"><img src="./assets/cisco-logo.png" alt="Cisco"><span class="eco-cn">Cisco</span><span class="eco-cd">Networking · Security · Cloud</span></div>
-    <div class="eco-c"><img src="./assets/akamai-logo.png" alt="Akamai"><span class="eco-cn">Akamai</span><span class="eco-cd">CDN · Zero Trust · DDoS</span></div>
-    <div class="eco-c"><img src="./assets/aryaka-logo.png" alt="Aryaka"><span class="eco-cn">Aryaka</span><span class="eco-cd">SASE · SD-WAN · WAN Optimization</span></div>
-    <div class="eco-c"><img src="./assets/appgate-logo.png" alt="Appgate"><span class="eco-cn">Appgate</span><span class="eco-cd">Zero Trust · ZTNA · SDP</span></div>
-    <div class="eco-c"><img src="./assets/NordSecurity-logo.png" alt="Nord Security"><span class="eco-cn">Nord Security</span><span class="eco-cd">VPN · Threat Protection</span></div>
-    <div class="eco-c"><img src="./assets/adaptiv-logo.png" alt="Adaptiv Networks"><span class="eco-cn">Adaptiv Networks</span><span class="eco-cd">SD-WAN · Secure Connectivity</span></div>
-    <div class="eco-c"><img src="./assets/lumen-logo.png" alt="Lumen"><span class="eco-cn">Lumen</span><span class="eco-cd">Edge · Connectivity · Security</span></div>
-    <div class="eco-c"><img src="./assets/xcitium-cybersecurity-logo.png" alt="Xcitium Cybersecurity"><span class="eco-cn">Xcitium Cybersecurity</span><span class="eco-cd">ZeroDwell · Endpoint · XDR</span></div>
-  </div></div>
-</section>
-
-<!-- CLIENTS -->
-<section id="clients" class="section section-b port-sec">
-  <div class="port-bg" role="img" aria-label="Global deployment footprint"></div>
-  <div class="container port-in">
-    <span class="eyebrow">Engineering Legacy</span>
-    <h2>Global Deployment Footprint</h2>
-    <p style="color:var(--tx2);margin-bottom:28px;font-size:1.05rem;">Our team's combined experience spans these organizations and industries.</p>
-    <div class="ind-tabs" id="industryTabs"></div>
-    <div class="co-g" id="companiesGrid"></div>
-  </div>
-</section>
-
 <!-- ABOUT -->
 <section id="about" class="section section-b about-sec">
   <div class="container">
@@ -509,7 +434,7 @@
         <h2>Headquartered in the Americas, Serving Globally</h2>
         <p>Violet Bridge Security is a cybersecurity consulting firm passionate about protecting the organizations that power our connected world. We specialize in helping organizations transition from legacy network infrastructure to modern, cloud-native security frameworks — reducing cost, complexity, and risk simultaneously.</p>
         <p>Our consulting approach is rooted in real-world deployment experience across financial services, retail, healthcare, and multinational enterprises. We don't just advise — we architect, deploy, and optimize. From SASE platform selection and Zero Trust Network Access (ZTNA) implementation to ongoing security awareness programs that measurably reduce human-factor risk, our team delivers end-to-end cybersecurity transformation.</p>
-        <p>As certified partners of Cato Networks, Palo Alto Networks, Netskope and Arsen Security, we bring vendor-neutral expertise combined with deep platform knowledge. Whether you are consolidating multiple point solutions into a unified SASE architecture, defending against sophisticated social engineering attacks, or seeking strategic guidance on your cybersecurity roadmap, Violet Bridge Security provides the engineering talent and strategic vision to accelerate your security posture.</p>
+        <p>We bring vendor-neutral expertise combined with deep platform knowledge. Whether you are consolidating multiple point solutions into a unified SASE architecture, defending against sophisticated social engineering attacks, or seeking strategic guidance on your cybersecurity roadmap, Violet Bridge Security provides the engineering talent and strategic vision to accelerate your security posture.</p>
         <div class="about-locs">
           <div class="about-loc">
             <div class="about-li">🇵🇦</div>
@@ -560,7 +485,7 @@
       <p>Converged security for a connected world. Violet Bridge Security delivers advanced cybersecurity engineering and strategic consulting globally. Backed by a proven legacy of hardening complex enterprise environments across critical infrastructure, we transform distributed ecosystems into resilient, zero-trust architectures to guarantee absolute business continuity.</p>
     </div>
     <div class="ftr-col"><h4>Services</h4><a href="#services">Incident Response</a><a href="#services">Technical Assurance</a><a href="#services">Managed Services</a><a href="#services">Consulting</a><a href="#services">Threat Intelligence</a><a href="#services">SASE Architecture</a><a href="#services">Security Workforce &amp; Advisory</a></div>
-    <div class="ftr-col"><h4>Company</h4><a href="#about">About Us</a><a href="#clients">Clients</a><a href="#insights">Insights</a><a href="#contact">Contact</a></div>
+    <div class="ftr-col"><h4>Company</h4><a href="#about">About Us</a><a href="#insights">Insights</a><a href="#contact">Contact</a></div>
     <div class="ftr-col"><h4>Legal</h4><a href="./legal.html#privacy">Privacy Notice</a><a href="./legal.html#cookies">Cookie Policy</a><a href="./legal.html#terms">Terms of Service</a><a href="#" onclick="openCookiePrefs();return false">Manage Cookies</a></div>
   </div>
   <div class="ftr-btm"><span>© 2026 Violet Bridge Security LLC. All rights reserved.</span><div class="ftr-legal"><a href="./legal.html#privacy">Privacy</a><a href="./legal.html#cookies">Cookies</a><a href="./legal.html#terms">Terms</a></div></div>
@@ -571,14 +496,8 @@ function handleCookies(a){const b=document.getElementById('cookieBanner'),m=docu
 function openCookiePrefs(){document.getElementById('cookieBanner').style.display='none';document.getElementById('cookieModal').classList.add('open')}
 (function(){const c=localStorage.getItem('vbs-cookies');if(!c){if(navigator.globalPrivacyControl){localStorage.setItem('vbs-cookies',JSON.stringify({n:1,a:0,m:0}));window['ga-disable-G-ZSCQFCZV23']=true;document.getElementById('gpcIndicator').classList.add('vis')}else document.getElementById('cookieBanner').style.display='block'}else{const p=JSON.parse(c);if(!p.a)window['ga-disable-G-ZSCQFCZV23']=true;if(navigator.globalPrivacyControl)document.getElementById('gpcIndicator').classList.add('vis')}})();
 
-const companies=[{name:'Banco do Brasil',i:'finance'},{name:'Banco Itaú',i:'finance'},{name:'Petrobras',i:'energy'},{name:'Claro',i:'telecom'},{name:'Bancolombia',i:'finance'},{name:'Anheuser Busch InBev',i:'retail'},{name:'AmbevTech',i:'retail'},{name:'Cielo',i:'finance'},{name:'Stone Pagamentos',i:'finance'},{name:'Localiza',i:'aviation'},{name:'Azul Linhas Aéreas',i:'aviation'},{name:'COMGÁS',i:'energy'},{name:'Sicredi',i:'finance'},{name:'Grupo Boticário',i:'retail'},{name:'Citrosuco',i:'retail'},{name:'Magazine Luiza',i:'retail'},{name:'Banco Davivienda',i:'finance'},{name:'Seguros Monterrey',i:'finance'},{name:'Mountain America CU',i:'finance'},{name:'Banco Santander',i:'finance'},{name:'Telefónica',i:'telecom'},{name:'LATAM Airlines',i:'aviation'}];
-const sn={finance:'Financial',telecom:'Telecom',retail:'Retail',energy:'Energy',aviation:'Aviation'};
-function renderTabs(){const t=document.getElementById('industryTabs');t.textContent='';['all',...Object.keys(sn)].forEach(s=>{const b=document.createElement('button');b.className='tab-b'+(s==='all'?' active':'');b.dataset.s=s;b.textContent=s==='all'?'All Sectors':sn[s];t.appendChild(b)});t.addEventListener('click',e=>{if(!e.target.classList.contains('tab-b'))return;t.querySelectorAll('.tab-b').forEach(b=>b.classList.remove('active'));e.target.classList.add('active');renderCo(e.target.dataset.s)})}
-function renderCo(f='all'){const g=document.getElementById('companiesGrid');const l=f==='all'?companies:companies.filter(c=>c.i===f);g.textContent='';l.forEach(c=>{const d=document.createElement('div');d.className='co-ch';d.textContent=c.name;const sm=document.createElement('small');sm.textContent=sn[c.i];d.appendChild(sm);g.appendChild(d)})}
-
 function sanitize(s){return s.replace(/[<>"'`]/g,c=>({'<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#x27;','`':'&#x60;'}[c]))}
 const form=document.getElementById('contactForm');if(form)form.addEventListener('submit',async function(e){e.preventDefault();const b=form.querySelector('button[type="submit"]');const o=b.textContent;b.disabled=true;b.textContent='Sending...';const fd=new FormData(form);for(const[k,v]of fd.entries())if(typeof v==='string')fd.set(k,sanitize(v));try{await fetch('https://formspree.io/f/xyznznrd',{method:'POST',body:fd,headers:{'Accept':'application/json'}});document.getElementById('formStatus').innerHTML='<span style="color:var(--gn)">✓ Sent successfully.</span>';form.reset()}catch(r){document.getElementById('formStatus').innerHTML='<span style="color:var(--rd)">✗ Error. Please email us directly.</span>'}finally{b.disabled=false;b.textContent=o}});
-document.addEventListener('DOMContentLoaded',()=>{renderTabs();renderCo()});
 (function(){var ch='0123456789ABCDEF#$%@&*<>{}|/\\?^~';function scramble(el,txt,ms,done){var n=txt.length,frame=0,total=Math.ceil(ms/35),t=setInterval(function(){frame++;var p=frame/total,rev=Math.floor(p*n),s='';for(var i=0;i<n;i++){if(txt[i]===' '){s+=' '}else if(i<rev){s+=txt[i]}else{s+=ch[Math.floor(Math.random()*ch.length)]}}el.textContent=s;if(frame>=total){clearInterval(t);el.textContent=txt;el.classList.remove('scrambling');if(done)done()}},35);return t}document.querySelectorAll('.svc-card').forEach(function(card){var desc=card.querySelector('.svc-cdesc');if(!desc)return;var orig=desc.textContent,timer=null,st=null;card.addEventListener('mouseenter',function(){card.classList.add('scanning');timer=setTimeout(function(){desc.classList.add('scrambling');st=scramble(desc,orig,480,function(){card.classList.add('revealed')})},90)});card.addEventListener('mouseleave',function(){card.classList.remove('scanning','revealed');clearTimeout(timer);if(st)clearInterval(st);desc.textContent=orig;desc.classList.remove('scrambling')});card.addEventListener('animationend',function(e){if(e.animationName==='hudScan')card.classList.remove('scanning')})})})();
 </script>
 </body>
