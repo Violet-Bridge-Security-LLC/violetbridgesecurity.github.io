@@ -153,18 +153,13 @@
 
     /* ABOUT */
     .about-sec{background:var(--bg-s)}
-    .about-g{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-    @media(max-width:768px){.about-g{grid-template-columns:1fr}}
     .about-t p{color:var(--tx2);font-size:1.05rem;line-height:1.8;margin-bottom:14px}
     .about-locs{display:flex;gap:16px;margin-top:24px;flex-wrap:wrap}
-    .about-loc{display:flex;align-items:flex-start;gap:12px;background:var(--bg-c);border:1px solid var(--bd);border-radius:var(--r);padding:16px 18px;flex:1;min-width:190px;transition:.2s}
+    .about-loc{display:flex;align-items:flex-start;gap:12px;background:var(--bg-c);border:1px solid var(--bd);border-radius:var(--r);padding:16px 18px;flex:0 1 auto;min-width:190px;transition:.2s}
     .about-loc:hover{border-color:var(--bd2);transform:translateY(-2px)}
     .about-li{width:38px;height:38px;flex-shrink:0;background:rgba(124,92,252,.08);border:1px solid rgba(124,92,252,.15);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
     .about-loc strong{display:block;font-size:.95rem;margin-bottom:2px}
     .about-loc span{font-size:.85rem;color:var(--tx2)}
-    .about-mw{border-radius:var(--r);overflow:hidden;border:1px solid var(--bd);aspect-ratio:4/3;background:var(--bg-c)}
-    .about-mw img{width:100%;height:100%;object-fit:cover}
-    .about-mph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:2px dashed var(--bd2);border-radius:var(--r);color:var(--tx3);font-size:.85rem;text-align:center;padding:24px}
 
     /* CONTACT */
     .ct-g{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:36px}
@@ -441,9 +436,6 @@
             <div><strong>Wyoming, USA</strong><span>Corporate HQ</span></div>
           </div>
         </div>
-      </div>
-      <div class="about-mw">
-        <img src="./assets/geomap.png" alt="Violet Bridge Security offices">
       </div>
     </div>
   </div>
