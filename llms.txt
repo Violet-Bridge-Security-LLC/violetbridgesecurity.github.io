@@ -8,18 +8,11 @@ Violet Bridge Security LLC is a cybersecurity consulting firm founded by senior 
 
 ## Services
 
-- **SASE Architecture Deployment**: Design, implementation, and optimization of Secure Access Service Edge platforms including Cato Networks and Netskope.
-- **Security Awareness & Phishing Simulation**: AI-driven phishing, vishing, and smishing simulations powered by Arsen Security. Micro-learning modules and executive protection programs.
+- **SASE Architecture Deployment**: Design, implementation, and optimization of Secure Access Service Edge platforms.
+- **Security Awareness & Phishing Simulation**: AI-driven phishing, vishing, and smishing simulations. Micro-learning modules and executive protection programs.
 - **Zero Trust Implementation (ZTNA)**: End-to-end Zero Trust Network Access architecture design and deployment.
 - **Network Transformation**: Migration from legacy MPLS to cloud-native architectures, vendor consolidation, and cost optimization.
 - **Cybersecurity Consulting**: Strategic advisory, security roadmap development, tenant health checks, and compliance alignment.
-
-## Technology Partners
-
-- Cato Networks (SASE Platform)
-- Netskope (Security Service Edge)
-- Arsen Security (Social Engineering & Awareness)
-- Telarus (Technology Brokerage)
 
 ## Industries Served
 
