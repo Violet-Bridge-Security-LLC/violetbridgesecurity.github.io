@@ -439,17 +439,14 @@ Ventaja de estar en header: `frame-ancestors 'none'` pasa a ser posible (en `<me
 
 ### 5.3 — Canonical HTTP en los PDFs
 
-Son **tres**, en **dos** carpetas. Una regla `/reports/*` no alcanza el de `assets/`:
+Son **dos**, ambos en `reports/`. (El capability statement de `assets/` se eliminó del sitio el 26/10/2026.)
 
 ```
 /reports/*
   Link: <https://violetbridgesecurity.com/>; rel="canonical"
-
-/assets/VioletBridge_capabilities_statement.pdf
-  Link: <https://violetbridgesecurity.com/>; rel="canonical"
 ```
 
-⚠️ **No añadir `noindex` a los PDF de portfolio y capabilities todavía.** El de portfolio es uno de los dos activos indexados que existen; desindexarlo antes de que haya página HTML equivalente deja menos, no más. Dejar un comentario en el archivo indicando que el `noindex` llega con las páginas de servicio.
+⚠️ **No añadir `noindex` al PDF de portfolio todavía.** El de portfolio es uno de los dos activos indexados que existen; desindexarlo antes de que haya página HTML equivalente deja menos, no más. Dejar un comentario en el archivo indicando que el `noindex` llega con las páginas de servicio.
 
 **Excepción:** el PDF de Netskope sí lleva `noindex` desde ya, por la misma razón que su versión HTML en la Fase 1.0:
 
@@ -464,7 +461,6 @@ Son **tres**, en **dos** carpetas. Una regla `/reports/*` no alcanza el de `asse
 curl -sI https://violetbridgesecurity.com/ | grep -iE 'x-content-type|x-frame|referrer-policy|permissions-policy|content-security'
 curl -s  https://violetbridgesecurity.com/ | grep -i 'http-equiv'
 curl -sI "https://violetbridgesecurity.com/reports/Violet%20Bridge%20Security%20-%20Service%20Portfolio%202026.pdf" | grep -i link
-curl -sI "https://violetbridgesecurity.com/assets/VioletBridge_capabilities_statement.pdf" | grep -i link
 ```
 
 Los headers deben aparecer en la respuesta HTTP. `http-equiv` no debe devolver nada de CSP ni de X-Frame.
